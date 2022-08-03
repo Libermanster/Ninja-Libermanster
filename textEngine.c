@@ -29,10 +29,12 @@ int starts_with_label(char line[]){
 }
 
 
-int throughText(){
+int throughText(char line[]){
 
 	int i = 0;
 	int fl_whiteSpace = 1;
+
+	fl_whiteSpace = ((line[i]== ' ')||(line[i]== '\t')) ? 1 : 0;
 
 	while (fl_whiteSpace == 1){
 		if (line[i]== '\n')
@@ -44,13 +46,24 @@ int throughText(){
 			return 1;
 		}
 		fl_whiteSpace = ((line[i]== ' ')||(line[i]== '\t')) ? 1 : 0;
+		++i;
+	}
+
+
+	if (line[i] == ';')
+	{
+		return 2;
 	}
 
 	for (i; i <= MAX_LINE; ++i)
 	{
-		if (line[i] == ';')
+		if ((line[i]== ' ')||(line[i]== '\t'))
 		{
-			return 2;
+			fl_whiteSpace = 1;
+		}
+		if ((line[i] == ':')&&(fl_whiteSpace != 1))
+		{
+			return 3;
 		}
 	}
 
