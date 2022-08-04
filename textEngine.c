@@ -4,6 +4,16 @@ text engine that goes through the text and determin what cind of text is it
 
 #include "textEngine.h" 
 
+
+void whatIsTheLabel(char line[], char label[]){
+	int i = 0;
+	while(line[i] != ':'){
+		label[i] == line[i];
+		++i;
+	}
+}
+
+
 int isEmpty(char line[]){
 	int _x;
 	if ((_x = throughText(line)) == 1)
@@ -31,7 +41,6 @@ int starts_with_label(char line[]){
 	}
 	return 0;
 }
-
 
 int throughText(char line[]){
 
