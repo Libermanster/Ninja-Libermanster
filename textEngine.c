@@ -5,7 +5,8 @@ text engine that goes through the text and determin what cind of text is it
 #include "textEngine.h" 
 
 int isEmpty(char line[]){
-	if ((throughText(line)) == 1)
+	int _x;
+	if ((_x = throughText(line)) == 1)
 	{
 		return 1;
 	}
@@ -13,15 +14,18 @@ int isEmpty(char line[]){
 }
 
 int isComment(char line[]){
-	if ((throughText(line)) == 2)
+	int _x;
+	if ((_x = throughText(line)) == 2)
 	{
 		return 1;
 	}
 	return 0;
 }
 
+
 int starts_with_label(char line[]){
-	if ((throughText(line)) == 3)
+	int _x;
+	if ((_x = throughText(line)) == 3)
 	{
 		return 1;
 	}
