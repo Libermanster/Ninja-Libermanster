@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-
+// gay
 /*from dec to binary begins*/
 
 void addOne(int* arr,int len)
