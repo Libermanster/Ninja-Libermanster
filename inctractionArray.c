@@ -3,26 +3,29 @@
 
 
 void fillOpcodeFormat(inctractionArray *a,int i, int k, int p, int r) {
-    fillArray(i,4,a->arr[a->dc].format.opcodeFormat.opcode);
-    fillArray(k,2,a->arr[a->dc].format.opcodeFormat.src);
-    fillArray(p,2,a->arr[a->dc].format.opcodeFormat.dst);
-    fillArray(r,2,a->arr[a->dc].format.opcodeFormat.are);    
+    fillArray(i,4,a->arr[a->dc].format.formatType.opcodeFormat.opcode);
+    fillArray(k,2,a->arr[a->dc].format.formatType.opcodeFormat.src);
+    fillArray(p,2,a->arr[a->dc].format.formatType.opcodeFormat.dst);
+    fillArray(r,2,a->arr[a->dc].format.formatType.opcodeFormat.are);    
     a->arr[a->dc].labelSwitch = 0;
+    a->arr[a->dc].format.formatTypeIndicator = 1;
     a->dc++;
 }
 
 void fillDataFormat(inctractionArray *a, int i, int k) {
-    fillArray(i,8,a->arr[a->dc].format.dataFormat.data);
-    fillArray(k,2,a->arr[a->dc].format.dataFormat.are);
+    fillArray(i,8,a->arr[a->dc].format.formatType.dataFormat.data);
+    fillArray(k,2,a->arr[a->dc].format.formatType.dataFormat.are);
     a->arr[a->dc].labelSwitch = 0;
+    a->arr[a->dc].format.formatTypeIndicator = 3;
     a->dc++;
 }
 
 void fillRegisterFormat(inctractionArray *a, int i, int k, int p) {
-    fillArray(i,4,a->arr[a->dc].format.registerFormat.firstOperandRegister);
-    fillArray(k,4,a->arr[a->dc].format.registerFormat.secondOperandRegister);
-    fillArray(p,2,a->arr[a->dc].format.registerFormat.are);
+    fillArray(i,4,a->arr[a->dc].format.formatType.registerFormat.firstOperandRegister);
+    fillArray(k,4,a->arr[a->dc].format.formatType.registerFormat.secondOperandRegister);
+    fillArray(p,2,a->arr[a->dc].format.formatType.registerFormat.are);
     a->arr[a->dc].labelSwitch = 0;
+    a->arr[a->dc].format.formatTypeIndicator = 2;
     a->dc++;
 }
 
@@ -195,7 +198,7 @@ void addInstractionToArray(inctractionArray *a,int opcode,operand operands[3],in
                             fillOpcodeFormat(a,opcode,3,0,0);
                             fillRegisterFormat(a,operands[1].value.number,0,0);
                             fillDataFormat(a,operands[2].value.number,0);
-                            rerturn;
+                            return;
                         case 1:
                             fillOpcodeFormat(a,opcode,3,1,0);
                             fillRegisterFormat(a,operands[1].value.number,0,0);
