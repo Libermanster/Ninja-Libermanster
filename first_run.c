@@ -16,7 +16,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
     char* line;
     symbolList *sl = NULL;
-    while(NULL != fgets(line, MAX_LINE, fp)) 
+    while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         
         int symbolInTheLine = 0;
