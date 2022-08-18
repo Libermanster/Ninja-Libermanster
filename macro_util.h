@@ -1,14 +1,6 @@
 /*MACROS UTILLITY FUNCTIONS HEADER*/
 
-/* the macro stracture*/
-typedef struct macro
-{
-    char *name;
-    char **lines;
-    int line_count;
-    int lines_filled;
-    struct macro *next;
-} macro;
+
 
 /**
  * @brief create a new macro
@@ -43,14 +35,7 @@ char *m_get_line(macro *m, int i);
  */
 void m_destroy(macro *m);
 
-/* the macro list stracture */
 
-typedef struct macro_list
-{
-    macro *head;
-    macro *tail;
-
-} macro_list;
 
 /**
  * @brief create a new macro list
@@ -82,3 +67,23 @@ macro *ml_get(macro_list *list, char *name);
  * @param list the macro list list
  */
 void ml_destroy(macro_list *list);
+
+
+/* the macro stracture*/
+typedef struct macro
+{
+    char *name;
+    char **lines;
+    int line_count;
+    int lines_filled;
+    struct macro *next;
+} macro;
+
+/* the macro list stracture */
+
+typedef struct macro_list
+{
+    macro *head;
+    macro *tail;
+
+} macro_list;
