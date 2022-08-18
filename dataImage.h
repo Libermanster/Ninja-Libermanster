@@ -2,7 +2,7 @@
 
 typedef struct dataImage 
 {
-    int dc; // =0 אולי צריך להגדיר
+    int dc;/*0??*/
     int dataArray[MAX_MEMORY];
     
 } dataImage;
