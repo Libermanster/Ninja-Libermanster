@@ -2,27 +2,11 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include "macro_util.h"
 
 #define INITIAL_LINE_COUNT 20
 
 
-/* the macro stracture*/
-typedef struct macro
-{
-    char *name;
-    char **lines;
-    int line_count;
-    int lines_filled;
-    struct macro *next;
-} macro;
-
-/* the macro stracture*/
-typedef struct macro_list
-{
-    macro *head;
-    macro *tail;
-
-} macro_list;
 
 macro_list *ml_create()
 {
