@@ -10,7 +10,7 @@
 	input: line[81], label[]
 	output: void, change the label char array into the label
 */
-void whatIsTheLabel(char*, char*);
+void getLabelName(char*, char*);
 /*
 	breif: checks if a line contain only whitespaces, works only for for 81 digits lines
 	input: line[81]
