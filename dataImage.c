@@ -15,7 +15,7 @@ void addInt(char* number, dataImage* dataIm)
     }
     num = atoi(number); /*doesnt work for negative please fix*/
     dataIm->dataArray[dataIm->dc] = num; 
-    (dataIm->dc)++;
+(dataIm->dc)++;
 }
 
 
