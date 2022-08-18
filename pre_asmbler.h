@@ -7,8 +7,7 @@
  * 
  * gets the pointer to the input file and its name
  */
- 
-void preasmbler_algorithm(FILE *fp, char name[]);
+void preasmbler_algorithm(FILE* , char[]);
 
 
 
