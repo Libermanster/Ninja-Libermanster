@@ -1,8 +1,18 @@
-#include util.h 
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include "util.h" 
+#include "inctractionArray.h" 
+#include "dataImage.h" 
+#include "symbol_util.h" 
+#include "operand.h" 
 
 
 
-FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, symbolList* sl) {
+
+
+FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
     
     char line[MAX_LINE+1];
     symbolList *sl = NULL;
@@ -10,18 +20,18 @@ FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, sy
     {
         
         int symbolInTheLine = 0;
-        symbol *s = NULL; //check with an expert that it doesnt delete the prevoius labels
+        symbol *s = NULL;/*  //check with an expert that it doesnt delete the prevoius labels */
         
-        if(isEmpty(&line)||isComment(&line)) //שורה ריקה או הערה,להגיד ליונש לעשות את זה, לבדוק לגבי מערכים ומצביעים בספר
+        if(isEmpty(&line)||isComment(&line)) /* //שורה ריקה או הערה,להגיד ליונש לעשות את זה, לבדוק לגבי מערכים ומצביעים בספר */
             continue;
         
-        line = &line[skip_spaces(line)];  //deletes the spaces in the start 
+        line = &line[skip_spaces(line)];  /* //deletes the spaces in the start  */
     
         if (startsWithWord(line, ".entry"))
         {
-            line += 6; // 6 == strlen(".entry") 
+            line += 6; /* // 6 == strlen(".entry")  */
             line = &line[skip_spaces(line)];
-            char *n = getNextWord(line); //check if the pointers shit is correct, its complicated in this line.
+            char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             symbol *s = create_symbol(n,0,UNKNOWN,ENTRY);
             free(n);
             addSymbolTolist(s,sl);
@@ -30,22 +40,23 @@ FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, sy
         
         if (startsWithWord(line, ".extern"))
         {
-            line += 7; // 7 == strlen(".extern") 
+            line += 7; /* // 7 == strlen(".extern")  */
             line = &line[skip_spaces(line)];
-            char *n = getNextWord(line); //check if the pointers shit is correct, its complicated in this line.
+            char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             symbol *s = create_symbol(n,0,UNKNOWN,EXTERNAL);
             free(n);
-            addSymbolTolist(s,sl); //check problems with the label s pointer how does it work
+            addSymbolTolist(s,sl);/*  //check problems with the label s pointer how does it work */
             continue;
         }
     
         if(startsWithLabel(&line))
         { 
             symbolInTheLine = 1;
-            char* name = getLabelName(&line);
+            char* name;
+            getLabelName(&line,name);
             s = create_symbol(name,0,UNKNOWN,NONE);
             free(name); 
-            line += strlen(get_symbol_name(s)) + 1; // fowards the line nigga
+            line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
             line = &line[skip_spaces(line)];
         }
         
@@ -98,12 +109,12 @@ FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, sy
                     continue;
                 }
                 else 
-                    //error
+                   /*  //error */
             }
             else
-                //error
+             /*    //error */
         }
-        if(starts_with_word(line,".struct")) //might not work needs a check.
+        if(starts_with_word(line,".struct"))/*  //might not work needs a check. */
         {
             
             char* end;
@@ -120,26 +131,26 @@ FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, sy
             char* numAndString; 
             numAndString = strtok(line, ",");
             addInt(numAndString, dataIm);
-            numAndString = strtok(NULL, ",")
+            numAndString = strtok(NULL, ",");
             numAndString += skip_spaces(numAndString);
             if (numAndString[0] != '"')
             {
-            error(eh, NOT_A_STRING, 0);
-            continue;
+                error(eh, NOT_A_STRING, 0);
+                continue;
             }
             numAndString++;
             if (NULL != (end = strchr(numAndString, '"'))) 
             {
                 if(is_last_word(end)) {
-                *end =  '\0';
-                addString(numAndString,dataIm);
-                continue;
+                    *end =  '\0';
+                    addString(numAndString,dataIm);
+                    continue;
                 }
                 else
-                //error
+                /* //error */
             }
             else
-                //error
+                /* //error */
             
         }
         
@@ -164,8 +175,8 @@ FILE first_run_algorithm(*FILE fp, *inctractionArray Iarr, *dataImage dataIm, sy
             free(temp);
             if (opcode == -1)
             {
-            error(eh, UNKNOWN_OPCODE, 1, part);
-            continue;
+                error(eh, UNKNOWN_OPCODE, 1, part);
+                continue;
             }
             line += skip_spaces(line);
             temp = strtok(line, ",");

@@ -1,3 +1,5 @@
+#ifndef OPERAND
+#define OPERAND
 typedef struct operand {
     int reffMode; //שיטת המיעון, refferenc Mode
     value value;
@@ -11,6 +13,8 @@ typedef union value {
         int num;
     } labelNameAndNum;
 } value;
+#endif
+
 
 
 operand createOperand(char* str) {
