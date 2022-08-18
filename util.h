@@ -2,6 +2,13 @@
 
 #define MAX_LINE 80
 
+
+
+
+
+
+
+
 /*
  * duplicate a string s into a new array of chars and return the pointer for that chars array
  */
@@ -47,6 +54,12 @@ void deleteSpacesAtEnd(char *s);
 
 
 /*
+    breif: 
+    input: line[81]
+    output: int, 1 for true 0 for false
+*/
+int hasDott(char*)
+/*
     breif: get back the label
     input: line[81], label[]
     output: void, change the label char array into the label
@@ -76,3 +89,32 @@ int starts_with_label(char*);
     output: 1 for empty line 2 for comment line 3 for labeled line 0 for else
 */
 int throughText(char*);
+
+
+/*
+    breif: 
+    input: line[81]
+    output:
+*/
+void getLabelOperandName(char line[], char label[]);
+
+/*
+    breif: 
+    input: line[81]
+    output:
+*/
+int getLabelOperandNumber(char line[]);
+
+/*
+    breif: 
+    input: line[81]
+    output:
+*/
+int getRegister(char* str);
+
+/*
+    breif: 
+    input: line[81]
+    output:
+*/
+int isRegister(char* str);

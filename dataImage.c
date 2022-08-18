@@ -1,11 +1,11 @@
-#include ״dataImage.h״
-
-
+#include <string.h>
+#include "dataImage.h"
+#include "util.h"
 
 void addInt(char* number, dataImage* dataIm) {
     
     number += skip_spaces(number); /* delete spaces in the start */
-    trimWord(number); /* delete spaces in the end*/
+    deleteSpacesAtEnd(number); /* delete spaces in the end*/
     int num = atoi(number); //doesnt work for negative please fix
     dataIm->dataArray[dataIm->dc] = num; 
     (dataIm->dc)++;

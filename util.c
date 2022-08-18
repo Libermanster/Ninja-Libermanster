@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "macro_util.h"
 #include "util.h" 
+int throughText(char *line);
 
 char *stringConnect(char *s1, char *s2) //strconcat
 {
@@ -49,7 +50,7 @@ int startsWithWord(char *s, char *word) //starts_with_word
 
 
 
-void trimWord(char *s) //trim_word
+void deleteSpacesAtEnd(char *s) //trim_word
 {
     int i = 0;
     while (s[i] != '\0' && !isspace(s[i]))
@@ -75,7 +76,6 @@ char *duplicateString(char *s) //dupstr
 
 
 
-int throughText(char *line);
 
 
 int hasDott(char *line){
