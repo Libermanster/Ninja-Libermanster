@@ -9,6 +9,10 @@ void addInt(char* number, dataImage* dataIm)
     int num;
     number += countSpaces(number); /* delete spaces in the start */
     deleteSpacesAtEnd(number); /* delete spaces in the end*/
+    if(number[0]=='-') {
+        number++;
+        num = atoi(number);
+    }
     num = atoi(number); /*doesnt work for negative please fix*/
     dataIm->dataArray[dataIm->dc] = num; 
     (dataIm->dc)++;
