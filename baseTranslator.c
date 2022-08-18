@@ -53,17 +53,3 @@ void decTo32(int dec, char* res){
 }
 
 /*from dec to base32 ends*/
-
-/*from binary to dec begins*/
-
-int decTo32(int* dec){
-	int res = 0;
-	int i = 0; 
-	for ( i ; i < 10; ++i)
-	{
-		res = res + (dec[i])*pow(2,9-i);
-	}
-	return res;
-}
-
-/*from binary to dec ends*/
