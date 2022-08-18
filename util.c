@@ -6,7 +6,7 @@
 #include "util.h" 
 int throughText(char *line);
 
-char *stringConnect(char *s1, char *s2) //strconcat
+char *stringConnect(char *s1, char *s2) /*//strconcat*/
 {
     char *new_s = malloc(strlen(s1) + strlen(s2) + 1);
     strcpy(new_s, s1);
@@ -15,7 +15,7 @@ char *stringConnect(char *s1, char *s2) //strconcat
 }
 
 
-int countSpaces(char *s) // skip_spaces
+int countSpaces(char *s) /* skip_spaces*/
 {
     int i = 0;
     for (i = 0; i < MAX_LINE && isspace(s[i]) && s[i] != '\0'; i++)
@@ -24,7 +24,7 @@ int countSpaces(char *s) // skip_spaces
 }
 
 
-int isLastWord(char *s) //is_last_word
+int isLastWord(char *s) /*//is_last_word*/
 {
     int i = 0;
     while (s[i] != '\0' && !isspace(s[i]))
@@ -42,7 +42,7 @@ int isLastWord(char *s) //is_last_word
 
 
 
-int startsWithWord(char *s, char *word) //starts_with_word
+int startsWithWord(char *s, char *word) /*//starts_with_word*/
 {
     int len = strlen(word);
     return strncmp(s, word, len) == 0 && (isspace(*(s + len)) || *(s + len) == '\0');
@@ -50,7 +50,7 @@ int startsWithWord(char *s, char *word) //starts_with_word
 
 
 
-void deleteSpacesAtEnd(char *s) //trim_word
+void deleteSpacesAtEnd(char *s) /*//trim_word*/
 {
     int i = 0;
     while (s[i] != '\0' && !isspace(s[i]))
@@ -64,7 +64,7 @@ void deleteSpacesAtEnd(char *s) //trim_word
 }
 
 
-char *duplicateString(char *s) //dupstr
+char *duplicateString(char *s) /*//dupstr*/
 {
     char *copy = malloc(sizeof(char) * MAX_LINE);
     strcpy(copy, s);

@@ -53,3 +53,13 @@ void decTo32(int dec, char* res){
 }
 
 /*from dec to base32 ends*/
+
+/*from dec to base32 begins*/
+
+void decTo32(int dec, char* res){
+	char base[] = "!@#$%^&*<>abcdefghijklmnopqrstuv";
+	res[0] = base[dec/32];
+	res[1] = base[dec%32];	
+}
+
+/*from dec to base32 ends*/
