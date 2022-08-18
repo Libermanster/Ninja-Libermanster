@@ -14,7 +14,7 @@
 
 FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
     
-    char line[MAX_LINE+1];
+    char* line;
     symbolList *sl = NULL;
     while(NULL != fgets(line, MAX_LINE, fp)) 
     {
@@ -94,11 +94,11 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             
             line+=7;
             line = &line[skip_spaces(line)];
-            if (line[0] != '"')
+            /*if (line[0] != '"')
             {
             error(eh, NOT_A_STRING, 0);
             continue;
-            }
+            }*/
             line++;
             if (NULL != (end = strchr(line, '"')))
             {
