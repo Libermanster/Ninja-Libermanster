@@ -1,4 +1,5 @@
 inctractionArray second_run(*inctractionArray a) {
+    updateDataSymbolsInList();
     for(i=0;i<a->ic;i++) {
         if(a->arr[i].labelSwitch==1) 
         {
