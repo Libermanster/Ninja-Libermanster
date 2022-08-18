@@ -58,7 +58,7 @@ void deleteSpacesAtEnd(char *s);
     input: line[81]
     output: int, 1 for true 0 for false
 */
-int hasDott(char*)
+int hasDott(char*);
 /*
     breif: get back the label
     input: line[81], label[]

@@ -1,18 +1,20 @@
+#include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "dataImage.h"
 #include "util.h"
 
-void addInt(char* number, dataImage* dataIm) {
-    
-    number += skip_spaces(number); /* delete spaces in the start */
+void addInt(char* number, dataImage* dataIm)
+{
+    number += countSpaces(number); /* delete spaces in the start */
     deleteSpacesAtEnd(number); /* delete spaces in the end*/
-    int num = atoi(number); //doesnt work for negative please fix
+    int num = atoi(number); /*doesnt work for negative please fix*/
     dataIm->dataArray[dataIm->dc] = num; 
     (dataIm->dc)++;
 }
 
 
-void addString(char* string, dataImage* dataIm) {
+void addString(char* string, dataImage* dataIm){
     int length = strlen(string)+1;
     int i;
     for(i=0;i<length;i++) 
