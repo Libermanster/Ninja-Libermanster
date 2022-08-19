@@ -5,11 +5,16 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     char* fname = stringConnect(name, ".ob");
     fp = fopen(fname, "w");
     int i = 0;
+    int k = 0;
     char array[10];
-    while(a->arr[i]!= NULL) 
+    char p[2];
+    char s[2];
+    decoTo32(a->ic,s);
+    decTo32(d->dc,p);
+    fprintf(fp,"%s %s\n",s,p); /*prints ic count and dc count*/
+    for(i=0;i<a->ic;i++)
     {
-        char p[2];
-        char s[2];
+        
         switch(a->arr[i].format.formatTypeIndicator) 
         {
             case 1:
@@ -23,8 +28,8 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                 for(k;k<=9;k++)
                     array[k]=a->arr[i].format.formatType.opcodeFormat.are;
                 int num = BinToDec(array);
-                decoTo32(i+100,p);
-                decoTo32(num,s);
+                decTo32(i+100,p);
+                decTo32(num,s);
                 fprintf(fp,"%s %s\n",p,s);
                 continue;
 
@@ -54,7 +59,14 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                 fprintf(fp,"%s %s\n",p,s);
                 continue;
         }
-         i++;
     }
-    fclose(fp);
+
+
+    for (k=0;k<d->dc;k++) 
+    {
+        decoTo32(i+100,p);
+        decoTo32(d->dataArray[k],s);
+        fprintf(fp,"%s %s\n",p,s);    
+    }
+
 }

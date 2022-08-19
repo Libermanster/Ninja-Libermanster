@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         symbolList* sl = createSymbolList();
         first_run(fp,a,d,sl);
         second_run(a,d,sl);
-        print(fp,a,d);
+        print(fname,a,d);
         
     }
 
