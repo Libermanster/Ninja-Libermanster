@@ -4,7 +4,7 @@
 
 
 
-void preasmbler_algorithm(FILE *fp, char name[]) {
+void preasmbler_algorithm(FILE *fp, char name[]){
     macro_list *macros = ml_create();
     char* line = malloc(sizeof(char)*81);
     int macroSwitch = 0;
