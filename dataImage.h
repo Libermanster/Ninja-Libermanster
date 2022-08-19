@@ -14,9 +14,10 @@ typedef struct dataImage
     
 } dataImage;
 #endif
+dataImage* createDataImage();
 
-void addInt(char* , dataImage*)
+void addInt(char* , dataImage*);
 
-void addString(char* , dataImage*)
+void addString(char* , dataImage*);
 
-int getDC(dataImage*)
+int getDC(dataImage*);
