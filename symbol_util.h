@@ -1,4 +1,7 @@
 #include "util.h"
+#include "inctractionArray.h"
+#include "dataImage.h"
+
 
 
 
@@ -20,7 +23,7 @@ typedef enum symbolSource
 
 typedef struct symbol
 {
-    char name[MAX_LINE]; 
+    char *name; 
     int address;
     symbolType type;
     symbolSource source;
