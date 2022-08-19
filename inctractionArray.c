@@ -237,6 +237,6 @@ void addInstractionToArray(inctractionArray *a,int opcode,operand operands[3],in
     }        
 }
 
-int getIC(inctractionArray *a) {
+int getIC(inctractionArray* a) {
     return a->ic;
 }
