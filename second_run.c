@@ -1,3 +1,5 @@
+#include "second_run.h"
+
 inctractionArray second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
     updateDataSymbolsInList(sl,a);
 

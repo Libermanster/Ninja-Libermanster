@@ -90,7 +90,7 @@ int isComment(char*);
     input: line[81]
     output: 1 for true 0 for false
 */
-int starts_with_label(char*);
+int startsWithLabel(char*);
 /*
     breif: checks for lines thats starts with label, contain only whitespaces or comments line
     input: line[81]

@@ -94,7 +94,7 @@ int hasDott(char *line){
 void getLabelName(char line[], char label[]){
     int i = 0;
     while(line[i] != ':'){
-        label[i] == line[i];
+        label[i] = line[i];
         ++i;
     }
 }
@@ -102,7 +102,7 @@ void getLabelName(char line[], char label[]){
 void getLabelOperandName(char line[], char label[]){
     int i = 0;
     while(line[i] != '.'){
-        label[i] == line[i];
+        label[i] = line[i];
         ++i;
     }
 }
@@ -146,7 +146,7 @@ int isComment(char line[]){
 }
 
 
-int starts_with_label(char line[]){
+int startsWithLabel(char line[]){
     int _x = throughText(line);
     _x = _x == 3 ? 1 : 0;
     return _x;
