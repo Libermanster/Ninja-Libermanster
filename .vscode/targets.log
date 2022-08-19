@@ -2,27 +2,48 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.3
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
+ 
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Aug 19 18:05:54 2022
+ 
+# Make data base, printed on Fri Aug 19 18:07:49 2022
+ 
 
 # Variables
+ 
 
+ 
 # environment
+ 
 GDK_BACKEND = x11
+ 
 # environment
+ 
 LC_ALL = C
+ 
 # environment
+ 
 GNOME_SHELL_SESSION_MODE = ubuntu
+ 
 # environment
+ 
 SSH_AGENT_LAUNCHER = gnome-keyring
+ 
 # environment
+ 
 GJS_DEBUG_OUTPUT = stderr
+ 
 # environment
+ 
 LC_NAME = en_IL
 # environment
 LC_NUMERIC = en_IL
@@ -261,12 +282,6 @@ second_run.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-inctraction.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 Ofiles/second_run.o: second_run.c second_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -281,7 +296,6 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  recipe to execute (from 'Makefile', line 11):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
 	# gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
- 
 
 # Not a target:
 util.h:
@@ -292,7 +306,7 @@ util.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 18:05:40.052067405
+#  Last modified 2022-08-19 18:07:40.637639466
 #  File has been updated.
 #  Successfully updated.
 
@@ -309,17 +323,19 @@ macro_util.c:
 #  File has not been updated.
 
 # Not a target:
+ 
 dataImage.h:
+ 
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
-Ofiles/inctraction.o: inctraction.c inctraction.h
+# Not a target:
+inctractionArray.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	gcc -g -c -ansi -Wall -pedantic inctraction.c -o Ofiles/inctraction.o
 
 # Not a target:
 util.c:
@@ -351,6 +367,13 @@ first_run.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+Ofiles/inctractionArray.o: inctractionArray.c inctractionArray.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o Ofiles/inctractionArray.o
+
 # Not a target:
 macro_util.h:
 #  Implicit rule search has not been done.
@@ -358,13 +381,13 @@ macro_util.h:
 #  File has not been updated.
 
 # Not a target:
-.DEFAULT:
+inctractionArray.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-inctraction.c:
+.DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -409,12 +432,12 @@ Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
 #  recipe to execute (from 'Makefile', line 21):
 	gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o Ofiles/baseTranslator.o
 
-MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
+MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 3):
-	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
+	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
 
 # Not a target:
 dataImage.c:
@@ -423,19 +446,19 @@ dataImage.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=3/69=4%
+# Load=29/1024=3%, Rehash=0, Collisions=5/69=7%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 49 / storage = 588 B / avg = 12 B
-# current buf: size = 8162 B / used = 588 B / count = 49 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 47 / storage = 565 B / avg = 12 B
+# current buf: size = 8162 B / used = 565 B / count = 47 / avg = 12 B
 
-# strcache performance: lookups = 83 / hit rate = 40%
+# strcache performance: lookups = 83 / hit rate = 43%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=0/83=0%
-# Finished Make data base on Fri Aug 19 18:05:54 2022
+# Load=47/8192=1%, Rehash=0, Collisions=0/83=0%
+# Finished Make data base on Fri Aug 19 18:07:49 2022
 
  

@@ -1,10 +1,9 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
+gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o Ofiles/inctractionArray.o
 gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
 # gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
 gcc -g -c -ansi -Wall -pedantic second_run.c -o Ofiles/second_run.o
+gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
 make: Leaving directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
  
-make: *** No rule to make target 'inctraction.c', needed by 'Ofiles/inctraction.o'.
-make: *** No rule to make target 'inctraction.h', needed by 'Ofiles/inctraction.o'.
-

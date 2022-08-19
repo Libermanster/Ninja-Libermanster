@@ -43,14 +43,14 @@ void addInstractionToArray(inctractionArray *a,int opcode,operand operands[3],in
     {
         case 0 :
         
-            //checkEroorOpcode(i);
+           /*  //checkEroorOpcode(i); */
             fillOpcodeFormat(a,opcode,0,0,0);
             a->arr[a->ic].labelSwitch = 0;
             return;
             
        case 1 :
         
-            //checkEroorOpcode(i);
+           /*  //checkEroorOpcode(i); */
             switch(operands[1].reffMode) 
             {
                 case 0: 
