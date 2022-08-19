@@ -2,7 +2,6 @@
 
 #include "dataImage.h"
 
-
 dataImage* createDataImage() {
     dataImage* ptr = malloc(sizeof(dataImage));
     ptr->dc = 0;
