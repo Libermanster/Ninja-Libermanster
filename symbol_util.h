@@ -1,8 +1,8 @@
-#include "util.h"
-#include "inctractionArray.h"
-#include "dataImage.h"
-
-
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 
 #ifndef SYMBL_UTL

@@ -1,13 +1,8 @@
-
-#include "macro_util.h"
-#include "util.h" 
-#include "inctractionArray.h" 
-#include "dataImage.h" 
-#include "symbol_util.h" 
-#include "operand.h" 
-#include "pre_asmbler.h" 
-#include "first_run.h"
-
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 #ifndef OPCD
 #define OPCD
