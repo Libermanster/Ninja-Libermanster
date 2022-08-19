@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 19 20:15:01 2022
+# Make data base, printed on Fri Aug 19 20:32:48 2022
 
 # Variables
 
@@ -229,9 +231,9 @@ LC_IDENTIFICATION = en_IL
 
 # Directories
 
-# . (device 2050, inode 17563901): 33 files, no impossibilities.
+# . (device 2050, inode 17563901): 34 files, no impossibilities.
 
-# 33 files, no impossibilities in 1 directories.
+# 34 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -243,14 +245,14 @@ Ofiles/main.o: main.c main.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 5):
+#  recipe to execute (from 'Makefile', line 4):
 	gcc -g -c -ansi -Wall -pedantic main.c -o Ofiles/main.o
 
 Ofiles/dataImage.o: dataImage.c dataImage.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 7):
+#  recipe to execute (from 'Makefile', line 6):
 	gcc -g -c -ansi -Wall -pedantic dataImage.c -o Ofiles/dataImage.o
 
 # Not a target:
@@ -263,36 +265,34 @@ Ofiles/pre_asmbler.o: pre_asmbler.c pre_asmbler.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
+#  recipe to execute (from 'Makefile', line 12):
 	gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
 
 Ofiles/second_run.o: second_run.c second_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
+#  recipe to execute (from 'Makefile', line 8):
 	gcc -g -c -ansi -Wall -pedantic second_run.c -o Ofiles/second_run.o
 
 Ofiles/first_run.o: first_run.c first_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 10):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Not a target:
 util.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 18:10:45.556070309
+#  Last modified 2022-08-19 20:31:56.79851014
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,6 +327,18 @@ inctractionArray.c:
 #  File has not been updated.
 
 # Not a target:
+opcode.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+print.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 util.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -344,11 +356,25 @@ main.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+Ofiles/opcode.o: opcode.c opcode.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	gcc -g -c -ansi -Wall -pedantic opcode.c -o Ofiles/opcode.o
+
 # Not a target:
 first_run.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+Ofiles/symbol_util.o: symbol_util.c symbol_util.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	gcc -g -c -ansi -Wall -pedantic symbol_util.c -o Ofiles/symbol_util.o
 
 # Not a target:
 first_run.c:
@@ -360,8 +386,14 @@ Ofiles/inctractionArray.o: inctractionArray.c inctractionArray.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
+#  recipe to execute (from 'Makefile', line 20):
 	gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o Ofiles/inctractionArray.o
+
+# Not a target:
+opcode.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 macro_util.h:
@@ -371,6 +403,12 @@ macro_util.h:
 
 # Not a target:
 inctractionArray.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+operand.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -389,7 +427,26 @@ all:
 #  File has not been updated.
 
 # Not a target:
+print.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Ofiles/print.o: print.c print.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	gcc -g -c -ansi -Wall -pedantic print.c -o Ofiles/print.o
+
+# Not a target:
 second_run.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+symbol_util.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -406,33 +463,52 @@ pre_asmbler.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+symbol_util.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 Ofiles/util.o: util.c util.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  recipe to execute (from 'Makefile', line 14):
 	gcc -g -c -ansi -Wall -pedantic util.c -o Ofiles/util.o
 
 Ofiles/macro_util.o: macro_util.c macro_util.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
+#  recipe to execute (from 'Makefile', line 18):
 	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
 
 Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 22):
 	gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o Ofiles/baseTranslator.o
 
-MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o
+# Not a target:
+operand.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 3):
-	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
+
+MMN: Ofiles/print.o Ofiles/symbol_util.o Ofiles/operand.o Ofiles/opcode.o Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 2):
+	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/print.o Ofiles/symbol_util.o Ofiles/operand.o Ofiles/opcode.o Ofiles/baseTranslator.o -o Ofiles/MMN
+
+Ofiles/operand.o: operand.c operand.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 26):
+	gcc -g -c -ansi -Wall -pedantic operand.c -o Ofiles/operand.o
 
 # Not a target:
 dataImage.c:
@@ -441,19 +517,20 @@ dataImage.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=32/1024=3%, Rehash=0, Collisions=5/74=7%
+# Load=44/1024=4%, Rehash=0, Collisions=5/102=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 48 / storage = 586 B / avg = 12 B
-# current buf: size = 8162 B / used = 586 B / count = 48 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 53 / storage = 664 B / avg = 12 B
+# current buf: size = 8162 B / used = 664 B / count = 53 / avg = 12 B
 
-# strcache performance: lookups = 87 / hit rate = 44%
+# strcache performance: lookups = 108 / hit rate = 50%
 # hash-table stats:
-# Load=48/8192=1%, Rehash=0, Collisions=0/87=0%
-# Finished Make data base on Fri Aug 19 20:15:01 2022
+ 
+# Load=53/8192=1%, Rehash=0, Collisions=0/108=0%
+# Finished Make data base on Fri Aug 19 20:32:48 2022
 
  
