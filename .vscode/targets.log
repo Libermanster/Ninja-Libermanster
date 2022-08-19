@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 19 20:32:48 2022
+# Make data base, printed on Sat Aug 20 01:39:55 2022
 
 # Variables
 
@@ -231,9 +231,9 @@ LC_IDENTIFICATION = en_IL
 
 # Directories
 
-# . (device 2050, inode 17563901): 34 files, no impossibilities.
+# . (device 2050, inode 17563901): 47 files, no impossibilities.
 
-# 34 files, no impossibilities in 1 directories.
+# 47 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -287,12 +287,11 @@ util.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 20:31:56.79851014
+#  Last modified 2022-08-20 01:39:49.774820168
 #  File has been updated.
 #  Successfully updated.
 
@@ -340,6 +339,7 @@ print.h:
 
 # Not a target:
 util.c:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -496,12 +496,12 @@ operand.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-MMN: Ofiles/print.o Ofiles/symbol_util.o Ofiles/operand.o Ofiles/opcode.o Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o
+MMN: Ofiles/main.o Ofiles/dataImage.o Ofiles/second_run.o Ofiles/first_run.o Ofiles/pre_asmbler.o Ofiles/util.o Ofiles/symbol_util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/baseTranslator.o Ofiles/opcode.o Ofiles/operand.o Ofiles/print.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 2):
-	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/print.o Ofiles/symbol_util.o Ofiles/operand.o Ofiles/opcode.o Ofiles/baseTranslator.o -o Ofiles/MMN
+	gcc -g -ansi -Wall -pedantic Ofiles/main.o Ofiles/dataImage.o Ofiles/second_run.o Ofiles/first_run.o Ofiles/pre_asmbler.o Ofiles/util.o Ofiles/symbol_util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/baseTranslator.o Ofiles/opcode.o Ofiles/operand.o Ofiles/print.o -o MMN
 
 Ofiles/operand.o: operand.c operand.h
 #  Implicit rule search has not been done.
@@ -517,20 +517,19 @@ dataImage.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=44/1024=4%, Rehash=0, Collisions=5/102=5%
+# Load=44/1024=4%, Rehash=0, Collisions=5/106=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 53 / storage = 664 B / avg = 12 B
-# current buf: size = 8162 B / used = 664 B / count = 53 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 66 / storage = 819 B / avg = 12 B
+# current buf: size = 8162 B / used = 819 B / count = 66 / avg = 12 B
 
-# strcache performance: lookups = 108 / hit rate = 50%
+# strcache performance: lookups = 123 / hit rate = 46%
 # hash-table stats:
- 
-# Load=53/8192=1%, Rehash=0, Collisions=0/108=0%
-# Finished Make data base on Fri Aug 19 20:32:48 2022
+# Load=66/8192=1%, Rehash=0, Collisions=0/123=0%
+# Finished Make data base on Sat Aug 20 01:39:55 2022
 
  

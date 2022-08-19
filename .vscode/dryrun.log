@@ -1,10 +1,10 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
-gcc -g -c -ansi -Wall -pedantic print.c -o Ofiles/print.o
+gcc -g -c -ansi -Wall -pedantic main.c -o Ofiles/main.o
 gcc -g -c -ansi -Wall -pedantic symbol_util.c -o Ofiles/symbol_util.o
+gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o Ofiles/inctractionArray.o
+gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o Ofiles/baseTranslator.o
 gcc -g -c -ansi -Wall -pedantic opcode.c -o Ofiles/opcode.o
- 
-gcc -g -c -ansi -Wall -pedantic second_run.c -o Ofiles/second_run.o
-gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/print.o Ofiles/symbol_util.o Ofiles/operand.o Ofiles/opcode.o Ofiles/baseTranslator.o -o Ofiles/MMN
+gcc -g -ansi -Wall -pedantic Ofiles/main.o Ofiles/dataImage.o Ofiles/second_run.o Ofiles/first_run.o Ofiles/pre_asmbler.o Ofiles/util.o Ofiles/symbol_util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/baseTranslator.o Ofiles/opcode.o Ofiles/operand.o Ofiles/print.o -o MMN
 make: Leaving directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
  
