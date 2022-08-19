@@ -34,14 +34,14 @@ void m_append(macro *m, char *line)
         m->lines = realloc(m->lines, m->line_count);
     }
 
-    m->lines[m->lines_filled++] = dupstr(line);
+    m->lines[m->lines_filled++] = duplicateString(line);
 }
 
 
 macro *m_create(char name[])
 {
     macro *m = malloc(sizeof(macro));
-    m->name = dupstr(name);
+    m->name = duplicateString(name);
     m->lines = malloc(sizeof(char *) * INITIAL_LINE_COUNT);
     m->line_count = INITIAL_LINE_COUNT;
     m->lines_filled = 0;
