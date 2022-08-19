@@ -1,7 +1,24 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
-gcc -g -c -ansi -Wall -pedantic main.c -o Ofiles/main.o
-gcc -g -c -ansi -Wall -pedantic symbol_util.c -o Ofiles/symbol_util.o
-gcc -g -ansi -Wall -pedantic Ofiles/main.o Ofiles/dataImage.o Ofiles/second_run.o Ofiles/first_run.o Ofiles/pre_asmbler.o Ofiles/util.o Ofiles/symbol_util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/baseTranslator.o Ofiles/opcode.o Ofiles/operand.o Ofiles/print.o -o MMN
+ 
+gcc -g -c -ansi -Wall -pedantic main.c -o main.o
+ 
+gcc -g -c -ansi -Wall -pedantic dataImage.c -o dataImage.o
+ 
+gcc -g -c -ansi -Wall -pedantic second_run.c -o second_run.o
+gcc -g -c -ansi -Wall -pedantic first_run.c -o first_run.o
+ 
+gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o pre_asmbler.o
+gcc -g -c -ansi -Wall -pedantic util.c -o util.o
+ 
+gcc -g -c -ansi -Wall -pedantic symbol_util.c -o symbol_util.o
+ 
+gcc -g -c -ansi -Wall -pedantic macro_util.c -o macro_util.o
+gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o inctractionArray.o
+gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o baseTranslator.o
+gcc -g -c -ansi -Wall -pedantic opcode.c -o opcode.o
+gcc -g -c -ansi -Wall -pedantic operand.c -o operand.o
+gcc -g -c -ansi -Wall -pedantic print.c -o print.o
+gcc -g -ansi -Wall -pedantic main.o dataImage.o second_run.o first_run.o pre_asmbler.o util.o symbol_util.o macro_util.o inctractionArray.o baseTranslator.o opcode.o operand.o print.o -o MMN
 make: Leaving directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
  
