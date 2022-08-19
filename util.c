@@ -178,7 +178,7 @@ int throughText(char line[]){
         return 2;
     }
 
-    for (i = i; i <= MAX_LINE; ++i)
+    for (; i <= MAX_LINE; ++i)
     {
         if (isspace(line[i]))
         {
@@ -248,3 +248,5 @@ char* getNextWord(char *line)
         return 0;
     }
  */
+
+

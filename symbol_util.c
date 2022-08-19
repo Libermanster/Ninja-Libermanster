@@ -39,7 +39,7 @@ void addSymbolToList(symbol* s, symbolList* sl) {
 }
 
 
-int isLabelExsits(char* str, symbolList* sl) { //לבדוק שהפונקציה הזאת עובדת!!! 
+int isLabelExsits(char* str, symbolList* sl) { 
     symbol* temp;
     temp = sl->first;
     while(temp!=NULL) {
