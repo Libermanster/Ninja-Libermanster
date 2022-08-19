@@ -1,3 +1,5 @@
+#include "print.h"
+
 void printTranslation(dataImage * d, inctractionArray* a,) {
     FILE *fp;
     fp = fopen("object.as", "w");

@@ -8,6 +8,8 @@
         "ctype.h": "c",
         "macro_util.h": "c",
         "string.h": "c",
-        "inctractionarray.h": "c"
+        "inctractionarray.h": "c",
+        "type_traits": "c",
+        "typeinfo": "c"
     }
 }
