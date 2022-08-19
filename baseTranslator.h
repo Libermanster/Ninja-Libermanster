@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include "util.h"
-#include <math.h>
+
 #ifndef BASETRANS
 #define BASETRANS
 
