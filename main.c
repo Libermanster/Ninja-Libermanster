@@ -19,8 +19,11 @@ int main(int argc, char *argv[])
 
     for (i = 1; i < argc; i++)
     {
-        char *fname = stringConnect(argv[i], ".as");
-        FILE *fp = fopen(fname, "r");
+        /*char *fname = stringConnect(argv[i], ".as");*/
+        char *fname = NULL;
+        FILE *fp;
+        strcpy(fname,argv[i]);
+        fp = fopen(fname, "r");
         /*preasmbler_algorithm(fp,fname); */
         a = createInstractionArray();
         d = createDataImage();
