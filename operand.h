@@ -25,7 +25,7 @@ operand createOperand(char* str) {
     {
         str++;
         char* num = getNextWord(str);
-        int number = atoi(num); //לשים לב שלא עובד למספרים שליליים יש לתקן
+        int number = atoi(num); /* //לשים לב שלא עובד למספרים שליליים יש לתקן */
         operand.reffMode = 0;
         operand.value.number = number;
         return operand;
@@ -40,12 +40,14 @@ operand createOperand(char* str) {
             return operand;
         }
         else
-            //error , reg number is not legal
+       {  
+            /*  //error , reg number is not legal */
+       }
     }
     
     else {
         if(hasDot(str)==1) {
-            char *name = getLabelOperandName(str); //get the stracture label name
+            char *name = getLabelOperandName(str); /* //get the stracture label name */
             operand.reffMode = 2;
             operand.value.labelNameAndNum.name = duplicateString(name);
             operand.value.labelNameAndNum.num = getIntAfterDot(str);
@@ -57,7 +59,7 @@ operand createOperand(char* str) {
             return operand;
         }
     }
-    //if none of that shit then there is an error , illigal operand ;
+   /*  //if none of that shit then there is an error , illigal operand ; */
     return NULL;
     
     

@@ -1,16 +1,4 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include "util.h" 
-#include "inctractionArray.h" 
-#include "dataImage.h" 
-#include "symbol_util.h" 
-#include "operand.h" 
-
-
-
-
+#include "first_run.h"
 
 FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
     
