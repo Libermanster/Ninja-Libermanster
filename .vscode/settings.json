@@ -5,6 +5,8 @@
         "symbol_util.h": "c",
         "dataimage.h": "c",
         "stdlib.h": "c",
-        "ctype.h": "c"
+        "ctype.h": "c",
+        "macro_util.h": "c",
+        "string.h": "c"
     }
 }

@@ -1,7 +1,7 @@
 /*MACROS UTILLITY FUNCTIONS HEADER*/
 
-#ifndef MACRO_TYPE
-#define MACRO_TYPE
+#ifndef MACRO_UTIL
+#define MACRO_UTIL
 /* the macro stracture*/
 typedef struct macro
 {
@@ -20,7 +20,7 @@ typedef struct macro_list
     macro *tail;
 
 } macro_list;
-#endif
+
 
 
 /**
@@ -88,3 +88,5 @@ macro *ml_get(macro_list *list, char *name);
  * @param list the macro list list
  */
 void ml_destroy(macro_list *list);
+
+#endif

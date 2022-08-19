@@ -1,9 +1,16 @@
 /*UTILITY FUNCTIONS HEADER*/
 
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include "macro_util.h"
 #define MAX_LINE 80
 
 
 
+#ifndef UTIL
+#define UTIL
 
 
 
@@ -118,3 +125,5 @@ int getRegister(char* str);
     output:
 */
 int isRegister(char* str);
+
+#endif
