@@ -9,7 +9,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     char array[10];
     char p[2];
     char s[2];
-    decoTo32(a->ic,s);
+    decTo32(a->ic,s);
     decTo32(d->dc,p);
     fprintf(fp,"%s %s\n",s,p); /*prints ic count and dc count*/
     for(i=0;i<a->ic;i++)
@@ -42,8 +42,8 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                 for(k=0,k<=9,k++) 
                     array[k]=a->arr[i].format.formatType.registerFormat.are; 
                 int num = BinToDec(array);
-                decoTo32(i+100,p);
-                decoTo32(num,s);
+                decTo32(i+100,p);
+                decTo32(num,s);
                 fprintf(fp,"%s %s\n",p,s);
                 continue;
 
@@ -54,8 +54,8 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                 for(k;k<=9;k++)
                     array[k]=a->arr[i].format.formatType.dataFormat.are;
                 int num = BinToDec(array);
-                decoTo32(i+100,p);
-                decoTo32(num,s);
+                decTo32(i+100,p);
+                decTo32(num,s);
                 fprintf(fp,"%s %s\n",p,s);
                 continue;
         }
@@ -64,9 +64,11 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
 
     for (k=0;k<d->dc;k++) 
     {
-        decoTo32(i+100,p);
-        decoTo32(d->dataArray[k],s);
+        decTo32(i+100,p);
+        decTo32(d->dataArray[k],s);
         fprintf(fp,"%s %s\n",p,s);    
     }
 
 }
+
+
