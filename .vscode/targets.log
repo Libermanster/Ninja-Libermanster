@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 20 01:39:55 2022
+# Make data base, printed on Sat Aug 20 02:00:28 2022
 
 # Variables
 
@@ -231,9 +231,9 @@ LC_IDENTIFICATION = en_IL
 
 # Directories
 
-# . (device 2050, inode 17563901): 47 files, no impossibilities.
+# . (device 2050, inode 17563901): 35 files, no impossibilities.
 
-# 47 files, no impossibilities in 1 directories.
+# 35 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,6 +281,7 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 10):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
+ 
 
 # Not a target:
 util.h:
@@ -288,10 +289,11 @@ util.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-20 01:39:49.774820168
+#  Last modified 2022-08-20 01:41:13.975954564
 #  File has been updated.
 #  Successfully updated.
 
@@ -339,7 +341,6 @@ print.h:
 
 # Not a target:
 util.c:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -524,12 +525,12 @@ dataImage.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 66 / storage = 819 B / avg = 12 B
-# current buf: size = 8162 B / used = 819 B / count = 66 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 54 / storage = 671 B / avg = 12 B
+# current buf: size = 8162 B / used = 671 B / count = 54 / avg = 12 B
 
-# strcache performance: lookups = 123 / hit rate = 46%
+# strcache performance: lookups = 111 / hit rate = 51%
 # hash-table stats:
-# Load=66/8192=1%, Rehash=0, Collisions=0/123=0%
-# Finished Make data base on Sat Aug 20 01:39:55 2022
+# Load=54/8192=1%, Rehash=0, Collisions=0/111=0%
+# Finished Make data base on Sat Aug 20 02:00:28 2022
 
  
