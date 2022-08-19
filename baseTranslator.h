@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "util.h"
+#include <math.h>
 #ifndef BASETRANS
 #define BASETRANS
 
@@ -39,7 +40,7 @@ void twoComlicated(int*,int);
 	translate the absouloute value of the number into the array
 	if the number was negative it calls twoComplicated to change it to negative value with Two's complement principle
 */
-void decToBin(int, int, int*);
+void decToBin(int, int, int[]);
 	
 
 /*from dec to binary ends*/

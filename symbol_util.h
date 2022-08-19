@@ -47,6 +47,7 @@ void addSymbolToList(symbol * ,symbolList * );
 int isLabelExsits(char* , symbolList* );
 int getSymbolAdress(char* , symbolList* );
 int getSymbolSource(char* , symbolList* );
+void updateSymbolsInList(symbolList* , inctractionArray* );
 
 #endif
 

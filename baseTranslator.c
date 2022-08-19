@@ -27,7 +27,7 @@ void twoComlicated(int* arr,int len)
 }
 
 
-void decToBin(int dec, int len, int* arr){
+void decToBin(int dec, int len, int arr[]){
 	int i,flag = 0;
 	flag = dec < 0 ? 1 : 0;
 	for(i = len; i > 0; --i){
