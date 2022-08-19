@@ -193,6 +193,23 @@ int throughText(char line[]){
     return 0;
 }
 
+char* getNextWord(char *line)
+{
+    char *word = NULL;
+    int i = 0;
+    while (line[i] != '\0' && !isspace(line[i]))
+    {
+        i++;
+    }
+    if (i > 0)
+    {
+        word = malloc(sizeof(char) * i);
+        strncpy(word, line, i);
+        word[i] = '\0';
+    }
+    return word;
+}
+
 /* 
     int main()
     {

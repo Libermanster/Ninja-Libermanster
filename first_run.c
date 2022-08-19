@@ -3,7 +3,6 @@
 FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
     
     char* line;
-    char* numOrstring;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         
@@ -20,7 +19,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             line += 6; /* // 6 == strlen(".entry")  */
             line = &line[countSpaces(line)];
             char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            symbol *s = create_symbol(n,0,UNKNOWN,ENTRY);
+            symbol *s = createSymbol(n,0,UNKNOWN,ENTRY);
             free(n);
             addSymbolTolist(s,sl);
             continue;
@@ -41,7 +40,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         { 
             char* name;
             symbolInTheLine = 1;
-            getLabelName(&line,name);
+            getLabelName(line,name);
             s = createSymbol(name,0,UNKNOWN,NONE);
             free(name); 
             line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
