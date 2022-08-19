@@ -6,7 +6,7 @@
 
 void preasmbler_algorithm(FILE *fp, char name[]) {
     macro_list *macros = ml_create();
-    char line[MAX_LINE + 1];
+    char* line = malloc(sizeof(char)*81);
     int macroSwitch = 0;
     macro *m;
     char *fileName = stringConnect(name,".am");
@@ -20,7 +20,7 @@ void preasmbler_algorithm(FILE *fp, char name[]) {
             if (strncmp(&line[i], "endm", 4) == 0 && isLastWord(&line[i]))
             {
                 ml_append(macros, m);
-                macroSwitch = 0; //turn off the switch
+                macroSwitch = 0; /* //turn off the switch */
             }
             else
             {
