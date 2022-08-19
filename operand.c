@@ -47,5 +47,5 @@ operand createOperand(char* str) {
         }
     }
    /*  //if none of that shit then there is an error , illigal operand ; */
-    return NULL;   
+    return;   
 }
