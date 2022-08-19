@@ -33,10 +33,10 @@ operand createOperand(char* str) {
             operand.value.number = registerNumber;
             return operand;
         }
-        else
-       {  
-            /*  //error , reg number is not legal */
-       }
+        
+        
+            /*  error , reg number is not legal */
+       
     }
     
     else {
