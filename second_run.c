@@ -1,10 +1,11 @@
 #include "second_run.h"
 
 inctractionArray second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
+    int i;
     updateSymbolsInList(sl,a);
 
-    
-    for(int i=0;i<a->ic;i++) {
+
+    for(i=0;i<a->ic;i++) {
         if(a->arr[i].labelSwitch==1) 
         {
             if(isLabelExsits(a->arr[i].format.formatType.labelName,sl)==1) 
