@@ -68,3 +68,22 @@ int getSymbolSource(char *str, symbolList* sl) {
     }
     return -1;
 }
+
+symbolList* createSymbolTable() {
+    symbolList* ptr = malloc(sizeof(symbolTable));
+    ptr->first = NULL;
+    ptr->last = NULL;
+    return ptr;
+}
+
+
+void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
+    symbol* temp;
+    temp = sl->first;
+    while(temp!=NULL) {
+        if(temp->type == DATA) {
+            temp->address += a->ic; /*adding ic to all the data labels */
+        }
+        temp->address += 100; /*adding 100 to all labels because the decoding strating from address 100*/
+    }
+}

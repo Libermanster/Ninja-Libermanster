@@ -1,229 +1,134 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
 
-# GNU Make 4.3
-# Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
-# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-# This is free software: you are free to change and redistribute it.
-# There is NO WARRANTY, to the extent permitted by law.
+# This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Fri Aug 19 11:01:01 2022
+# Make data base, printed on Fri Aug 19 14:22:26 2022
 
 # Variables
 
-# environment
-GDK_BACKEND = x11
-# environment
-LC_ALL = C
-# environment
-GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-SSH_AGENT_LAUNCHER = gnome-keyring
-# environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-LC_NAME = en_IL
-# environment
-LC_NUMERIC = en_IL
-# environment
-VSCODE_CWD = /home/yonash
-# environment
-LC_ADDRESS = en_IL
-# default
-MAKE_COMMAND := make
-# environment
-QT_ACCESSIBILITY = 1
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/davidsmirin/Documents/MMN14/Ninja-Libermanster
+# makefile
+SHELL = /bin/sh
 # environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools
+# environment
+ELECTRON_RUN_AS_NODE = 1
 # default
-.VARIABLES := 
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-PWD = /home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster
-# automatic
-%D = $(patsubst %/,%,$(dir $%))
-# environment
-XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7P4ZoILHjy/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/yonash/.config/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+PWD = /Users/davidsmirin/Documents/MMN14/Ninja-Libermanster
 # environment
-LANG = C
-# environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.0WG2Q1
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-LESSOPEN = | /usr/bin/lesspipe %s
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
-# environment
-SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# default
-.SHELLFLAGS := -c
-# environment
-WAYLAND_DISPLAY = wayland-0
-# environment
-XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# environment
-XDG_SESSION_DESKTOP = ubuntu
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
-# automatic
-@F = $(notdir $@)
-# environment
-VSCODE_PID = 3969
-# environment
-XDG_SESSION_TYPE = wayland
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
-# environment
-SESSION_MANAGER = local/yonash-PC:@/tmp/.ICE-unix/1198,unix/yonash-PC:/tmp/.ICE-unix/1198
-# automatic
-*F = $(notdir $*)
-# environment
-CHROME_DESKTOP = code-url-handler.desktop
-# environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
-# default
-MAKE_HOST := x86_64-pc-linux-gnu
-# environment
-GNOME_DESKTOP_SESSION_ID = this-is-deprecated
-# makefile
-SHELL = /bin/sh
-# default
-MAKECMDGOALS := all
-# environment
-XMODIFIERS = @im=ibus
-# environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-SHLVL = 0
-# environment
-MAKELEVEL := 0
-# environment
-IM_CONFIG_CHECK_ENV = 1
-# default
-MAKE = $(MAKE_COMMAND)
-# environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
-# default
-MAKEFILES := 
-# environment
-LANGUAGE = en_US:en
-# environment
-LC_MONETARY = en_IL
-# automatic
-^F = $(notdir $^)
-# environment
-LC_TIME = en_IL
-# environment
-INVOCATION_ID = b3f55f5fa5b34cc6b70e1ab753dad313
-# environment
-USERNAME = yonash
-# environment
-GNOME_SETUP_DISPLAY = :1
-# environment
-LC_TELEPHONE = en_IL
-# environment
-LESSCLOSE = /usr/bin/lesspipe %s %s
-# automatic
-?F = $(notdir $?)
-# environment
-XDG_CURRENT_DESKTOP = Unity
-# environment
-LS_COLORS = 
-# automatic
-+F = $(notdir $+)
-# environment
-DESKTOP_SESSION = ubuntu
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# 'override' directive
-GNUMAKEFLAGS := 
-# environment
-LOGNAME = yonash
-# environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
-# makefile
-.DEFAULT_GOAL := MMN
-# environment
-SYSTEMD_EXEC_PID = 1234
-# environment
-DISPLAY = :0
-# environment
-USER = yonash
-# environment
-GTK_MODULES = gail:atk-bridge
-# default
-MAKE_VERSION := 4.3
-# environment
-MANAGERPID = 1064
-# environment
-LC_MEASUREMENT = en_IL
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3969
-# environment
-_ = /usr/share/code/code
-# environment
-LC_PAPER = en_IL
-# environment
-XDG_RUNTIME_DIR = /run/user/1000
-# environment
-JOURNAL_STREAM = 8:29036
-# environment
-XDG_SESSION_CLASS = user
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/yonash
-# environment
-QT_IM_MODULE = ibus
-# environment
-ELECTRON_RUN_AS_NODE = 1
-# environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-31ab1c56-1.70.2-main.sock
-# environment
-IM_CONFIG_PHASE = 1
-# environment
-PAPERSIZE = a4
+HOME = /Users/davidsmirin
 # default
-.RECIPEPREFIX := 
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/davidsmirin/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+# environment
+LOGNAME = davidsmirin
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 2
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = davidsmirin
+# makefile
+.DEFAULT_GOAL := MMN
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/_1/l7slh03j6sz2f1l_q66hn9b00000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/davidsmirin/Library/Application Support/Code/1.70.2-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.17282485.17282491
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
 # default
 SUFFIXES := 
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+.INCLUDE_DIRS = /usr/local/include
 # environment
-XDG_MENU_PREFIX = gnome-
+MAKELEVEL := 0
 # environment
-GDMSESSION = ubuntu
+LANG = C
 # environment
-LC_IDENTIFICATION = en_IL
+VSCODE_PID = 2806
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=4/135=3%
+# Load=58/1024=6%, Rehash=0, Collisions=1/82=1%
 
 # Pattern-specific Variable Values
 
@@ -231,9 +136,9 @@ LC_IDENTIFICATION = en_IL
 
 # Directories
 
-# . (device 2050, inode 17563901): 29 files, no impossibilities.
+# . (device 16777220, inode 17772770): 32 files, no impossibilities.
 
-# 29 files, no impossibilities in 1 directories.
+# 32 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -241,49 +146,49 @@ LC_IDENTIFICATION = en_IL
 
 # Files
 
-Ofiles/dataImage.o: dataImage.c dataImage.h
+MMN: Ofiles/MMN14.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 7):
-	gcc -g -c -ansi -Wall -pedantic dataImage.c -o Ofiles/dataImage.o
+#  commands to execute (from `Makefile', line 3):
+	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/MMN14.o Ofiles/util.o -o Ofiles/MMN
+	
+
+Ofiles/inctraction.o: inctraction.c inctraction.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 13):
+	gcc -g -c -ansi -Wall -pedantic inctraction.c -o Ofiles/inctraction.o
+	
 
 # Not a target:
-second_run.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
-
-# Not a target:
-inctraction.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 Ofiles/MMN14.o: MMN14.c MMN14.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 5):
+#  commands to execute (from `Makefile', line 5):
 	gcc -g -c -ansi -Wall -pedantic MMN14.c -o Ofiles/MMN14.o
-
-Ofiles/second_run.o: second_run.c second_run.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	gcc -g -c -ansi -Wall -pedantic second_run.c -o Ofiles/second_run.o
+	
 
 Ofiles/first_run.o: first_run.c first_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  commands to execute (from `Makefile', line 15):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
+	
 
- 
 # Not a target:
-util.h:
+.SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -291,34 +196,25 @@ util.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 00:27:12.144215004
+#  Last modified 2022-08-19 14:22:14
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-macro_util.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-dataImage.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Ofiles/inctraction.o: inctraction.c inctraction.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
-	gcc -g -c -ansi -Wall -pedantic inctraction.c -o Ofiles/inctraction.o
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 util.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+Ofiles/macro_util.o: macro_util.c macro_util.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 11):
+	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
+	
 
 # Not a target:
 MMN14.c:
@@ -327,7 +223,13 @@ MMN14.c:
 #  File has not been updated.
 
 # Not a target:
-first_run.h:
+util.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dataImage.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -336,37 +238,6 @@ first_run.h:
 first_run.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-MMN14.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-macro_util.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-.DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-inctraction.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
 #  File has not been updated.
 
 # Not a target:
@@ -379,43 +250,96 @@ Ofiles/util.o: util.c util.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
+#  commands to execute (from `Makefile', line 9):
 	gcc -g -c -ansi -Wall -pedantic util.c -o Ofiles/util.o
-
-Ofiles/macro_util.o: macro_util.c macro_util.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
-	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
-
-MMN: Ofiles/MMN14.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 3):
-	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/MMN14.o Ofiles/util.o -o Ofiles/MMN
+	
 
 # Not a target:
-dataImage.c:
+MMN14.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dataImage.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+macro_util.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Ofiles/second_run.o: second_run.c second_run.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 17):
+	gcc -g -c -ansi -Wall -pedantic second_run.c -o Ofiles/second_run.o
+	
+
+# Not a target:
+first_run.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+second_run.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+macro_util.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+inctraction.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Ofiles/dataImage.o: dataImage.c dataImage.h
+ 
+make: *** No rule to make target `all'.  Stop.
+
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 7):
+	gcc -g -c -ansi -Wall -pedantic dataImage.c -o Ofiles/dataImage.o
+	
+
+# Not a target:
+inctraction.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=26/1024=3%, Rehash=0, Collisions=3/62=5%
+# Load=26/1024=3%, Rehash=0, Collisions=0/58=0%
 # VPATH Search Paths
 
-# No 'vpath' search paths.
+# No `vpath' search paths.
 
-# No general ('VPATH' variable) search path.
+# No general (`VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 46 / storage = 546 B / avg = 11 B
-# current buf: size = 8162 B / used = 546 B / count = 46 / avg = 11 B
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# strcache performance: lookups = 74 / hit rate = 37%
-# hash-table stats:
-# Load=46/8192=1%, Rehash=0, Collisions=0/74=0%
-# Finished Make data base on Fri Aug 19 11:01:01 2022
+# Finished Make data base on Fri Aug 19 14:22:26 2022
 
  

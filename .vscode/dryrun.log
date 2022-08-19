@@ -1,12 +1,13 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
-gcc -g -c -ansi -Wall -pedantic MMN14.c -o Ofiles/MMN14.o
+make: Entering directory `/Users/davidsmirin/Documents/MMN14/Ninja-Libermanster'
 gcc -g -c -ansi -Wall -pedantic util.c -o Ofiles/util.o
 gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
-make: Leaving directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
+gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
+make: Leaving directory `/Users/davidsmirin/Documents/MMN14/Ninja-Libermanster'
  
-make: *** No rule to make target 'inctraction.c', needed by 'Ofiles/inctraction.o'.
-make: *** No rule to make target 'inctraction.h', needed by 'Ofiles/inctraction.o'.
-make: *** No rule to make target 'first_run.h', needed by 'Ofiles/first_run.o'.
-make: *** No rule to make target 'second_run.h', needed by 'Ofiles/second_run.o'.
+make: *** No rule to make target `MMN14.c', needed by `Ofiles/MMN14.o'.
+make: *** No rule to make target `MMN14.h', needed by `Ofiles/MMN14.o'.
+make: *** No rule to make target `inctraction.c', needed by `Ofiles/inctraction.o'.
+make: *** No rule to make target `inctraction.h', needed by `Ofiles/inctraction.o'.
+make: *** No rule to make target `second_run.h', needed by `Ofiles/second_run.o'.
 

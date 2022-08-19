@@ -1,13 +1,15 @@
 #include "print.h"
 
-void printTranslation(dataImage * d, inctractionArray* a,) {
-    FILE *fp;
-    fp = fopen("object.as", "w");
+void printObject(char* name ,dataImage * d, inctractionArray* a,) {
+    FILE* fp;
+    char* fname = stringConnect(name, ".ob");
+    fp = fopen(fname, "w");
     int i = 0;
     char array[10];
     while(a->arr[i]!=NULL) 
     {
-        
+        char p[2];
+        char s[2];
         switch(a->arr[i].format.formatTypeIndicator) 
         {
             case 1:
@@ -21,7 +23,9 @@ void printTranslation(dataImage * d, inctractionArray* a,) {
                 for(k;k<=9;k++)
                     array[k]=a->arr[i].format.formatType.opcodeFormat.are;
                 int num = BinToDec(array);
-                fprintf(fp,"%d\n",num);
+                decoTo32(i+100,p);
+                decoTo32(num,s);
+                fprintf(fp,"%s %s\n",p,s);
                 continue;
 
             case 2:
@@ -33,7 +37,9 @@ void printTranslation(dataImage * d, inctractionArray* a,) {
                 for(k=0,k<=9,k++)
                     array[k]=a->arr[i].format.formatType.registerFormat.are;
                 int num = BinToDec(array);
-                fprintf(fp,"%d\n",num);
+                decoTo32(i+100,p);
+                decoTo32(num,s);
+                fprintf(fp,"%s %s\n",p,s);
                 continue;
 
             case 3:
@@ -43,11 +49,12 @@ void printTranslation(dataImage * d, inctractionArray* a,) {
                 for(k;k<=9;k++)
                     array[k]=a->arr[i].format.formatType.dataFormat.are;
                 int num = BinToDec(array);
-                fprintf(fp,"%d\n",num);
+                decoTo32(i+100,p);
+                decoTo32(num,s);
+                fprintf(fp,"%s %s\n",p,s);
                 continue;
         }
-
-        i++;
+         i++;
     }
     fclose(fp);
 }
