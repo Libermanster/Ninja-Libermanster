@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 19 18:12:02 2022
+# Make data base, printed on Fri Aug 19 20:15:01 2022
 
 # Variables
 
@@ -65,7 +63,7 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -89,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 27633
+VSCODE_PID = 46250
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -183,7 +181,7 @@ MANAGERPID = 1064
 # environment
 LC_MEASUREMENT = en_IL
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 27633
+GIO_LAUNCHED_DESKTOP_FILE_PID = 46250
 # environment
 _ = /usr/share/code/code
 # environment
@@ -201,7 +199,6 @@ HOME = /home/yonash
 # environment
 QT_IM_MODULE = ibus
 # environment
- 
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-31ab1c56-1.70.2-main.sock
@@ -282,6 +279,9 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
 # Not a target:
 util.h:
@@ -421,7 +421,6 @@ Ofiles/macro_util.o: macro_util.c macro_util.h
 	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
 
 Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -455,6 +454,6 @@ dataImage.c:
 # strcache performance: lookups = 87 / hit rate = 44%
 # hash-table stats:
 # Load=48/8192=1%, Rehash=0, Collisions=0/87=0%
-# Finished Make data base on Fri Aug 19 18:12:02 2022
+# Finished Make data base on Fri Aug 19 20:15:01 2022
 
  

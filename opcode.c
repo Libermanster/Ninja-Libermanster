@@ -1,4 +1,4 @@
-
+#include "opcode.h"
 const char *opcodeArray[16]={"mov","cmp","add","sub","not","clr","lea","inc","dec","jmp","bne","get","prn","jsr","rts","hlt"};
 
 int getOpcode(char* str) {

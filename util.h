@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 #include "macro_util.h"
 
 #define MAX_LINE 80
