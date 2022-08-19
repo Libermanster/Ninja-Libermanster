@@ -39,6 +39,7 @@ typedef struct word {
         } formatType;
     } format;
 } word;
+
 typedef struct inctractionArray {
     word arr[MAX_MEMORY];
     int ic;

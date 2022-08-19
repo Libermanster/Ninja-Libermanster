@@ -160,12 +160,12 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             operand operands[3];
             line += skip_spaces(line);
             temp = get_next_word(line);
-            line += strlen(part);
+            line += strlen(temp);
             opcode = get_opcode(temp);
             free(temp);
             if (opcode == -1)
             {
-                error(eh, UNKNOWN_OPCODE, 1, part);
+                /*error(eh, UNKNOWN_OPCODE, 1, part);*/
                 continue;
             }
             line += skip_spaces(line);
