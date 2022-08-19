@@ -127,11 +127,6 @@ int getRegister(char *);
 */
 int isRegister(char *);
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 4cd66fef3e0fbfc4b6179bb61f7dc0763f2b528b
 char* getNextWord(char *);
 
 #endif
