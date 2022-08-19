@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "dataImage.h"
-#include "util.h"
 
 void addInt(char* number, dataImage* dataIm)
 {
