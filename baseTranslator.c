@@ -57,10 +57,14 @@ void decTo32(int dec, char* res){
 /*from bin to dec begins*/
 
 int binToDec(char* bin){
-	int i,res = 0;
-	for (i = 0; i < 10; ++i)
+	int i = 0,j,k = 2,temp,res = 0;
+	for (; i < 10; ++i)
 	{
-		res = res + (bin[i] - '0')*pow(2,9-i);
+
+		temp = (bin[i] - '0');
+		for(j=0,k=1 ; j<9-i ;++j)
+			k = k*2;
+		res = res + temp*k;
 	}
 	return res;
 }
