@@ -1,10 +1,7 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include "util.h"
 #include "operand.h"
 #include "baseTranslator.h"
+
+
 #define MAX_MEMORY 264
 
 #ifndef INSTRACTION
