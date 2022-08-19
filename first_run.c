@@ -15,6 +15,7 @@
 FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
     
     char* line;
+    char* numOrstring;
     symbolList *sl = NULL;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
@@ -51,8 +52,8 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
         if(startsWithLabel(&line))
         { 
-            symbolInTheLine = 1;
             char* name;
+            symbolInTheLine = 1;
             getLabelName(&line,name);
             s = create_symbol(name,0,UNKNOWN,NONE);
             free(name); 
@@ -62,6 +63,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         
         if (starts_with_word(line, ".data")) 
         {
+            char* number; 
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
@@ -71,7 +73,6 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             
             line += 5;
             line = &line[skip_spaces(line)];
-            char* number; 
             number = strtok(line, ",");
             addInt(number, dataIm); 
             while (NULL != (number = strtok(NULL, ",")))
@@ -83,8 +84,6 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         
         if(starts_with_word(line,".string")) 
         {
-            char *end;
-            
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
@@ -109,16 +108,19 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                     continue;
                 }
                 else 
+                {
                    /*  //error */
+                }
             }
             else
+            {
              /*    //error */
+            }
         }
         if(starts_with_word(line,".struct"))/*  //might not work needs a check. */
         {
-            
-            char* end;
-            
+              
+            char* numAndString; 
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
@@ -128,7 +130,6 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             
             line+=7;
             line = &line[skip_spaces(line)];
-            char* numAndString; 
             numAndString = strtok(line, ",");
             addInt(numAndString, dataIm);
             numAndString = strtok(NULL, ",");
