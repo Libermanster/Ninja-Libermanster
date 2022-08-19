@@ -49,7 +49,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             line = &line[skip_spaces(line)];
         }
         
-        if (starts_with_word(line, ".data")) 
+        if (startsWithWord(line, ".data")) 
         {
             char* number; 
             if(symbolInTheLine==1)
@@ -71,7 +71,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             continue;
         }
         
-        if(starts_with_word(line,".string")) 
+        if(startsWithWord(line,".string")) 
         {
             if(symbolInTheLine==1)
             {
@@ -90,7 +90,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             line++;
             if (NULL != (end = strchr(line, '"')))
             {
-                if (is_last_word(end))
+                if (isLastWord(end))
                 {
                     *end = '\0';
                     addString(line, dataIm);
@@ -106,7 +106,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
              /*    //error */
             }
         }
-        if(starts_with_word(line,".struct"))/*  //might not work needs a check. */
+        if(startsWithWord(line,".struct"))/*  //might not work needs a check. */
         {
               
             char* numAndString; 
@@ -131,7 +131,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             numAndString++;
             if (NULL != (end = strchr(numAndString, '"'))) 
             {
-                if(is_last_word(end)) {
+                if(isLastWord(end)) {
                     *end =  '\0';
                     addString(numAndString,dataIm);
                     continue;

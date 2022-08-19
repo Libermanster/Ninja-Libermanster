@@ -2,48 +2,27 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.3
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Fri Aug 19 18:07:49 2022
- 
+# Make data base, printed on Fri Aug 19 18:12:02 2022
 
 # Variables
- 
 
- 
 # environment
- 
 GDK_BACKEND = x11
- 
 # environment
- 
 LC_ALL = C
- 
 # environment
- 
 GNOME_SHELL_SESSION_MODE = ubuntu
- 
 # environment
- 
 SSH_AGENT_LAUNCHER = gnome-keyring
- 
 # environment
- 
 GJS_DEBUG_OUTPUT = stderr
- 
 # environment
- 
 LC_NAME = en_IL
 # environment
 LC_NUMERIC = en_IL
@@ -222,6 +201,7 @@ HOME = /home/yonash
 # environment
 QT_IM_MODULE = ibus
 # environment
+ 
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-31ab1c56-1.70.2-main.sock
@@ -282,6 +262,13 @@ second_run.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+Ofiles/pre_asmbler.o: pre_asmbler.c pre_asmbler.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 13):
+	gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
+
 Ofiles/second_run.o: second_run.c second_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -295,7 +282,6 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
-	# gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
 
 # Not a target:
 util.h:
@@ -306,9 +292,15 @@ util.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 18:07:40.637639466
+#  Last modified 2022-08-19 18:10:45.556070309
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+pre_asmbler.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 baseTranslator.h:
@@ -323,11 +315,8 @@ macro_util.c:
 #  File has not been updated.
 
 # Not a target:
- 
 dataImage.h:
- 
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -411,6 +400,12 @@ main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+pre_asmbler.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 Ofiles/util.o: util.c util.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -426,6 +421,7 @@ Ofiles/macro_util.o: macro_util.c macro_util.h
 	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
 
 Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -446,19 +442,19 @@ dataImage.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=5/69=7%
+# Load=32/1024=3%, Rehash=0, Collisions=5/74=7%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 47 / storage = 565 B / avg = 12 B
-# current buf: size = 8162 B / used = 565 B / count = 47 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 586 B / avg = 12 B
+# current buf: size = 8162 B / used = 586 B / count = 48 / avg = 12 B
 
-# strcache performance: lookups = 83 / hit rate = 43%
+# strcache performance: lookups = 87 / hit rate = 44%
 # hash-table stats:
-# Load=47/8192=1%, Rehash=0, Collisions=0/83=0%
-# Finished Make data base on Fri Aug 19 18:07:49 2022
+# Load=48/8192=1%, Rehash=0, Collisions=0/87=0%
+# Finished Make data base on Fri Aug 19 18:12:02 2022
 
  
