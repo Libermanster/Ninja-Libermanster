@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
+#include "inctractionArray.h"
 
 
 #ifndef SYMBL_UTL
