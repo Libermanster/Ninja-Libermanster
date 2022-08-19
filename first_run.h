@@ -7,6 +7,7 @@
 #include "dataImage.h" 
 #include "symbol_util.h" 
 #include "operand.h" 
+#include "opcode.h"
 
 #ifndef FIRST_RUN
 #define FIRST_RUN

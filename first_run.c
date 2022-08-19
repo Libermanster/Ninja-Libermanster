@@ -29,11 +29,12 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         
         if (startsWithWord(line, ".extern"))
         {
-
+            char *n;
+            symbol *s;
             line += 7; /* // 7 == strlen(".extern")  */
             line = &line[countSpaces(line)];
-            char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            symbol *s = createSymbol(n,0,UNKNOWN,EXTERNAL);
+            n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            s = createSymbol(n,0,UNKNOWN,EXTERNAL);
             free(n);
             addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
             continue;
@@ -74,13 +75,13 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         
         if(startsWithWord(line,".string")) 
         {
+            char* end;
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);  
                 addSymbolToList(s,sl);
             }
-            char* end;
             line+=7;
             line = &line[countSpaces(line)];
             /*if (line[0] != '"')
@@ -109,7 +110,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         }
         if(startsWithWord(line,".struct"))/*  //might not work needs a check. */
         {
-              
+            char* end; 
             char* numAndString; 
             if(symbolInTheLine==1)
             {
@@ -117,7 +118,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                 setLabelType(s,DATA);    
                 addSymbolToList(s,sl);
             }
-            char* end;
+            
             line+=7;
             line = &line[countSpaces(line)];
             numAndString = strtok(line, ",");
@@ -138,15 +139,18 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                     continue;
                 }
                 /*else*/
-                /* //error */
+                /* error */
             }
             /* else
-                /* //error */
+                 error */
             
         }
         
         else{
-            
+            int i;
+            char *temp;
+            int opcode;
+            operand operands[3];
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getIC(Iarr));
@@ -154,11 +158,10 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                 addSymbolToList(s,sl);
             }
             
+        
+            i=0;
             
-            int i=0;
-            char *temp;
-            int opcode;
-            operand operands[3];
+            
             line += countSpaces(line);
             temp = getNextWord(line);
             line += strlen(temp);
@@ -190,3 +193,4 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
     
 }
+

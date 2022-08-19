@@ -12,6 +12,7 @@
         "type_traits": "c",
         "typeinfo": "c",
         "stdio.h": "c",
-        "operand.h": "c"
+        "operand.h": "c",
+        "locale": "c"
     }
 }
