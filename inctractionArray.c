@@ -1,3 +1,5 @@
+#include "inctractionArray.h"
+
 inctractionArray* createInstractionArray() {
     instractionArray* ptr = malloc(sizeof(inctractionArray));
     ptr->ic = 0;

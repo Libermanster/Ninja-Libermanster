@@ -1,4 +1,10 @@
 /*MACROS UTILLITY FUNCTIONS HEADER*/
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define INITIAL_LINE_COUNT 20
 
 #ifndef MACRO_UTIL
 #define MACRO_UTIL

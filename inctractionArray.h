@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include "util.h"
 #define MAX_MEMORY 264
 
 #ifndef INSTRACTION
