@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 19 15:15:30 2022
+# Make data base, printed on Fri Aug 19 15:22:04 2022
 
 # Variables
 
@@ -222,6 +224,7 @@ GDMSESSION = ubuntu
 LC_IDENTIFICATION = en_IL
 # variable set hash-table stats:
 # Load=105/1024=10%, Rehash=0, Collisions=4/135=3%
+ 
 
 # Pattern-specific Variable Values
 
@@ -265,13 +268,6 @@ inctraction.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-Ofiles/pre_asmbler.o: pre_asmbler.c pre_asmbler.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
-	gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
-
 Ofiles/second_run.o: second_run.c second_run.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -285,6 +281,7 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
+	# gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
 
 # Not a target:
 util.h:
@@ -294,19 +291,10 @@ util.h:
 
 # Not a target:
 Makefile:
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 15:14:58.620764056
+#  Last modified 2022-08-19 15:20:37.333086713
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-pre_asmbler.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 baseTranslator.h:
@@ -340,6 +328,7 @@ util.c:
 #  File has not been updated.
 
 # Not a target:
+ 
 baseTranslator.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -400,12 +389,6 @@ main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-pre_asmbler.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 Ofiles/util.o: util.c util.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -427,12 +410,12 @@ Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
 #  recipe to execute (from 'Makefile', line 21):
 	gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o Ofiles/baseTranslator.o
 
-MMN: Ofiles/pre_asmbler.o Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
+MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 3):
-	gcc -g -ansi -Wall -pedantic Ofiles/pre_asmbler.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
+	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
 
 # Not a target:
 dataImage.c:
@@ -441,19 +424,19 @@ dataImage.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=32/1024=3%, Rehash=0, Collisions=3/76=4%
+# Load=29/1024=3%, Rehash=0, Collisions=3/69=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 609 B / avg = 12 B
-# current buf: size = 8162 B / used = 609 B / count = 50 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 49 / storage = 588 B / avg = 12 B
+# current buf: size = 8162 B / used = 588 B / count = 49 / avg = 12 B
 
-# strcache performance: lookups = 87 / hit rate = 42%
+# strcache performance: lookups = 82 / hit rate = 40%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=0/87=0%
-# Finished Make data base on Fri Aug 19 15:15:30 2022
+# Load=49/8192=1%, Rehash=0, Collisions=0/82=0%
+# Finished Make data base on Fri Aug 19 15:22:04 2022
 
  
