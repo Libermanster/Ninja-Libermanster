@@ -1,12 +1,12 @@
 #include "print.h"
 
-void printObject(char* name ,dataImage * d, inctractionArray* a,) {
+void printObject(char* name ,dataImage * d, inctractionArray* a) {
     FILE* fp;
     char* fname = stringConnect(name, ".ob");
     fp = fopen(fname, "w");
     int i = 0;
     char array[10];
-    while(a->arr[i]!=NULL) 
+    while(a->arr[i]!= NULL) 
     {
         char p[2];
         char s[2];
@@ -34,8 +34,8 @@ void printObject(char* name ,dataImage * d, inctractionArray* a,) {
                     array[k]=a->arr[i].format.formatType.registerFormat.firstOperandRegister;
                 for(k=0,k<=7,k++)
                     array[k]=a->arr[i].format.formatType.registerFormat.secondOperandRegister;
-                for(k=0,k<=9,k++)
-                    array[k]=a->arr[i].format.formatType.registerFormat.are;
+                for(k=0,k<=9,k++) 
+                    array[k]=a->arr[i].format.formatType.registerFormat.are; 
                 int num = BinToDec(array);
                 decoTo32(i+100,p);
                 decoTo32(num,s);
