@@ -35,7 +35,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             symbol *s = createSymbol(n,0,UNKNOWN,EXTERNAL);
             free(n);
-            addSymbolTolist(s,sl);/*  //check problems with the label s pointer how does it work */
+            addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
             continue;
         }
     
@@ -57,7 +57,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                addSymbolTolist(s,sl);
+                addSymbolToList(s,sl);
             }
             
             line += 5;
@@ -78,7 +78,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);  
-                addSymbolTolist(s,sl);
+                addSymbolToList(s,sl);
             }
             char* end;
             line+=7;
@@ -115,7 +115,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);    
-                addSymbolTolist(s,sl);
+                addSymbolToList(s,sl);
             }
             char* end;
             line+=7;
@@ -151,7 +151,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             {
                 setLabelAddress(s,getIC(Iarr));
                 setLabelType(s,INCTRACTION); 
-                addSymbolTolist(s,sl);
+                addSymbolToList(s,sl);
             }
             
             
