@@ -178,9 +178,9 @@ int throughText(char line[]){
         return 2;
     }
 
-    for (i; i <= MAX_LINE; ++i)
+    for (i = i; i <= MAX_LINE; ++i)
     {
-        if ((line[i]== ' ')||(line[i]== '\t'))
+        if (isspace(line[i]))
         {
             fl_whiteSpace = 1;
         }
