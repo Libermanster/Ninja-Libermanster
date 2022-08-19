@@ -49,21 +49,21 @@ int startsWithWord(char *s, char *word) /*//starts_with_word*/
 
 
 
-void deleteSpacesAtEnd(char *s) /*//trim_word*/
+void deleteSpacesAtEnd(char *s) 
 {
     int i = 0;
     while (s[i] != '\0' && !isspace(s[i]))
     {
         i++;
     }
-    if (!(s[i] == '\0')) /* prevent segfault if there aren't any spaces*/
+    if (!(s[i] == '\0')) 
     {
         s[i] = '\0';
     }
 }
 
 
-char *duplicateString(char *s) /*//dupstr*/
+char *duplicateString(char *s) 
 {
     char *copy = malloc(sizeof(char) * MAX_LINE);
     strcpy(copy, s);

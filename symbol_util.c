@@ -2,13 +2,13 @@
 #include "symbol_util.h"
 
 
-symbol* create_symbol(char* name, int address, symbolType type, symbolSource source) {
+symbol* create_symbol(char* namee, int address, symbolType type, symbolSource source) {
    
     symbol *s = malloc(sizeof(symbol));
-    s->name = duplicateString(name);
+    s->name = duplicateString(namee);
     s->address = address;
     s->type = type;
-    s->attribute = attribute;
+    s->source = source;
     s->next = NULL;
     return s;
     
@@ -30,8 +30,12 @@ void setLabelType(symbol* s, symbolType type) {
 
 
 void addSymbolToList(symbol *s, symbolList* sl) {
+    if(sl->first==NULL) {
+        sl->first = s;
+        sl->last = s;
+    }
     sl->last->next = s;
-    sl->last = s; //לטפל במצב שבו הרשימה ריקה
+    sl->last = s; 
 }
 
 
@@ -70,7 +74,7 @@ int getSymbolSource(char *str, symbolList* sl) {
 }
 
 symbolList* createSymbolTable() {
-    symbolList* ptr = malloc(sizeof(symbolTable));
+    symbolList* ptr = malloc(sizeof(symbolList));
     ptr->first = NULL;
     ptr->last = NULL;
     return ptr;
