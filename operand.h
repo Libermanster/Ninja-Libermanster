@@ -16,4 +16,7 @@ typedef union value {
         int num;
     } labelNameAndNum;
 } value;
+
+
+operand createOperand(char*);
 #endif

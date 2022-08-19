@@ -33,9 +33,10 @@ operand createOperand(char* str) {
     
     else {
         if(hasDot(str)==1) {
-            char *name = getLabelOperandName(str); /* //get the stracture label name */
+            char *namee;
+            getLabelOperandName(str,namee); /* //get the stracture label name */
             operand.reffMode = 2;
-            operand.value.labelNameAndNum.name = duplicateString(name);
+            operand.value.labelNameAndNum.name = duplicateString(namee);
             operand.value.labelNameAndNum.num = getIntAfterDot(str);
             return operand;
         }
@@ -46,9 +47,5 @@ operand createOperand(char* str) {
         }
     }
    /*  //if none of that shit then there is an error , illigal operand ; */
-    return NULL;
-    
-    
-        
-    
+    return NULL;   
 }
