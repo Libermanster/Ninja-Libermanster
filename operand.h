@@ -3,10 +3,6 @@
 
 #ifndef OPERAND
 #define OPERAND
-typedef struct operand {
-    int reffMode; /* //שיטת המיעון, refferenc Mode */
-    value value;
-} operand;
 
 typedef union value {
     int number;/*  //data ot register number */
@@ -16,4 +12,9 @@ typedef union value {
         int num;
     } labelNameAndNum;
 } value;
+
+typedef struct operand {
+    int reffMode; /* //שיטת המיעון, refferenc Mode */
+    value value;
+} operand;
 #endif
