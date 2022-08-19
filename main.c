@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
     for (i = 1; i < argc; i++)
     {
         /*char *fname = stringConnect(argv[i], ".as");*/
-        char *fname = NULL;
+        char fname[] = "test.txt";
         FILE *fp;
-        strcpy(fname,argv[i]);
+        /*strcpy(fname,argv[i]);*/
         fp = fopen(fname, "r");
         /*preasmbler_algorithm(fp,fname); */
         a = createInstractionArray();
