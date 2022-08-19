@@ -4,6 +4,13 @@
 #include "dataImage.h"
 #include "util.h"
 
+
+dataImage* createDataImage() {
+    dataImage* ptr = malloc(sizeof(dataImage));
+    ptr->dc = 0;
+    return ptr;
+}
+
 void addInt(char* number, dataImage* dataIm)
 {
     int num;
