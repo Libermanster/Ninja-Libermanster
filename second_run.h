@@ -8,6 +8,7 @@
 #include "dataImage.h" 
 #include "symbol_util.h" 
 #include "operand.h" 
+#include "baseTranslator.h"
 
 
 #define MAX_MEMORY 264
