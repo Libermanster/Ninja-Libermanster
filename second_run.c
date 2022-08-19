@@ -1,6 +1,6 @@
 #include "second_run.h"
 
-inctractionArray second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
+void second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
     int i;
     updateSymbolsInList(sl,a);
 
@@ -13,10 +13,15 @@ inctractionArray second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
                 decToBin(getSymbolAdress(a->arr[i].format.formatType.labelName,sl),8,a->arr[a->ic].format.formatType.dataFormat.data);
                 decToBin(getSymbolSource(a->arr[i].format.formatType.labelName,sl),2,a->arr[a->ic].format.formatType.dataFormat.are);
             }
-            else     
+            /*     
             {
-                /*error: label doenst exisits */
-            }
+                error: label doenst exisits 
+            } */
         }
     }
 }
+
+
+
+
+

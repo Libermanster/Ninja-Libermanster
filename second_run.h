@@ -16,5 +16,5 @@
 
 #ifndef SCNDRN
 #define SCNDRN
-inctractionArray second_run(inctractionArray*, dataImage*, symbolList*);
+void second_run(inctractionArray*, dataImage*, symbolList*);
 #endif
