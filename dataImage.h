@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include "util.h"
 
-#ifndef MAX_MEMORY
+
 #define MAX_MEMORY 264
-#endif
+
 
 #ifndef DATA_IMAGE
 #define DATA_IMAGE
