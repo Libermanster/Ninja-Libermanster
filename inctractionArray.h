@@ -37,7 +37,7 @@ typedef struct word {
         registerFormat registerFormat;
         dataFormat dataFormat;
         } formatType;
-    }
+    } format;
 } word;
 typedef struct inctractionArray {
     word arr[MAX_MEMORY];
@@ -50,16 +50,16 @@ inctractionArray* createInstractionArray();
 
 
 
-void fillOpcodeFormat(inctractionArray ,int, int, int, int);
-void fillDataFormat(inctractionArray , int, int);
+void fillOpcodeFormat(inctractionArray* ,int, int, int, int);
+void fillDataFormat(inctractionArray* , int, int);
 
-void fillRegisterFormat(inctractionArray , int, int, int);
-
-
+void fillRegisterFormat(inctractionArray* , int, int, int);
 
 
-void addInstractionToArray(inctractionArray ,int ,operand ,int );
 
-int getIC(inctractionArray );
+
+void addInstractionToArray(inctractionArray* ,int ,operand[3] ,int );
+
+int getIC(inctractionArray* );
 
 #endif
