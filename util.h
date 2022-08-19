@@ -127,8 +127,6 @@ int getRegister(char *);
 */
 int isRegister(char *);
 
-
-**/
 char* getNextWord(char *);
 
 #endif
