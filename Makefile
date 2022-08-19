@@ -1,6 +1,6 @@
 
-MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o
-	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctraction.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
+MMN: Ofiles/baseTranslator.o Ofiles/main.o Ofiles/util.o Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o
+	gcc -g -ansi -Wall -pedantic Ofiles/macro_util.o Ofiles/inctractionArray.o Ofiles/first_run.o Ofiles/second_run.o Ofiles/main.o Ofiles/util.o Ofiles/baseTranslator.o -o Ofiles/MMN
 Ofiles/main.o: main.c main.h
 	gcc -g -c -ansi -Wall -pedantic main.c -o Ofiles/main.o
 Ofiles/dataImage.o: dataImage.c dataImage.h
@@ -15,7 +15,7 @@ Ofiles/util.o: util.c util.h
 	gcc -g -c -ansi -Wall -pedantic util.c -o Ofiles/util.o
 Ofiles/macro_util.o: macro_util.c macro_util.h
 	gcc -g -c -ansi -Wall -pedantic macro_util.c -o Ofiles/macro_util.o
-Ofiles/inctraction.o: inctraction.c inctraction.h
-	gcc -g -c -ansi -Wall -pedantic inctraction.c -o Ofiles/inctraction.o
+Ofiles/inctractionArray.o: inctractionArray.c inctractionArray.h
+	gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o Ofiles/inctractionArray.o
 Ofiles/baseTranslator.o: baseTranslator.c baseTranslator.h
 	gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o Ofiles/baseTranslator.o

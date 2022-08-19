@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 19 15:22:04 2022
+# Make data base, printed on Fri Aug 19 18:05:54 2022
 
 # Variables
 
@@ -224,7 +224,6 @@ GDMSESSION = ubuntu
 LC_IDENTIFICATION = en_IL
 # variable set hash-table stats:
 # Load=105/1024=10%, Rehash=0, Collisions=4/135=3%
- 
 
 # Pattern-specific Variable Values
 
@@ -232,9 +231,9 @@ LC_IDENTIFICATION = en_IL
 
 # Directories
 
-# . (device 2050, inode 17563901): 32 files, no impossibilities.
+# . (device 2050, inode 17563901): 33 files, no impossibilities.
 
-# 32 files, no impossibilities in 1 directories.
+# 33 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -282,6 +281,7 @@ Ofiles/first_run.o: first_run.c first_run.h
 #  recipe to execute (from 'Makefile', line 11):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o Ofiles/first_run.o
 	# gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o Ofiles/pre_asmbler.o
+ 
 
 # Not a target:
 util.h:
@@ -292,7 +292,7 @@ util.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 15:20:37.333086713
+#  Last modified 2022-08-19 18:05:40.052067405
 #  File has been updated.
 #  Successfully updated.
 
@@ -328,7 +328,6 @@ util.c:
 #  File has not been updated.
 
 # Not a target:
- 
 baseTranslator.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -434,9 +433,9 @@ dataImage.c:
 # strcache buffers: 1 (0) / strings = 49 / storage = 588 B / avg = 12 B
 # current buf: size = 8162 B / used = 588 B / count = 49 / avg = 12 B
 
-# strcache performance: lookups = 82 / hit rate = 40%
+# strcache performance: lookups = 83 / hit rate = 40%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=0/82=0%
-# Finished Make data base on Fri Aug 19 15:22:04 2022
+# Load=49/8192=1%, Rehash=0, Collisions=0/83=0%
+# Finished Make data base on Fri Aug 19 18:05:54 2022
 
  
