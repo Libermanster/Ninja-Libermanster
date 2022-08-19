@@ -9,12 +9,13 @@ inctractionArray second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
         {
             if(labelExsits(a->arr[i].format.labelName)==1) 
             {
-                fillArray(getSymbolAdress(a->arr[i].format.labelName),8,a->arr[a->dc].format.formatType.dataFormat.data);
-                fillArray(getSymbolSource(a->arr[i].format.labelName),2,a->arr[a->dc].format.formatType.dataFormat.are);
+                fillArray(getSymbolAdress(a->arr[i].format.labelName),8,a->arr[a->ic].format.formatType.dataFormat.data);
+                fillArray(getSymbolSource(a->arr[i].format.labelName),2,a->arr[a->ic].format.formatType.dataFormat.are);
             }
-            else 
+            else     
+            {
                 /*error: label doenst exisits */
-            
+            }
         }
     }
 }
