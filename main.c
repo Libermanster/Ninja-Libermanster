@@ -3,15 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    /*int i = 8;
-    int arr[10];
-    decToBin(6,6,arr);
-    printf("hello world!\n");
-    printf("i = %d\n",i);
-    for(i=0;i<6;++i)
-        printf("%d",arr[i]);
-    printf("\n");
-    */
+   
     int i;
     dataImage* d;
     inctractionArray* a;
