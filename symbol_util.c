@@ -30,7 +30,7 @@ void setLabelType(symbol* s, symbolType type) {
 
 
 void addSymbolToList(symbol* s, symbolList* sl) {
-    if(sl->first== NULL ) {
+    if(sl->first == NULL ) {
         sl->first = s;
         sl->last = s;
     }

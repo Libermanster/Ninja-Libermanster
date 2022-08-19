@@ -16,17 +16,20 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
         if (startsWithWord(line, ".entry"))
         {
+            char *n;
+            symbol *s;
             line += 6; /* // 6 == strlen(".entry")  */
             line = &line[countSpaces(line)];
-            char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            symbol *s = createSymbol(n,0,UNKNOWN,ENTRY);
+            n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            s = createSymbol(n,0,UNKNOWN,ENTRY);
             free(n);
-            addSymbolTolist(s,sl);
+            addSymbolToList(s,sl);
             continue;
         }
         
         if (startsWithWord(line, ".extern"))
         {
+
             line += 7; /* // 7 == strlen(".extern")  */
             line = &line[countSpaces(line)];
             char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
@@ -157,7 +160,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             int opcode;
             operand operands[3];
             line += countSpaces(line);
-            temp = get_next_word(line);
+            temp = getNextWord(line);
             line += strlen(temp);
             opcode = getOpcode(temp);
             free(temp);
