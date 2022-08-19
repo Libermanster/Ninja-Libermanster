@@ -1,6 +1,11 @@
-
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 #define MAX_MEMORY 264
 
+#ifndef INSTRACTION
+#define INSTRACTION
 typedef struct inctractionArray {
     word arr[MAX_MEMORY];
     int ic = 0;
@@ -10,7 +15,7 @@ typedef struct word {
     int labelSwitch; //if a label is decoded in the line 
     struct format{
         int formatTypeIndicator; /* 1 - opcodeFormat , 2 - registerFormat , 3 - dataFormat*/
-        Union formatType {
+        union formatType {
         char* labelName;
         opcodeFormat opcodeFormat;
         registerFormat registerFormat;
@@ -37,3 +42,22 @@ typedef struct dataFormat {
     int are[10]={0}; // 2 bits for ARE 
 } dataFormat;
 
+
+
+inctractionArray* createInstractionArray();
+
+
+
+void fillOpcodeFormat(inctractionArray ,int, int, int, int);
+void fillDataFormat(inctractionArray , int, int);
+
+void fillRegisterFormat(inctractionArray , int, int, int);
+
+
+
+
+void addInstractionToArray(inctractionArray ,int ,operand ,int );
+
+int getIC(inctractionArray );
+
+#endif
