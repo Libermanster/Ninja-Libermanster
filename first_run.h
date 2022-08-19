@@ -5,6 +5,7 @@
 
 #ifndef FIRST_RUN
 #define FIRST_RUN
-FILE first_run_algorithm(FILE* , inctractionArray* , dataImage* , symbolList* );
+void first_run_algorithm(FILE * , inctractionArray * , dataImage * , symbolList * );
+
 #endif
 

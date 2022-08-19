@@ -1,8 +1,8 @@
 #include "first_run.h"
 
-FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, symbolList* sl) {
+void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl) {
     
-    char* line;
+    char* line = NULL;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         
@@ -42,7 +42,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
         if(startsWithLabel(line))
         { 
-            char* name;
+            char* name = NULL;
             symbolInTheLine = 1;
             getLabelName(line,name);
             s = createSymbol(name,0,UNKNOWN,NONE);

@@ -66,3 +66,4 @@ int binToDec(char* bin){
 }
 
 /*from bin to dec ends*/
+
