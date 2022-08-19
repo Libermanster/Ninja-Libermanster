@@ -4,22 +4,21 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
     
     char* line;
     char* numOrstring;
-    symbolList *sl = NULL;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         
         int symbolInTheLine = 0;
-        symbol *s = NULL;/*  //check with an expert that it doesnt delete the prevoius labels */
+        symbol *s; /*  //check with an expert that it doesnt delete the prevoius labels */
         
-        if(isEmpty(&line)||isComment(&line)) /* //שורה ריקה או הערה,להגיד ליונש לעשות את זה, לבדוק לגבי מערכים ומצביעים בספר */
+        if(isEmpty(line)||isComment(line)) /* //שורה ריקה או הערה,להגיד ליונש לעשות את זה, לבדוק לגבי מערכים ומצביעים בספר */
             continue;
         
-        line = &line[skip_spaces(line)];  /* //deletes the spaces in the start  */
+        line = &line[countSpaces(line)];  /* //deletes the spaces in the start  */
     
         if (startsWithWord(line, ".entry"))
         {
             line += 6; /* // 6 == strlen(".entry")  */
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
             char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             symbol *s = create_symbol(n,0,UNKNOWN,ENTRY);
             free(n);
@@ -30,23 +29,23 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
         if (startsWithWord(line, ".extern"))
         {
             line += 7; /* // 7 == strlen(".extern")  */
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
             char *n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            symbol *s = create_symbol(n,0,UNKNOWN,EXTERNAL);
+            symbol *s = createSymbol(n,0,UNKNOWN,EXTERNAL);
             free(n);
             addSymbolTolist(s,sl);/*  //check problems with the label s pointer how does it work */
             continue;
         }
     
-        if(startsWithLabel(&line))
+        if(startsWithLabel(line))
         { 
             char* name;
             symbolInTheLine = 1;
             getLabelName(&line,name);
-            s = create_symbol(name,0,UNKNOWN,NONE);
+            s = createSymbol(name,0,UNKNOWN,NONE);
             free(name); 
             line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
         }
         
         if (startsWithWord(line, ".data")) 
@@ -60,7 +59,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             }
             
             line += 5;
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
             number = strtok(line, ",");
             addInt(number, dataIm); 
             while (NULL != (number = strtok(NULL, ",")))
@@ -81,7 +80,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             }
             char* end;
             line+=7;
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
             /*if (line[0] != '"')
             {
             error(eh, NOT_A_STRING, 0);
@@ -118,11 +117,11 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             }
             char* end;
             line+=7;
-            line = &line[skip_spaces(line)];
+            line = &line[countSpaces(line)];
             numAndString = strtok(line, ",");
             addInt(numAndString, dataIm);
             numAndString = strtok(NULL, ",");
-            numAndString += skip_spaces(numAndString);
+            numAndString += countSpaces(numAndString);
             /*if (numAndString[0] != '"')
             {
                 error(eh, NOT_A_STRING, 0);
@@ -158,17 +157,17 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             char *temp;
             int opcode;
             operand operands[3];
-            line += skip_spaces(line);
+            line += countSpaces(line);
             temp = get_next_word(line);
             line += strlen(temp);
-            opcode = get_opcode(temp);
+            opcode = getOpcode(temp);
             free(temp);
             if (opcode == -1)
             {
                 /*error(eh, UNKNOWN_OPCODE, 1, part);*/
                 continue;
             }
-            line += skip_spaces(line);
+            line += countSpaces(line);
             temp = strtok(line, ",");
             if(temp!=NULL) {
                 i++;

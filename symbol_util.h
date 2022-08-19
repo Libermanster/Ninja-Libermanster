@@ -39,7 +39,7 @@ typedef struct symbolList
 } symbolList;
 
 
-symbol* create_symbol(char* , int , symbolType , symbolSource );
+symbol* createSymbol(char* , int , symbolType , symbolSource );
 char* get_symbol_name(symbol*);
 void setLabelAddress(symbol* , int );
 void setLabelType(symbol* , symbolType );
