@@ -67,6 +67,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
             {
             addInt(number, dataIm);
             }
+            free(number);
             continue;
         }
         
@@ -78,7 +79,7 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                 setLabelType(s,DATA);  
                 addSymbolTolist(s,sl);
             }
-            
+            char* end;
             line+=7;
             line = &line[skip_spaces(line)];
             /*if (line[0] != '"')
@@ -115,18 +116,18 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                 setLabelType(s,DATA);    
                 addSymbolTolist(s,sl);
             }
-            
+            char* end;
             line+=7;
             line = &line[skip_spaces(line)];
             numAndString = strtok(line, ",");
             addInt(numAndString, dataIm);
             numAndString = strtok(NULL, ",");
             numAndString += skip_spaces(numAndString);
-            if (numAndString[0] != '"')
+            /*if (numAndString[0] != '"')
             {
                 error(eh, NOT_A_STRING, 0);
                 continue;
-            }
+            }*/
             numAndString++;
             if (NULL != (end = strchr(numAndString, '"'))) 
             {
@@ -135,10 +136,10 @@ FILE first_run_algorithm(FILE* fp, inctractionArray* Iarr, dataImage* dataIm, sy
                     addString(numAndString,dataIm);
                     continue;
                 }
-                else
+                /*else*/
                 /* //error */
             }
-            else
+            /* else
                 /* //error */
             
         }
