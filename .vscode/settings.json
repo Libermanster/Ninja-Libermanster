@@ -1,0 +1,10 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "util.h": "c",
+        "symbol_util.h": "c",
+        "dataimage.h": "c",
+        "stdlib.h": "c",
+        "ctype.h": "c"
+    }
+}

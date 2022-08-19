@@ -1,5 +1,5 @@
-#include <stdio.h>
 
+#include "baseTranslator.h"
 
 
 /*from dec to binary begins*/

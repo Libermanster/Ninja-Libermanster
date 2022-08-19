@@ -1,9 +1,14 @@
+
+#ifndef HEAD
+#define HEAD
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 #include "macro_util.h"
 #include "util.h" 
+#endif
+
 int throughText(char *line);
 
 char *stringConnect(char *s1, char *s2) /*//strconcat*/

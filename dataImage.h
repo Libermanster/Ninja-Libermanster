@@ -1,7 +1,11 @@
+
+#ifndef HEAD
+#define HEAD
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "util.h"
+#endif
 
 #define MAX_MEMORY 264
 
@@ -14,6 +18,7 @@ typedef struct dataImage
     
 } dataImage;
 #endif
+
 dataImage* createDataImage();
 
 void addInt(char* , dataImage*);
