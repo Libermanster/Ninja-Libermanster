@@ -50,9 +50,9 @@ void decToBin(int, int, int[]);
 translate any number smaller or equal to 1024 to 32 base presentation
 get the number to translate and the 2 digit long string in which to store the resault
 */
-void decTo32(int, char*);
+void decTo32(int, char *);
 /*from dec to base32 ends*/
 
-int binToDec(char*);
+int binToDec(char *);
 
 #endif
