@@ -1,4 +1,5 @@
 
+#include "symbol_util.h"
 
 
 symbol* create_symbol(char* name, int address, symbolType type, symbolSource source) {

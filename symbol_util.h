@@ -1,8 +1,9 @@
-#include util.h 
+#include "util.h"
 
 
 
-
+#ifndef SYMBL_UTL
+#define SYMBL_UTL
 typedef enum symbolType
 {
     UNKNOWN,
@@ -35,16 +36,15 @@ typedef struct symbolList
 } symbolList;
 
 
-symbol* create_symbol(char* name, int address, symbolType type, symbolSource source) {
-    //make header
-}
+symbol* create_symbol(char* , int , symbolType , symbolSource );
+char* get_symbol_name(symbol*);
+void setLabelAddress(symbol* , int );
+void setLabelType(symbol* , symbolType );
+void addSymbolToList(symbol* , symbolList* );
+int isLabelExsits(char* , symbolList* );
+int getSymbolAdress(char* , symbolList* );
+int getSymbolSource(char* , symbolList* );
 
+#endif
 
-char* get_symbol_name(symbol* s) {
-  // make heaer   
-}
-
-void add_symbol_to_list(symbol *s, symbol_list *sl) {
-    // please make this function in the c file, add the symbol s to symbol_list sl , )רשימה מקושרת
-}
 
