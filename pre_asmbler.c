@@ -1,10 +1,9 @@
 /* the pre-asmbler code file, here we do the pre-asmbler macro algorthim */
-#include "pre_asmbler.c"
+#include "pre_asmbler.h"
 
 
-
-
-void preasmbler_algorithm(FILE *fp, char name[]){
+void preasmbler_algorithm(FILE *fp, char name[])
+{
     macro_list *macros = ml_create();
     char* line = malloc(sizeof(char)*81);
     int macroSwitch = 0;
@@ -29,10 +28,13 @@ void preasmbler_algorithm(FILE *fp, char name[]){
             }
         }
         else if (startsWithWord(&line[i], "macro"))
+        {
+
+        }
         else if (startsWithWord(&line[i], "macro"))
         {
             i += 6;
-            trimWord(&line[i]);
+            deleteSpacesAtEnd(&line[i]);
             m = m_create(&line[i]);
             macroSwitch = 1;
         }
@@ -42,7 +44,7 @@ void preasmbler_algorithm(FILE *fp, char name[]){
             {
                 macro *found_macro;
                 char *copy = duplicateString(&line[i]);
-                trimWord(copy);
+                deleteSpacesAtEnd(copy);
                 found_macro = ml_get(macros, copy);
                 free(copy);
                 if (found_macro != NULL)
@@ -66,7 +68,3 @@ void preasmbler_algorithm(FILE *fp, char name[]){
         }
     }
 }
-
-
-
-

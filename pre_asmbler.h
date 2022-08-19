@@ -1,6 +1,5 @@
 /* PREASMBLER ALGORITHM HEADER FILE */
 
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
