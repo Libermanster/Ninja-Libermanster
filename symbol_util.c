@@ -89,5 +89,6 @@ void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
             temp->address += a->ic; /*adding ic to all the data labels */
         }
         temp->address += 100; /*adding 100 to all labels because the decoding strating from address 100*/
+        temp = temp->next;
     }
 }

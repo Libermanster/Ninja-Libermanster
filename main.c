@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     for (i = 1; i < argc; i++)
     {
         /*char *fname = stringConnect(argv[i], ".as");*/
-        char fname[] = "test.txt";
+        char fname[] = "test";
         FILE *fp;
         /*strcpy(fname,argv[i]);*/
         fp = fopen(fname, "r");

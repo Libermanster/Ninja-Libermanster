@@ -29,6 +29,8 @@ void twoComlicated(int* arr,int len)
 
 void decToBin(int dec, int len, int arr[]){
 	int i,flag = 0;
+	for (i=0;i<10;++i)
+		arr[i] = 0;
 	flag = dec < 0 ? 1 : 0;
 	for(i = len; i > 0; --i){
 		if(dec%2 != 0){
@@ -57,16 +59,28 @@ void decTo32(int dec, char* res){
 /*from bin to dec begins*/
 
 int binToDec(char* bin){
-	int i = 0,j,k = 2,temp,res = 0;
+	int i = 0,k = 1,temp,res = 0;
 	for (; i < 10; ++i)
 	{
 
 		temp = (bin[i] - '0');
-		for(j=0,k=1 ; j<9-i ;++j)
-			k = k*2;
+		k = int_pow(2, 9-i);
 		res = res + temp*k;
 	}
 	return res;
+}
+
+int int_pow(int base, int exp)
+{
+    int result = 1;
+    while (exp)
+    {
+        if (exp % 2)
+           result *= base;
+        exp /= 2;
+        base *= base;
+    }
+    return result;
 }
 
 /*from bin to dec ends*/
