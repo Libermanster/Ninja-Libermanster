@@ -58,4 +58,6 @@ void decTo32(int, char *);
 
 int binToDec(int *);
 
+int int_pow(int , int );
+
 #endif
