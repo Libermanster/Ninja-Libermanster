@@ -1,14 +1,15 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
+make: *** No rule to make target 'all'.  Stop.
 
-# Make data base, printed on Sat Aug 20 02:36:51 2022
+
+# Make data base, printed on Sat Aug 20 12:36:25 2022
 
 # Variables
 
@@ -55,7 +56,7 @@ VSCODE_CODE_CACHE_PATH = /home/yonash/.config/Code/CachedData/e4503b30fc78200f84
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.0WG2Q1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.D4J9Q1
 # default
 .LOADED := 
 # default
@@ -89,13 +90,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 74409
+VSCODE_PID = 2766
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/yonash-PC:@/tmp/.ICE-unix/1198,unix/yonash-PC:/tmp/.ICE-unix/1198
+SESSION_MANAGER = local/yonash-PC:@/tmp/.ICE-unix/1202,unix/yonash-PC:/tmp/.ICE-unix/1202
 # automatic
 *F = $(notdir $*)
 # environment
@@ -139,7 +140,7 @@ LC_MONETARY = en_IL
 # environment
 LC_TIME = en_IL
 # environment
-INVOCATION_ID = b3f55f5fa5b34cc6b70e1ab753dad313
+INVOCATION_ID = 4256ded855cf45bca9f622345effab0a
 # environment
 USERNAME = yonash
 # environment
@@ -169,7 +170,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := MMN
 # environment
-SYSTEMD_EXEC_PID = 1234
+SYSTEMD_EXEC_PID = 1235
 # environment
 DISPLAY = :0
 # environment
@@ -179,11 +180,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1064
+MANAGERPID = 1069
 # environment
 LC_MEASUREMENT = en_IL
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 74409
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2766
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +192,7 @@ LC_PAPER = en_IL
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:29036
+JOURNAL_STREAM = 8:29262
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -281,7 +282,6 @@ first_run.o: first_run.c first_run.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 10):
 	gcc -g -c -ansi -Wall -pedantic first_run.c -o first_run.o
- 
 
 # Not a target:
 util.h:
@@ -292,6 +292,7 @@ util.h:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-08-20 02:11:15.768151449
 #  File has been updated.
 #  Successfully updated.
@@ -530,6 +531,6 @@ dataImage.c:
 # strcache performance: lookups = 125 / hit rate = 56%
 # hash-table stats:
 # Load=54/8192=1%, Rehash=0, Collisions=0/125=0%
-# Finished Make data base on Sat Aug 20 02:36:51 2022
+# Finished Make data base on Sat Aug 20 12:36:25 2022
 
  

@@ -195,58 +195,18 @@ int throughText(char line[]){
 
 char* getNextWord(char *line)
 {
-    char *word = NULL;
+    char *word;
     int i = 0;
+    word = malloc(sizeof(char));
     while (line[i] != '\0' && !isspace(line[i]))
     {
         i++;
     }
     if (i > 0)
     {
-        word = malloc(sizeof(char) * i);
+        word = realloc(word , sizeof(char) * (i+1);
         strncpy(word, line, i);
         word[i] = '\0';
     }
     return word;
 }
-
-/* 
-    int main()
-    {
-        char* str = "r1yo:";
-        char* lab = "yoni";
-        printf("r1yo: regtest = %d\n",isRegister(str) );
-        str = "r1";
-        printf("r1 regtest = %d\n",isRegister(str) );
-        str = "r4";
-        printf("r4: regtest = %d\n",isRegister(str) );
-        str = "11";
-        printf("r1 getRegister = %d\n",getRegister(str));
-        str = "14";
-        printf("r4: getRegister = %d\n",getRegister(str));
-        printf("r4: regtest = %d\n",isRegister(str) );
-        str = "label.7";
-        printf("label.7 getLabelOperandNumber = %d\n",getLabelOperandNumber(str));
-        str = "label.7";
-        getLabelOperandName(str,lab);
-        printf("label.7 getLabelOperandName = %s\n",lab);
-        
-
-
-        str = "r1yo:";
-        printf("r1yo: label test = %d\n",starts_with_label(str) );
-        str = "r1yo  klsjasdf kkl;a;lkj   jkkdlal;kjf ka;lkjdf ;lkjad;lkj";
-        printf("r1yo  klsjasdf kkl;a;lkj   jkkdlal;kjf ka;lkjdf ;lkjad;lkj\n label test = %d\n",starts_with_label(str) );
-        str = "  ;r1fd: yo: ;lakjasdf kjdk:";
-        printf("  ;r1fd: yo: ;lakjasdf kjdk: label isComment = %d\n",isComment(str) );
-        str = "             ;r1fd: yo: ;lakjasdf kjdk:";
-        printf("            ;r1fd: yo: ;lakjasdf kjdk: label isComment = %d\n",isComment(str) );
-        str = "             1fd: yo: ;lakjasdf kjdk:";
-        printf("            1fd: yo: ;lakjasdf kjdk: label isComment = %d\n",isComment(str) );
-        str = ";r1fd: yo: ;lakjasdf kjdk:";
-        printf(";r1fd: yo: ;lakjasdf kjdk: label isComment = %d\n",isComment(str) );
-        return 0;
-    }
- */
-
-

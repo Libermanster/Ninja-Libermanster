@@ -2,7 +2,7 @@
 
 void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl) {
     
-    char* line = NULL;
+    char* line = malloc(sizeof(char)*(MAX_LINE+1));
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         
@@ -42,7 +42,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
     
         if(startsWithLabel(line))
         { 
-            char* name = NULL;
+            char* name = malloc(sizeof(char)*(MAX_LINE+1));
             symbolInTheLine = 1;
             getLabelName(line,name);
             s = createSymbol(name,0,UNKNOWN,NONE);

@@ -8,7 +8,7 @@ operand createOperand(char* str) {
     char* num; 
     int number;
     int registerNumber;
-    char* namee = NULL;
+    char* namee = malloc(sizeof(char)*(MAX_LINE+1));
     str+=countSpaces(str);
     deleteSpacesAtEnd(str);
     if(str[0]=='#') 
@@ -22,6 +22,7 @@ operand createOperand(char* str) {
         number = atoi(num); /* //לשים לב שלא עובד למספרים שליליים יש לתקן */
         operand.reffMode = 0;
         operand.value.number = number;
+        free(namee);
         return operand;
     }
     
@@ -31,6 +32,7 @@ operand createOperand(char* str) {
         if(0<=registerNumber && registerNumber<=7) {
             operand.reffMode = 3;
             operand.value.number = registerNumber;
+            free(namee);
             return operand;
         }
         
@@ -46,11 +48,13 @@ operand createOperand(char* str) {
             operand.reffMode = 2;
             operand.value.labelNameAndNum.name = duplicateString(namee);
             operand.value.labelNameAndNum.num = getLabelOperandNumber(str);
+            free(namee);
             return operand;
         }
         else{
             operand.reffMode = 1;
             operand.value.labelName = duplicateString(str);
+            free(namee);
             return operand;
         }
     }
@@ -58,5 +62,6 @@ operand createOperand(char* str) {
    /* doesnt supose to reach this point*/
 operand.reffMode= -1;
 operand.value.number = -1;
+free(namee);
 return operand;     
 }

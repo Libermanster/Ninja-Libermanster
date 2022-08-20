@@ -1,18 +1,12 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/yonash/Documents/MMN14/for vlc/Ninja-Libermanster'
- 
 gcc -g -c -ansi -Wall -pedantic main.c -o main.o
- 
 gcc -g -c -ansi -Wall -pedantic dataImage.c -o dataImage.o
- 
 gcc -g -c -ansi -Wall -pedantic second_run.c -o second_run.o
 gcc -g -c -ansi -Wall -pedantic first_run.c -o first_run.o
- 
 gcc -g -c -ansi -Wall -pedantic pre_asmbler.c -o pre_asmbler.o
 gcc -g -c -ansi -Wall -pedantic util.c -o util.o
- 
 gcc -g -c -ansi -Wall -pedantic symbol_util.c -o symbol_util.o
- 
 gcc -g -c -ansi -Wall -pedantic macro_util.c -o macro_util.o
 gcc -g -c -ansi -Wall -pedantic inctractionArray.c -o inctractionArray.o
 gcc -g -c -ansi -Wall -pedantic baseTranslator.c -o baseTranslator.o
