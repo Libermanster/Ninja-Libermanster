@@ -56,6 +56,8 @@ get the number to translate and the 2 digit long string in which to store the re
 void decTo32(int, char *);
 /*from dec to base32 ends*/
 
-int binToDec(char *);
+int binToDec(int *);
+
+int int_pow(int , int );
 
 #endif
