@@ -6,7 +6,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     int i = 0;
     int k = 0;
     int p=0;
-    char array[10];
+    int array[10];
     char z[2];
     char s[2];
     int num;
@@ -29,7 +29,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                     array[k]=a->arr[i].format.formatType.opcodeFormat.dst[p];
                 for(p=0;k<=9;k++,p++)
                     array[k]=a->arr[i].format.formatType.opcodeFormat.are[p];
-                 num = binToDec(array);
+                num = binToDec(array);
                 decTo32(i+100, z);
                 decTo32(num, s);
                 fprintf(fp,"%s %s\n",z,s);
