@@ -6,7 +6,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     int i = 0;
     int k = 0;
     int p=0;
-    char array[10];
+    int array[10];
     char z[2];
     char s[2];
     int num;
