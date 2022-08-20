@@ -172,9 +172,14 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 /*error(eh, UNKNOWN_OPCODE, 1, part);*/
                 continue;
             }
-            line += countSpaces(line);
+
+            if(isEmpty(line)) { /* no operands */
+                addInstractionToArray(Iarr,opcode,operands,i);
+                continue;
+            }
+
             temp = strtok(line, ",");
-            if(temp!=NULL) {
+            if(temp!=NULL) { /* two operands */
                 i++;
                 operands[i]=createOperand(temp);
                 temp = strtok(NULL, ",");
@@ -182,7 +187,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     i++;
                     operands[i]=createOperand(temp);
                 }
+            addInstractionToArray(Iarr,opcode,operands,i);
+            continue;
             }
+            i++; /* one operand */
+            operands[i] = createOperand(line);
             addInstractionToArray(Iarr,opcode,operands,i);
             continue;
             
