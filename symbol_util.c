@@ -66,8 +66,18 @@ int getSymbolSource(char *str, symbolList* sl) {
     symbol* temp;
     temp = sl->first;
     while(temp!=NULL) {
-        if(strcmp(str,temp->name)==0)
-            return temp->source;
+        if(strcmp(str,temp->name)==0) {
+            switch(temp->source) {
+                case NONE:
+                    return 0;
+                case ENTRY:
+                    return 2;
+                case EXTERNAL:
+                    return 1;    
+            }
+        }
+            
+            
         temp = temp->next;
     }
     return -1;
