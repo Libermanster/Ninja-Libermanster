@@ -204,7 +204,7 @@ char* getNextWord(char *line)
     }
     if (i > 0)
     {
-        word = realloc(word , sizeof(char) * (i+1);
+        word = realloc(word , sizeof(char) * (i+1));
         strncpy(word, line, i);
         word[i] = '\0';
     }
