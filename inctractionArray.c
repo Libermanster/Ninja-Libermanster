@@ -146,7 +146,7 @@ void addInstractionToArray(inctractionArray *a,int opcode,operand operands[3],in
                             fillRegisterFormat(a,0,operands[2].value.number,0);
                         break;
                     }
-                break
+                break;
                 case 2:
                     switch(operands[2].reffMode) 
                     {
