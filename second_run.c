@@ -12,7 +12,7 @@ void second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
             {
                 decToBin(getSymbolAdress(a->arr[i].format.formatType.labelName,sl),8,a->arr[a->ic].format.formatType.dataFormat.data);
                 decToBin(getSymbolSource(a->arr[i].format.formatType.labelName,sl),2,a->arr[a->ic].format.formatType.dataFormat.are);
-                a->arr[a->ic].format.formatTypeIndicator = 3;
+                a->arr[i].format.formatTypeIndicator = 3;
             }
             /*     
             {
