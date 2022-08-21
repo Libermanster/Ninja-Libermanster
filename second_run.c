@@ -2,7 +2,10 @@
 
 void second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
     int i;
+    int symbolAdress;
+    int symbolSource;
     i=0;
+    
     updateSymbolsInList(sl,a);
 
 
@@ -11,8 +14,10 @@ void second_run(inctractionArray* a, dataImage* d, symbolList* sl) {
         {
             /*if(isLabelExsits(a->arr[i].format.formatType.labelName,sl)==1) 
             {*/
-                decToBin(getSymbolAdress(a->arr[i].format.formatType.labelName,sl),8,a->arr[i].format.formatType.dataFormat.data);
-                decToBin(getSymbolSource(a->arr[i].format.formatType.labelName,sl),2,a->arr[i].format.formatType.dataFormat.are);
+                symbolAdress = getSymbolAdress(a->arr[i].format.formatType.labelName,sl);
+                symbolSource = getSymbolSource(a->arr[i].format.formatType.labelName,sl);
+                decToBin(symbolAdress,8,a->arr[i].format.formatType.dataFormat.data);
+                decToBin(symbolSource,2,a->arr[i].format.formatType.dataFormat.are);
                 a->arr[i].format.formatTypeIndicator = 3;
            /* } */
             /*     
