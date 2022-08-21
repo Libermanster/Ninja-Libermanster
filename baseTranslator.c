@@ -55,7 +55,7 @@ void decToBin (int dec, int len, int arr[])
 /*from dec to base32 begins*/
 
 void decTo32(int dec, char* res){
-	char base[] = "!@#$%^&*<>abcdefghijklmnopqrstuv";
+	char base[] = {'!','@','#','$','%','^','&','*','<','>','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v'};
 	res[0] = base[dec/32];
 	res[1] = base[dec%32];	
 }
