@@ -13,7 +13,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     fp = fopen(fname, "w");
     decTo32(a->ic, s);
     decTo32(d->dc, z);
-    fprintf(fp,"%s %s\n",s,z); /*prints ic count and dc count*/
+    fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]); /*prints ic count and dc count*/
     for(i=0;i<a->ic;i++)
     {
         
@@ -32,7 +32,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                 num = binToDec(array);
                 decTo32(i+100, z);
                 decTo32(num, s);
-                fprintf(fp,"%s %s\n",z,s);
+                fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);
                 continue;
 
             case 2:
@@ -46,7 +46,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                  num = binToDec(array);
                 decTo32(i+100,z);
                 decTo32(num,s);
-                fprintf(fp,"%s %s\n",z,s);
+                fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);
                 continue;
 
             case 3:
@@ -58,7 +58,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                  num = binToDec(array);
                 decTo32(i+100,z);
                 decTo32(num,s);
-                fprintf(fp,"%s %s\n",z,s);
+                fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);
                 continue;
         }
     }
@@ -68,7 +68,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     {
         decTo32(i+100,z);
         decTo32(d->dataArray[k],s);
-        fprintf(fp,"%s %s\n",z,s);    
+        fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);    
     }
 
 }
