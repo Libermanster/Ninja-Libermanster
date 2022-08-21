@@ -19,7 +19,7 @@ void addInt(char* number, dataImage* dataIm)
     }
     num = atoi(number); /*doesnt work for negative please fix*/
     dataIm->dataArray[dataIm->dc] = num; 
-    (dataIm->dc)++;
+    dataIm->dc++;
 }
 
 
@@ -29,7 +29,7 @@ void addString(char* string, dataImage* dataIm){
     for(i=0;i<length;i++) 
     {
         dataIm->dataArray[dataIm->dc] = (int)string[i];
-        (dataIm->dc)++;
+        dataIm->dc++;
     }
 }
 
