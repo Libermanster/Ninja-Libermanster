@@ -94,7 +94,13 @@ int hasDott(char *line){
 void getLabelName(char line[], char label[]){
     int i = 0;
     while(line[i] != ':'){
+        if (i >= 30)
+        {
+            printf("label size to big\n");
+            exit(0);
+        }
         label[i] = line[i];
+        label[i+1] = '\0';
         ++i;
     }
 }
@@ -160,7 +166,6 @@ int throughText(char line[]){
     fl_whiteSpace = isspace(line[i]) ? 1 : 0;
 
     while (fl_whiteSpace == 1){
-        ++i;
         if (line[i]== '\n')
         {
             return 1;
@@ -170,6 +175,7 @@ int throughText(char line[]){
             return 1;
         }
         fl_whiteSpace = isspace(line[i]) ? 1 : 0;
+        ++i;
     }
 
 

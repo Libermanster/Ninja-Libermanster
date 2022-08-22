@@ -8,49 +8,46 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
         
         int symbolInTheLine = 0;
         symbol *s; /*  //check with an expert that it doesnt delete the prevoius labels */
-        
-        if(isEmpty(line)||isComment(line)) /* //שורה ריקה או הערה,להגיד ליונש לעשות את זה, לבדוק לגבי מערכים ומצביעים בספר */
+        char *name;
+        if(isEmpty(line)||isComment(line))
+        {
             continue;
-        
+        }
         line = &line[countSpaces(line)];  /* //deletes the spaces in the start  */
-    
+        /*first word is .entry*/
         if (startsWithWord(line, ".entry"))
         {
-            char *n;
-            symbol *s;
             line += 6; /* // 6 == strlen(".entry")  */
             line = &line[countSpaces(line)];
-            n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            s = createSymbol(n,0,UNKNOWN,ENTRY);
-            free(n);
+            name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            s = createSymbol(name,0,UNKNOWN,ENTRY);
             addSymbolToList(s,sl);
+            free(name);
             continue;
         }
-        
+        /*first word is .extern*/
         if (startsWithWord(line, ".extern"))
         {
-            char *n;
-            symbol *s;
             line += 7; /* // 7 == strlen(".extern")  */
             line = &line[countSpaces(line)];
-            n = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
-            s = createSymbol(n,0,UNKNOWN,EXTERNAL);
-            free(n);
+            name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            s = createSymbol(name,0,UNKNOWN,EXTERNAL);
             addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
+            free(name);
             continue;
         }
-    
+        /*first word is label*/
         if(startsWithLabel(line))
         { 
-            char* name = malloc(sizeof(char)*(MAX_LINE+1));
             symbolInTheLine = 1;
+            name  = malloc(sizeof(char) * MAX_LINE);
             getLabelName(line,name);
             s = createSymbol(name,0,UNKNOWN,NONE);
             free(name); 
             line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
             line = &line[countSpaces(line)];
         }
-        
+        /*first word is .data*/
         if (startsWithWord(line, ".data")) 
         {
             char* number; 
@@ -72,7 +69,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             free(number);
             continue;
         }
-        
+        /*first word is .string*/
         if(startsWithWord(line,".string")) 
         {
             char* end;
@@ -96,18 +93,21 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 {
                     *end = '\0';
                     addString(line, dataIm);
+
                     continue;
                 }
                 else 
                 {
+
                    /*  //error */
                 }
             }
             else
             {
-             /*    //error */
+                /*//error */
             }
         }
+        /*first word is .struct*/
         if(startsWithWord(line,".struct"))/*  //might not work needs a check. */
         {
             char* end; 
@@ -137,16 +137,19 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     *end =  '\0';
                     addString(numAndString,dataIm);
                     continue;
+                } else
+                {
+                    /*error*/
+                    printf("error first_run-> startsWithWord .struct -> isLastWord\n");
                 }
-                /*else*/
-                /* error */
+
+            } else
+            {
+                /*error*/   
+                printf("error first_run-> startsWithWord .struct\n");
             }
-            /* else
-                 error */
-            
-        }
-        
-        else{
+        } else
+        {
             int i;
             char *temp;
             int opcode;
@@ -166,11 +169,12 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             temp = getNextWord(line);
             line += strlen(temp);
             opcode = getOpcode(temp);
-            free(temp);
             if (opcode == -1)
             {
+                /*error*/
+                printf("error first_run-> startsWithWord .struct\n");
                 /*error(eh, UNKNOWN_OPCODE, 1, part);*/
-                continue;
+                exit(0);
             }
 
             if(isEmpty(line)) { /* no operands */
@@ -192,14 +196,8 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
             i++; /* one operand */
             operands[i] = createOperand(line);
-            addInstractionToArray(Iarr,opcode,operands,i);
-            continue;
-            
-            
-            
+            addInstractionToArray(Iarr,opcode,operands,i);      
+            continue;  
         }
-    }
-    
-    
+    } 
 }
-

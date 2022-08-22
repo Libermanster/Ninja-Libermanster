@@ -33,9 +33,11 @@ void addSymbolToList(symbol* s, symbolList* sl) {
     if(sl->first == NULL ) {
         sl->first = s;
         sl->last = s;
+    } else
+    {
+        sl->last->next = s;
+        sl->last = s; 
     }
-    sl->last->next = s;
-    sl->last = s; 
 }
 
 
