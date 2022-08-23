@@ -6,17 +6,16 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     int i = 0;
     int k = 0;
     int p=0;
-    int array[10];
     char z[2];
     char s[2];
     int num;
     fp = fopen(fname, "w");
     decTo32(a->ic, s);
     decTo32(d->dc, z);
-    fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]); /*prints ic count and dc count*/
+    fprintf(fp,"%c%c %c%c\n",s[0],s[1],z[0],z[1]); /*prints ic count and dc count*/
     for(i=0;i<a->ic;i++)
     {
-        
+        int array[10] = {0};
         switch(a->arr[i].format.formatTypeIndicator) 
         {
             case 1:
