@@ -17,12 +17,12 @@ typedef struct macro
 
 /* the macro list stracture */
 
-typedef struct macro_list
+typedef struct macroList
 {
     macro *head;
     macro *tail;
 
-} macro_list;
+} macroList;
 
 
 
@@ -32,7 +32,7 @@ typedef struct macro_list
  * @param name the name of the macro
  * @return macro* a new macro
  */
-macro *m_create(char *name);
+macro *createMacro(char *name);
 
 /**
  * @brief apppend a line to the macro
@@ -40,7 +40,7 @@ macro *m_create(char *name);
  * @param m the macro
  * @param line the line
  */
-void m_append(macro *m, char *line);
+void addLineToMacro(macro *m, char *line);
 
 /**
  * @brief get a line of a macro
@@ -50,23 +50,18 @@ void m_append(macro *m, char *line);
  * @param i the index of the line
  * @return char* the line
  */
-char *m_get_line(macro *m, int i);
+char *getLineFromMacro(macro *m, int i);
 
-/**
- * @brief free the memory used by a macro
- *
- * @param m the macro
- */
-void m_destroy(macro *m);
+
 
 
 
 /**
  * @brief create a new macro list
  *
- * @return macro_list* a new macro list
+ * @return macroList* a new macro list
  */
-macro_list *ml_create();
+macroList *createMacroList();
 
 /**
  * @brief append a macro to the list
@@ -74,7 +69,7 @@ macro_list *ml_create();
  * @param list the macro list
  * @param m the macro
  */
-void ml_append(macro_list *list, macro *m);
+void addMacroToList(macroList *list, macro *m);
 
 /**
  * @brief get a macro from the list using its name
@@ -83,13 +78,30 @@ void ml_append(macro_list *list, macro *m);
  * @param name the name of the desired macro
  * @return macro* the relevant macro
  */
-macro *ml_get(macro_list *list, char *name);
+macro *getMacroFromList(macroList *list, char *name);
 
 /**
  * @brief free the memory used by the macro list
  * 
  * @param list the macro list list
  */
-void ml_destroy(macro_list *list);
+void freeMacroList(macroList *list);
+
+
+
+void freeMacro(macro* m) 
+    {
+    int i = 0;
+    char *line;
+    while ((line = getLineFromMacro(m, i)) != NULL)
+    {
+        free(line);
+        i++;
+    }
+    free(m->lines);
+    free(m->name);
+    free(m);
+}
+
 
 #endif

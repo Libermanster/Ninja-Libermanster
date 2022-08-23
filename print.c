@@ -64,7 +64,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
     }
 
 
-    for (k=0;k<d->dc;k++) 
+    for (k=0;k<d->dc;k++,i++) 
     {
         decTo32(i+100,z);
         decTo32(d->dataArray[k],s);

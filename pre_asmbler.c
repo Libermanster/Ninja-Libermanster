@@ -4,7 +4,7 @@
 
 void preasmbler_algorithm(FILE *fp, char name[])
 {
-    macro_list *macros = ml_create();
+    macroList *macros = createMacroList();
     char* line = malloc(sizeof(char)*81);
     int macroSwitch = 0;
     macro *m;
@@ -18,24 +18,21 @@ void preasmbler_algorithm(FILE *fp, char name[])
         {
             if (strncmp(&line[i], "endm", 4) == 0 && isLastWord(&line[i]))
             {
-                ml_append(macros, m);
+                addMacroToList(macros, m);
                 macroSwitch = 0; /* //turn off the switch */
             }
             else
             {
-                m_append(m, line);
-                fwrite(line, 1, strlen(line), out);
+                addLineToMacro(m, line);
+                
             }
         }
-        else if (startsWithWord(&line[i], "macro"))
-        {
-
-        }
+       
         else if (startsWithWord(&line[i], "macro"))
         {
             i += 6;
             deleteSpacesAtEnd(&line[i]);
-            m = m_create(&line[i]);
+            m = createMacro(&line[i]);
             macroSwitch = 1;
         }
         else
@@ -45,13 +42,13 @@ void preasmbler_algorithm(FILE *fp, char name[])
                 macro *found_macro;
                 char *copy = duplicateString(&line[i]);
                 deleteSpacesAtEnd(copy);
-                found_macro = ml_get(macros, copy);
+                found_macro = getMacroFromList(macros, copy);
                 free(copy);
                 if (found_macro != NULL)
                 {
                     int i = 0;
                     char *m_line;
-                    while ((m_line = m_get_line(found_macro, i++)) != NULL)
+                    while ((m_line = getLineFromMacro(found_macro, i++)) != NULL)
                     {
                         fwrite(m_line, 1, strlen(m_line), out);
                     }
@@ -67,4 +64,7 @@ void preasmbler_algorithm(FILE *fp, char name[])
             }
         }
     }
+
+    freeMacroList(macros);
 }
+

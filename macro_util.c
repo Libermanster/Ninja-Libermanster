@@ -4,16 +4,16 @@
 
 
 
-macro_list *ml_create()
+macroList *createMacroList()
 {
-    macro_list *list = malloc(sizeof(macro_list));
+    macroList *list = malloc(sizeof(macroList));
     list->head = NULL;
     list->tail = NULL;
     return list;
 }
 
 
-void ml_append(macro_list *list, macro *m)
+void addMacroToList(macroList *list, macro *m)
 {
     if (list->head == NULL)
     {
@@ -26,7 +26,7 @@ void ml_append(macro_list *list, macro *m)
 }
 
 
-void m_append(macro *m, char *line)
+void addLineToMacro(macro *m, char *line)
 {
     if (m->lines_filled == m->line_count)
     {
@@ -38,7 +38,7 @@ void m_append(macro *m, char *line)
 }
 
 
-macro *m_create(char name[])
+macro *createMacro(char name[])
 {
     macro *m = malloc(sizeof(macro));
     m->name = duplicateString(name);
@@ -51,7 +51,7 @@ macro *m_create(char name[])
 }
 
 
-macro *ml_get(macro_list *list, char *name)
+macro *getMacroFromList(macroList *list, char *name)
 {
     macro *ptr = list->head;
     while (ptr != NULL)
@@ -68,9 +68,23 @@ macro *ml_get(macro_list *list, char *name)
 
 
 
-char *m_get_line(macro *m, int i)
+char *getLineFromMacro(macro *m, int i)
 {
     if (i > m->lines_filled)
         return NULL;
     return m->lines[i];
 }
+
+void destroyMacroList(macroList* list) 
+    {
+    macro *ptr = list->head;
+    macro *tmp;
+    while (ptr != NULL)
+    {
+        tmp = ptr;
+        ptr = ptr->next;
+        freeMacro(tmp);
+    }
+    free(list);
+}
+
