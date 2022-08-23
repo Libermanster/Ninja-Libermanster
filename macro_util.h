@@ -32,7 +32,7 @@ typedef struct macroList
  * @param name the name of the macro
  * @return macro* a new macro
  */
-macro *createMacro(char *name);
+macro *createMacro(char *);
 
 /**
  * @brief apppend a line to the macro
@@ -40,7 +40,7 @@ macro *createMacro(char *name);
  * @param m the macro
  * @param line the line
  */
-void addLineToMacro(macro *m, char *line);
+void addLineToMacro(macro *, char *);
 
 /**
  * @brief get a line of a macro
@@ -50,7 +50,7 @@ void addLineToMacro(macro *m, char *line);
  * @param i the index of the line
  * @return char* the line
  */
-char *getLineFromMacro(macro *m, int i);
+char *getLineFromMacro(macro *, int );
 
 
 
@@ -69,7 +69,7 @@ macroList *createMacroList();
  * @param list the macro list
  * @param m the macro
  */
-void addMacroToList(macroList *list, macro *m);
+void addMacroToList(macroList *, macro *);
 
 /**
  * @brief get a macro from the list using its name
@@ -78,30 +78,21 @@ void addMacroToList(macroList *list, macro *m);
  * @param name the name of the desired macro
  * @return macro* the relevant macro
  */
-macro *getMacroFromList(macroList *list, char *name);
+macro *getMacroFromList(macroList *, char *);
 
 /**
  * @brief free the memory used by the macro list
  * 
  * @param list the macro list list
  */
-void freeMacroList(macroList *list);
+
+void freeMacro(macro*);
+void freeMacroList(macroList *);
+ /*
 
 
 
-void freeMacro(macro* m) 
-    {
-    int i = 0;
-    char *line;
-    while ((line = getLineFromMacro(m, i)) != NULL)
-    {
-        free(line);
-        i++;
-    }
-    free(m->lines);
-    free(m->name);
-    free(m);
-}
 
+*/
 
 #endif

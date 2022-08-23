@@ -75,8 +75,23 @@ char *getLineFromMacro(macro *m, int i)
     return m->lines[i];
 }
 
-void destroyMacroList(macroList* list) 
+
+void freeMacro(macro* m) 
+{
+    int i = 0;
+    char *line;
+    while ((line = getLineFromMacro(m, i)) != NULL)
     {
+        free(line);
+        i++;
+    }
+    free(m->lines);
+    free(m->name);
+    free(m);
+}
+
+void freeMacroList(macroList * list) 
+{
     macro *ptr = list->head;
     macro *tmp;
     while (ptr != NULL)
@@ -87,4 +102,3 @@ void destroyMacroList(macroList* list)
     }
     free(list);
 }
-
