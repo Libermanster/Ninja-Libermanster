@@ -57,8 +57,9 @@ int getSymbolAdress(char* str, symbolList* sl) {
     symbol* temp;
     temp = sl->first;
     while(temp!=NULL) {
-        if(strcmp(str,temp->name)==0)
+        if(strcmp(str,temp->name)==0) {
             return temp->address;
+        }
         temp = temp->next;
     }
     return 0;
