@@ -55,7 +55,12 @@ void decToBin (int dec, int len, int arr[])
 /*from dec to base32 begins*/
 
 void decTo32(int dec, char* res){
-	char base[] = {'!','@','#','$','%','^','&','*','<','>','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v'};
+	if(dec <0) { /* if data from dataArray is negative*/  
+    int arr[10];
+    decToBin(dec,10,arr);
+    dec = binToDec(arr);
+  }
+  char base[] = {'!','@','#','$','%','^','&','*','<','>','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v'};
 	res[0] = base[dec/32];
 	res[1] = base[dec%32];	
 }

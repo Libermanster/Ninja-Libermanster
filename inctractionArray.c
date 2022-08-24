@@ -58,20 +58,20 @@ void addInstractionToArray(inctractionArray *a,int opcode,operand operands[3],in
                     fillDataFormat(a,operands[1].value.number,0);
                 break;
                 case 1:
-                    fillOpcodeFormat(a,opcode,1,0,0);
+                    fillOpcodeFormat(a,opcode,0,1,0);
                     a->arr[a->ic].format.formatType.labelName = duplicateString(operands[1].value.labelName);
                     a->arr[a->ic].labelSwitch = 1;
                     a->ic++;
                 break;
                 case 2:
-                    fillOpcodeFormat(a,opcode,2,0,0);
+                    fillOpcodeFormat(a,opcode,0,2,0);
                     a->arr[a->ic].format.formatType.labelName = duplicateString(operands[1].value.labelNameAndNum.name);
                     a->arr[a->ic].labelSwitch = 1;
                     a->ic++;
                     fillDataFormat(a,operands[1].value.labelNameAndNum.num,0);
                 break;
                 case 3:
-                    fillOpcodeFormat(a,opcode,3,0,0);
+                    fillOpcodeFormat(a,opcode,0,3,0);
                     fillRegisterFormat(a,operands[1].value.number,0,0);
                 break;     
             }

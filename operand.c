@@ -17,9 +17,11 @@ operand createOperand(char* str) {
         num = getNextWord(str);
         if(num[0]=='-') {
         num++;
-        number = -atoi(num);
+        number = -1 * atoi(num);
         }
-        number = atoi(num); /* //לשים לב שלא עובד למספרים שליליים יש לתקן */
+        else  {
+        number = atoi(num); 
+        }
         operand.reffMode = 0;
         operand.value.number = number;
         free(namee);
