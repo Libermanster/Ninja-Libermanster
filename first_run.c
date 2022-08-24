@@ -172,7 +172,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             if (opcode == -1)
             {
                 /*error*/
-                printf("error first_run-> startsWithWord .struct\n");
+                printf("error - illigel opcode\n");
                 /*error(eh, UNKNOWN_OPCODE, 1, part);*/
                 exit(0);
             }
@@ -183,7 +183,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
 
             temp = strtok(line, ",");
-            if(temp!=NULL) { /* two operands */
+             if(temp!=NULL) { /* two operands */
                 i++;
                 operands[i]=createOperand(temp);
                 temp = strtok(NULL, ",");
@@ -191,13 +191,15 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     i++;
                     operands[i]=createOperand(temp);
                 }
-            addInstractionToArray(Iarr,opcode,operands,i);
-            continue;
+                addInstractionToArray(Iarr,opcode,operands,i);
+                continue;
             }
+            else {
             i++; /* one operand */
             operands[i] = createOperand(line);
             addInstractionToArray(Iarr,opcode,operands,i);      
             continue;  
+            }
         }
     } 
 }
