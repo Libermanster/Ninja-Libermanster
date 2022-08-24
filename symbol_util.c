@@ -72,11 +72,10 @@ int getSymbolSource(char *str, symbolList* sl) {
         if(strcmp(str,temp->name)==0) {
             switch(temp->source) {
                 case NONE:
-                    return 0;
-                case ENTRY:
                     return 2;
                 case EXTERNAL:
-                    return 1;    
+                    return 1;  
+                case  
             }
         }
             
@@ -101,7 +100,10 @@ void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
         if(temp->type == DATA) {
             temp->address += a->ic; /*adding ic to all the data labels */
         }
-        temp->address += 100; /*adding 100 to all labels because the decoding strating from address 100*/
+        if(temp->source == NONE) {
+            temp->address += 100; /*adding 100 to all labels because the decoding strating from address 100*/
+        }
+
         temp = temp->next;
     }
 }

@@ -67,7 +67,7 @@ char *duplicateString(char *s)
 {
     char *copy = malloc(sizeof(char) * MAX_LINE);
     strcpy(copy, s);
-    /* copy[strlen(copy)] = '\0'; */
+    /*copy[strlen(copy)] = '\0'; */
     return copy;
 }
 
