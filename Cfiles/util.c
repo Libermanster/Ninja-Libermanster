@@ -109,7 +109,13 @@ void getLabelName(char line[], char label[]){
 void getLabelOperandName(char line[], char label[]){
     int i = 0;
     while(line[i] != '.'){
+        if (i >= 30)
+        {
+            printf("label size to big\n");
+            exit(0);
+        }
         label[i] = line[i];
+        label[i+1] = '\0';
         ++i;
     }
 }
@@ -132,12 +138,9 @@ int isRegister(char* str)
 {
     int res = 0;
     res = str[0] == 'r'? 1 : 0;
-    res = isdigit(str[1])? 1 : 0;
-    if (isspace(str[2])||(str[2] == '\0'))
-    {
-        return res;
-    }
-    return 0;
+    res = isdigit(str[1])? (res*1) : 0;
+    res = (isspace(str[2])||(str[2] == '\0')) ? (res*1) : 0;
+    return res;
 }
 
 int isEmpty(char line[]){
