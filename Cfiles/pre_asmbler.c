@@ -2,14 +2,16 @@
 #include "../Hfiles/pre_asmbler.h"
 
 
-void preasmbler_algorithm(FILE *fp, char name[])
+FILE* preasmbler_algorithm(FILE *fp, char name[])
 {
     macroList *macros = createMacroList();
     char* line = malloc(sizeof(char)*81);
     int macroSwitch = 0;
     macro *m;
-    char *fileName = stringConnect(name,".am");
-    FILE *out = fopen(fileName, "w");
+    char *fileName;
+    FILE *out;
+    fileName = stringConnect(name,".am");
+    out = fopen(fileName, "w");
     while (NULL != fgets(line, MAX_LINE, fp))
     {
         int i = 0;
@@ -64,7 +66,8 @@ void preasmbler_algorithm(FILE *fp, char name[])
             }
         }
     }
-
+    fclose(fp);
     freeMacroList(macros);
+    return out;
 }
 

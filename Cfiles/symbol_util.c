@@ -74,7 +74,9 @@ int getSymbolSource(char *str, symbolList* sl) {
                 case NONE:
                     return 2;
                 case EXTERNAL:
-                    return 1;    
+                    return 1; 
+                case ENTRY:
+                    return 0;    
             }
         }
             

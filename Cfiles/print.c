@@ -2,13 +2,14 @@
 
 void printObject(char* name ,dataImage * d, inctractionArray* a) {
     FILE* fp;
-    char* fname = stringConnect(name, ".ob");
+    char* fname;
     int i = 0;
     int k = 0;
     int p=0;
     char z[2];
     char s[2];
     int num;
+    fname = stringConnect(name, ".ob");
     fp = fopen(fname, "w");
     decTo32(a->ic, s);
     decTo32(d->dc, z);
@@ -91,6 +92,7 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
         decTo32(d->dataArray[k],s);
         fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);    
     }
+    fclose(fp);
 
 }
 

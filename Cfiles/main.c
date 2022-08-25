@@ -11,19 +11,21 @@ int main(int argc, char *argv[])
 
     for (i = 1; i < argc; i++)
     {
-        /*char *fname = stringConnect(argv[i], ".as");*/
-        char fname[] = "Tests/day1";
-
+        char *fname;
         FILE *fp;
-        /*strcpy(fname,argv[i]);*/
+        fname = stringConnect(argv[i], ".as");
         fp = fopen(fname, "r");
-        /*preasmbler_algorithm(fp,fname); */
+        fp = preasmbler_algorithm(fp,argv[i]); 
         a = createInstractionArray();
         d = createDataImage();
         sl = createSymbolTable();
+        fname = stringConnect(argv[i], ".am");
+        fclose (fp);
+        fp = fopen(fname, "r");
         first_run_algorithm(fp,a,d,sl);
+        fclose (fp);
         second_run(a,d,sl);
-        printObject(fname,d,a);
+        printObject(argv[i],d,a);
         
     }
     return 0;
