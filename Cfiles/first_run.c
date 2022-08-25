@@ -3,9 +3,11 @@
 void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl) {
     
     char* line = malloc(sizeof(char)*(MAX_LINE+1));
+    int lineCounter;
+    lineCounter = 0;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
-        
+        lineCounter++;
         int symbolInTheLine = 0;
         symbol *s; /*  //check with an expert that it doesnt delete the prevoius labels */
         char *name;
@@ -39,13 +41,21 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
         /*first word is label*/
         if(startsWithLabel(line))
         { 
-            symbolInTheLine = 1;
             name  = malloc(sizeof(char) * MAX_LINE);
             getLabelName(line,name);
+            if(isLabelExsits(name,sl)==1){
+                if(isEntryLabel(name,sl)==1) {
+                    
+                }
+            }
+            else 
+            {
+            symbolInTheLine = 1;
             s = createSymbol(name,0,UNKNOWN,NONE);
             free(name); 
             line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
             line = &line[countSpaces(line)];
+            }
         }
         /*first word is .data*/
         if (startsWithWord(line, ".data")) 
