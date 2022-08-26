@@ -14,7 +14,7 @@ int getSymbolSource(char* , symbolList* );
 void updateSymbolsInList(symbolList* , inctractionArray* );
 symbolList* createSymbolTable();
 symbol* getLabelByName(char* , symbolList*);
-
+int isEntryLabel(char* , symbolList* );
 int isExternLabel(char* , symbolList* );
 
 externalList* createExternTable();

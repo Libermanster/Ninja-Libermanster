@@ -112,6 +112,9 @@ void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
 int isEntryLabel(char* name, symbolList* sl) {
     symbol* temp;
     temp = getLabelByName(name,sl);
+    if(temp == NULL) {
+        return 0;
+    }
     if(temp->source == ENTRY) {
         return 1;
     }
@@ -163,6 +166,9 @@ void addExternToList(externSymbol* e, externalList* el) {
 int isExternLabel(char* name, symbolList* sl) {
     symbol* temp;
     temp = getLabelByName(name,sl);
+    if(temp == NULL) {
+        return 0;
+    }
     if(temp->source == EXTERNAL) {
         return 1;
     }

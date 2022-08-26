@@ -4,7 +4,7 @@
 #include "../Hfiles/operand.h"
 /*#include "../Hfiles/symbol_util.h"*/
 
-operand createOperand(char* str, int lineCounter, externalList* el, symbolList* sl) {
+operand createOperand(char* str, externalList* el, int lineCounter,  symbolList* sl) {
     operand operand;
     char* num; 
     int number;
@@ -69,28 +69,25 @@ operand createOperand(char* str, int lineCounter, externalList* el, symbolList* 
             free(namee);
             return operand;
      }
-    else {
-        operand.reffMode= -1;
-        operand.value.number = -1;
-        free(namee);
-        printf("ERROR IN LINE: %d , ILLIGAL OPERANDS", lineCounter);
-        return operand; 
-     }
-    
+    operand.reffMode= -1;
+    operand.value.number = -1;
+    free(namee);
+    printf("ERROR IN LINE: %d , ILLIGAL OPERANDS", lineCounter);
+    return operand; 
+
    /*  //if none of that shit then there is an error , illigal operand ; */
-   /* doesnt supose to reach this point*/
-    
+   /* doesnt supose to reach this point*/ 
 }
 
 
 
-int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
+int checkOperandsError(int op,operand arr[],int i,int lineCounter) {
     int str1[]={0,1,2,3};
     int str2[]={1,2,-1,-1};
     int str3[]={1,2,3,-1};
     switch(op) {
         case 0:
-            if(i=2) {
+            if(i==2) {
                 if(isIn(arr[1].reffMode,str1)==1 && isIn(arr[2].reffMode,str3)==1) {
                     return 1;
                 }
@@ -104,7 +101,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 1:
-            if(i=2) {
+            if(i==2) {
                 if(isIn(arr[1].reffMode,str1)==1 && isIn(arr[2].reffMode,str1)==1) {
                     return 1;
                 }
@@ -118,7 +115,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 2:
-            if(i=2) {
+            if(i==2) {
                 if(isIn(arr[1].reffMode,str1)==1 && isIn(arr[2].reffMode,str3)==1) {
                     return 1;
                 }
@@ -132,7 +129,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 3:
-            if(i=2) {
+            if(i==2) {
                 if(isIn(arr[1].reffMode,str1)==1 && isIn(arr[2].reffMode,str3)==1) {
                     return 1;
                 }
@@ -146,7 +143,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 4:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -160,7 +157,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 5:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -174,7 +171,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 6:
-            if(i=2) {
+            if(i==2) {
                 if(isIn(arr[1].reffMode,str2)==1 && isIn(arr[2].reffMode,str3)==1) {
                     return 1;
                 }
@@ -188,7 +185,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 7:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -202,7 +199,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 8:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -216,7 +213,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 9:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -230,7 +227,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 10:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -244,7 +241,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 11:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -258,7 +255,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 12:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str1)==1) {
                     return 1;
                 }
@@ -272,7 +269,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 13:
-            if(i=1) {
+            if(i==1) {
                 if(isIn(arr[1].reffMode,str3)==1) {
                     return 1;
                 }
@@ -286,7 +283,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }    
         case 14:
-            if(i=0) {
+            if(i==0) {
                return 1;
             }
             else{
@@ -294,7 +291,7 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
                 return 0;
             }
         case 15:
-            if(i=0) {
+            if(i==0) {
                return 1;
             }
             else{
@@ -303,4 +300,5 @@ int checkOperandsError(int op,operand arr[3],int i,int lineCounter) {
             }
 
     }
+    return -1;
 }

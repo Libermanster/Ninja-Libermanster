@@ -1,16 +1,16 @@
 #include "../Hfiles/first_run.h"
 
-void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl, externSymbol * el, int errorSwitch,int entrySwitch, int externSwitch) {
+void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl, externalList * el, int errorSwitch,int entrySwitch, int externSwitch) {
     
     char* line = malloc(sizeof(char)*(MAX_LINE+1));
     int lineCounter;
     lineCounter = 0;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
-        lineCounter++;
         int symbolInTheLine = 0;
         symbol *s; /*  //check with an expert that it doesnt delete the prevoius labels */
         char *name;
+        lineCounter++;
         if(isEmpty(line)||isComment(line))
         {
             continue;
@@ -138,7 +138,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             char* numAndString; 
             if(symbolInTheLine==1)
             {
-                ssetLabelAddress(s,getDC(dataIm));
+                setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
                 if(isEntryLabel(get_symbol_name(s),sl)==0) {
                     addSymbolToList(s,sl);
@@ -212,11 +212,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             temp = strtok(line, ",");
             if(temp!=NULL) { /* two operands */
                 i++;
-                operands[i]=createOperand(temp,el,lineCounter);
+                operands[i] = createOperand(temp,el,lineCounter,sl);
                 temp = strtok(NULL, ",");
                 if(temp && countSpaces(temp) != strlen(temp)) {
                     i++;
-                    operands[i]=createOperand(temp,el,lineCounter);
+                    operands[i]=createOperand(temp,el,lineCounter,sl);
                 }
                 if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     errorSwitch=1;
@@ -230,7 +230,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
             else {
             i++; /* one operand */
-            operands[i] = createOperand(line,el,lineCounter);
+            operands[i] = createOperand(line,el,lineCounter,sl);
             if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     errorSwitch=1;
                     continue;

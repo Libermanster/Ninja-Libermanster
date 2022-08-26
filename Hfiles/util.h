@@ -14,7 +14,7 @@
 #define UTIL
 #include "Types.h"
 
-
+int isIn(int , int*);
 
 
 

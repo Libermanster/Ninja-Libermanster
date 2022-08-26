@@ -5,7 +5,7 @@
 #define OPERAND
 
 
-operand createOperand(char* , int , externalList*, symbolList*);
+operand createOperand(char* , externalList*, int ,  symbolList*);
 int isExternLabel(char* , symbolList* );
 
 externalList* createExternTable();
@@ -13,5 +13,6 @@ externalList* createExternTable();
 externSymbol* createExtern(char* , int );
 
 void addExternToList(externSymbol*, externalList*);
+int checkOperandsError(int ,operand * ,int ,int );
 
 #endif

@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
 
     for (i = 1; i < argc; i++)
     {
-        int errorSwitch = 0;
-        externSwitch = 0;
-        entrySwitch = 0;
         char *fname;
         FILE *fp;
+        errorSwitch = 0;
+        externSwitch = 0;
+        entrySwitch = 0;
         fname = stringConnect(argv[i], ".as");
         fp = fopen(fname, "r");
         fp = preasmbler_algorithm(fp,argv[i]); 
