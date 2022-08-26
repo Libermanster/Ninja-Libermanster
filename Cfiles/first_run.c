@@ -45,7 +45,15 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             getLabelName(line,name);
             if(isLabelExsits(name,sl)==1){
                 if(isEntryLabel(name,sl)==1) {
-                    
+                    symbolInTheLine = 1;
+                    s = getLabelByName(name,sl);
+                    line += strlen(get_symbol_name(s)) + 1;
+                    line = &line[countSpaces(line)];  
+                }
+                else {
+                    printf("ERROR IN LINE: %d , LABEL IS ALREADY DEFINED\n",lineCounter);
+                    errorSwitch=1;
+                    continue;
                 }
             }
             else 
@@ -53,7 +61,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             symbolInTheLine = 1;
             s = createSymbol(name,0,UNKNOWN,NONE);
             free(name); 
-            line += strlen(get_symbol_name(s)) + 1;/*  // fowards the line nigga */
+            line += strlen(get_symbol_name(s)) + 1;
             line = &line[countSpaces(line)];
             }
         }
@@ -65,7 +73,9 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                addSymbolToList(s,sl);
+                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                    addSymbolToList(s,sl);
+                }
             }
             
             line += 5;
@@ -86,8 +96,10 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
-                setLabelType(s,DATA);  
-                addSymbolToList(s,sl);
+                setLabelType(s,DATA);
+                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                    addSymbolToList(s,sl);
+                }
             }
             line+=7;
             line = &line[countSpaces(line)];
@@ -124,9 +136,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             char* numAndString; 
             if(symbolInTheLine==1)
             {
-                setLabelAddress(s,getDC(dataIm));
-                setLabelType(s,DATA);    
-                addSymbolToList(s,sl);
+                ssetLabelAddress(s,getDC(dataIm));
+                setLabelType(s,DATA);
+                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                    addSymbolToList(s,sl);
+                }
             }
             
             line+=7;
@@ -168,7 +182,9 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             {
                 setLabelAddress(s,getIC(Iarr));
                 setLabelType(s,INCTRACTION); 
-                addSymbolToList(s,sl);
+                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                    addSymbolToList(s,sl);
+                }
             }
             
         
@@ -181,10 +197,9 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             opcode = getOpcode(temp);
             if (opcode == -1)
             {
-                /*error*/
-                printf("error - illigel opcode\n");
-                /*error(eh, UNKNOWN_OPCODE, 1, part);*/
-                exit(0);
+                printf("ERROR IN LINE: %d , UNKNOWN OPCODE\n",lineCounter);
+                errorSwitch=1;
+                continue;    
             }
 
             if(isEmpty(line)) { /* no operands */
@@ -193,7 +208,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
 
             temp = strtok(line, ",");
-             if(temp!=NULL) { /* two operands */
+            if(temp!=NULL) { /* two operands */
                 i++;
                 operands[i]=createOperand(temp);
                 temp = strtok(NULL, ",");
@@ -201,12 +216,23 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     i++;
                     operands[i]=createOperand(temp);
                 }
-                addInstractionToArray(Iarr,opcode,operands,i);
-                continue;
+                if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
+                    errorSwitch=1;
+                    continue;
+                }
+                else {
+                     addInstractionToArray(Iarr,opcode,operands,i);
+                    continue;
+                }
+               
             }
             else {
             i++; /* one operand */
             operands[i] = createOperand(line);
+            if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
+                    errorSwitch=1;
+                    continue;
+                }
             addInstractionToArray(Iarr,opcode,operands,i);      
             continue;  
             }
