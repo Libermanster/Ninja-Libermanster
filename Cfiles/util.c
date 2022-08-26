@@ -2,8 +2,20 @@
 
 #include "../Hfiles/util.h" 
 
-
 int throughText(char *line);
+
+/*return 1 if x is in the array, 0 if not*/
+isIn(int x, int arr[4]) 
+{
+    int i = 0 , res = 0;
+    for(;i<4;++i)
+    {
+        res = arr[i] == x ? 1 : res ;
+    }
+    return res;
+
+}
+
 
 char *stringConnect(char *s1, char *s2) /*//strconcat*/
 {
