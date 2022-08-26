@@ -5,7 +5,7 @@
 int throughText(char *line);
 
 /*return 1 if x is in the array, 0 if not*/
-isIn(int x, int arr[4]) 
+int isIn(int x, int arr[4]) 
 {
     int i = 0 , res = 0;
     for(;i<4;++i)
