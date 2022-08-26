@@ -108,3 +108,56 @@ void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
         temp = temp->next;
     }
 }
+
+int isEntryLabel(char* name, symbolList* sl) {
+    symbol* temp;
+    temp = getLabelByName(name,sl);
+    if(temp->source == ENTRY) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+symbol* getLabelByName(char* name, symbolList* sl) {
+    symbol* temp;
+    temp = sl->first;
+    while(temp!=NULL) {
+        if(strcmp(name,temp->name)==0) {
+            return temp;
+        }    
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+
+externalList* createExternTable() {
+    externalList* ptr = malloc(sizeof(externalList));
+    ptr->first = NULL;
+    ptr->last = NULL;
+    return ptr;    
+}
+
+externSymbol* createExtern(char* n, int d) {
+    externSymbol* e = malloc(sizeof(externSymbol));
+    e->address  = d;
+    e->name = duplicateString(n);
+    e->next = NULL;
+}
+
+void addExternToList(externSymbol* e, externSymbol* el) {
+    if(el->first == NULL ) {
+        el->first = s;
+        el->last = s;
+    } 
+    else
+    {
+        el->last->next = s;
+        el->last = s; 
+    }
+}
+
+
+

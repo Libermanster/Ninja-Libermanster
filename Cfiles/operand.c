@@ -63,7 +63,7 @@ operand createOperand(char* str, int lineCounter, externalList* el) {
             if(isExternLabel(str)==1)  {
                 externSymbol* e;
                 e = createExtern(duplicateString(str),lineCounter);
-                addExternList(e,el);
+                addExternToList(e,el);
             }
             free(namee);
             return operand;
