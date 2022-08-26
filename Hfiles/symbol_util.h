@@ -34,6 +34,20 @@ typedef struct symbolList
     
 } symbolList;
 
+typedef struct externSymbol
+{
+    int address;
+    char *name;
+    externSymbol *next;
+}  externSymbol;
+
+
+typedef struct externalList 
+{
+    externSymbol *first;
+    externSymbol *last;
+} externalList;
+
 
 symbol* createSymbol(char* , int , symbolType , symbolSource );
 char* get_symbol_name(symbol*);

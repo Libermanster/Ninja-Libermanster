@@ -101,7 +101,7 @@ void updateSymbolsInList(symbolList* sl, inctractionArray* a) {
         if(temp->type == DATA) {
             temp->address += a->ic; /*adding ic to all the data labels */
         }
-        if(temp->source == NONE) {
+        if((temp->source == NONE) || (temp->source == ENTRY)) {
             temp->address += 100; /*adding 100 to all labels because the decoding strating from address 100*/
         }
 

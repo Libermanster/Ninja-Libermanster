@@ -97,3 +97,35 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
 }
 
 
+
+void printEntry(char* name, symbolList* sl) {
+    FILE* fp;
+    char* fname;
+    fname = stringConnect(name, ".ent");
+    fp = fopen(fname, "w");
+    symbol temp;
+    temp = sl->first;
+    while(temp!=NULL) {
+        if(temp->source == ENTRY ) {
+            fprinf("name: %s  ,  address: %d",temp->name,temp->address);
+        }
+        temp = temp->next;
+    }
+    fclose(fp);
+}
+
+void printExtern(char* name, externalList* el) {
+     FILE* fp;
+    char* fname;
+    fname = stringConnect(name, ".ext");
+    fp = fopen(fname, "w");
+    externSymbol temp;
+    temp = el->first;
+    while(temp!=NULL) {
+        fprinf("name: %s  ,  address: %d",temp->name,temp->address+100);
+        temp = temp->next;
+    }
+    fclose(fp);
+}
+
+
