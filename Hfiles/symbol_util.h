@@ -38,8 +38,8 @@ typedef struct externSymbol
 {
     int address;
     char *name;
-    externSymbol *next;
-}  externSymbol;
+    struct externSymbol *next;
+} externSymbol;
 
 
 typedef struct externalList 
@@ -59,6 +59,7 @@ int getSymbolAdress(char* , symbolList* );
 int getSymbolSource(char* , symbolList* );
 void updateSymbolsInList(symbolList* , inctractionArray* );
 symbolList* createSymbolTable();
+symbol* getLabelByName(char* , symbolList*);
 
 #endif
 

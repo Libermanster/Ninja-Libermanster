@@ -145,17 +145,18 @@ externSymbol* createExtern(char* n, int d) {
     e->address  = d;
     e->name = duplicateString(n);
     e->next = NULL;
+    return e;
 }
 
-void addExternToList(externSymbol* e, externSymbol* el) {
+void addExternToList(externSymbol* e, externalList* el) {
     if(el->first == NULL ) {
-        el->first = s;
-        el->last = s;
+        el->first = e;
+        el->last = e;
     } 
     else
     {
-        el->last->next = s;
-        el->last = s; 
+        el->last->next = e;
+        el->last = e; 
     }
 }
 
