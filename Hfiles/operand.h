@@ -1,8 +1,17 @@
-#include "util.h"
 
+#include "util.h"
 
 #ifndef OPERAND
 #define OPERAND
+
+
+operand createOperand(char*);
+
+#endif
+
+#ifndef TYPES
+#define TYPES
+
 
 typedef union value {
     int number;/*  //data ot register number */
@@ -18,6 +27,19 @@ typedef struct operand {
     value value;
 } operand;
 
-operand createOperand(char*);
+
+typedef struct externSymbol
+{
+    int address;
+    char *name;
+    struct externSymbol *next;
+} externSymbol;
+
+
+typedef struct externalList 
+{
+    externSymbol *first;
+    externSymbol *last;
+} externalList;
 
 #endif

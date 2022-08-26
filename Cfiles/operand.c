@@ -2,6 +2,7 @@
 
 
 #include "../Hfiles/operand.h"
+/*#include "../Hfiles/symbol_util.h"*/
 
 operand createOperand(char* str, int lineCounter, externalList* el) {
     operand operand;

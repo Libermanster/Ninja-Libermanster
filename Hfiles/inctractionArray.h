@@ -7,6 +7,31 @@
 #ifndef INSTRACTION
 #define INSTRACTION
 
+
+
+
+inctractionArray* createInstractionArray();
+
+
+
+void fillOpcodeFormat(inctractionArray* ,int, int, int, int);
+void fillDataFormat(inctractionArray* , int, int);
+
+void fillRegisterFormat(inctractionArray* , int, int, int);
+
+
+
+
+void addInstractionToArray(inctractionArray* ,int ,operand[3] ,int );
+
+int getIC(inctractionArray* );
+
+#endif
+
+#ifndef TYPES
+#define TYPES
+
+
 typedef struct opcodeFormat {
     int opcode[10]; /* // 4 first opcode bits */
     int src[10]; /* // 2 bits for sorce refferance mode */
@@ -44,21 +69,5 @@ typedef struct inctractionArray {
 } inctractionArray;
 
 
-
-inctractionArray* createInstractionArray();
-
-
-
-void fillOpcodeFormat(inctractionArray* ,int, int, int, int);
-void fillDataFormat(inctractionArray* , int, int);
-
-void fillRegisterFormat(inctractionArray* , int, int, int);
-
-
-
-
-void addInstractionToArray(inctractionArray* ,int ,operand[3] ,int );
-
-int getIC(inctractionArray* );
 
 #endif

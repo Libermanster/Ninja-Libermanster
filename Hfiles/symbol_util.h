@@ -1,8 +1,24 @@
-#include "inctractionArray.h"
 
+#include "inctractionArray.h"
 
 #ifndef SYMBL_UTL
 #define SYMBL_UTL
+symbol* createSymbol(char* , int , symbolType , symbolSource );
+char* get_symbol_name(symbol*);
+void setLabelAddress(symbol* , int );
+void setLabelType(symbol* , symbolType );
+void addSymbolToList(symbol * ,symbolList * );
+int isLabelExsits(char* , symbolList* );
+int getSymbolAdress(char* , symbolList* );
+int getSymbolSource(char* , symbolList* );
+void updateSymbolsInList(symbolList* , inctractionArray* );
+symbolList* createSymbolTable();
+symbol* getLabelByName(char* , symbolList*);
+
+#endif
+
+#ifndef TYPES
+#define TYPES
 typedef enum symbolType
 {
     UNKNOWN,
@@ -33,34 +49,5 @@ typedef struct symbolList
     symbol *last;
     
 } symbolList;
-
-typedef struct externSymbol
-{
-    int address;
-    char *name;
-    struct externSymbol *next;
-} externSymbol;
-
-
-typedef struct externalList 
-{
-    externSymbol *first;
-    externSymbol *last;
-} externalList;
-
-
-symbol* createSymbol(char* , int , symbolType , symbolSource );
-char* get_symbol_name(symbol*);
-void setLabelAddress(symbol* , int );
-void setLabelType(symbol* , symbolType );
-void addSymbolToList(symbol * ,symbolList * );
-int isLabelExsits(char* , symbolList* );
-int getSymbolAdress(char* , symbolList* );
-int getSymbolSource(char* , symbolList* );
-void updateSymbolsInList(symbolList* , inctractionArray* );
-symbolList* createSymbolTable();
-symbol* getLabelByName(char* , symbolList*);
-
 #endif
-
 
