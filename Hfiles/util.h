@@ -5,14 +5,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include "Types.h"
 
 #define MAX_LINE 80
-
+#define MAX_MEMORY 264
 
 
 #ifndef UTIL
 #define UTIL
+#include "Types.h"
 
 
 

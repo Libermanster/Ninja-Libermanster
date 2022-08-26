@@ -1,5 +1,5 @@
 #include "dataImage.h"
-#include "inctractionArray.h"
+#include "symbol_util.h"
 
 
 

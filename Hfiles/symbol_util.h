@@ -15,39 +15,12 @@ void updateSymbolsInList(symbolList* , inctractionArray* );
 symbolList* createSymbolTable();
 symbol* getLabelByName(char* , symbolList*);
 
+int isExternLabel(char* , symbolList* );
+
+externalList* createExternTable();
+
+externSymbol* createExtern(char* , int );
+
+void addExternToList(externSymbol*, externalList*);
+
 #endif
-
-#ifndef TYPES
-#define TYPES
-typedef enum symbolType
-{
-    UNKNOWN,
-    INCTRACTION,
-    DATA
-} symbolType;
-
-typedef enum symbolSource
-{
-    NONE,
-    ENTRY,
-    EXTERNAL
-} symbolSource;
-
-typedef struct symbol
-{
-    char *name; 
-    int address;
-    symbolType type;
-    symbolSource source;
-    struct symbol *next;
-
-} symbol;
-
-typedef struct symbolList
-{
-    symbol *first;
-    symbol *last;
-    
-} symbolList;
-#endif
-

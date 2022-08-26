@@ -4,7 +4,7 @@
 #include "../Hfiles/operand.h"
 /*#include "../Hfiles/symbol_util.h"*/
 
-operand createOperand(char* str, int lineCounter, externalList* el) {
+operand createOperand(char* str, int lineCounter, externalList* el, symbolList* sl) {
     operand operand;
     char* num; 
     int number;
@@ -61,7 +61,7 @@ operand createOperand(char* str, int lineCounter, externalList* el) {
     {
             operand.reffMode = 1;
             operand.value.labelName = duplicateString(str);
-            if(isExternLabel(str)==1)  {
+            if(isExternLabel(str,sl)==1)  {
                 externSymbol* e;
                 e = createExtern(duplicateString(str),lineCounter);
                 addExternToList(e,el);
