@@ -1,6 +1,6 @@
 #include "../Hfiles/first_run.h"
 
-void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl) {
+void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl, externSymbol * el, int errorSwitch,int entrySwitch, int externSwitch) {
     
     char* line = malloc(sizeof(char)*(MAX_LINE+1));
     int lineCounter;
@@ -24,6 +24,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,ENTRY);
             addSymbolToList(s,sl);
+            entrySwitch = 1;
             free(name);
             continue;
         }
@@ -35,6 +36,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,EXTERNAL);
             addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
+            externSwitch = 1;
             free(name);
             continue;
         }
@@ -210,11 +212,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             temp = strtok(line, ",");
             if(temp!=NULL) { /* two operands */
                 i++;
-                operands[i]=createOperand(temp);
+                operands[i]=createOperand(temp,el,lineCounter);
                 temp = strtok(NULL, ",");
                 if(temp && countSpaces(temp) != strlen(temp)) {
                     i++;
-                    operands[i]=createOperand(temp);
+                    operands[i]=createOperand(temp,el,lineCounter);
                 }
                 if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     errorSwitch=1;
@@ -228,7 +230,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
             else {
             i++; /* one operand */
-            operands[i] = createOperand(line);
+            operands[i] = createOperand(line,el,lineCounter);
             if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     errorSwitch=1;
                     continue;

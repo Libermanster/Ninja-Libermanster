@@ -38,13 +38,19 @@ int main(int argc, char *argv[])
             if(externSwitch==1) {
                 printExtern(argv[i],el);
             }
-           
             if(entrySwitch==1) {
                 printEntry(argv[i],sl);
             }   
         }
+        free(d);
+        free(a);
+        free(sl);
+        free(el);
+
             
     }
+
+
     return 0;
 
 }
