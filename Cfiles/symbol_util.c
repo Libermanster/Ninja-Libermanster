@@ -160,5 +160,16 @@ void addExternToList(externSymbol* e, externalList* el) {
     }
 }
 
+int isExternLabel(char* name, symbolList* sl) {
+    symbol* temp;
+    temp = getLabelByName(name,sl);
+    if(temp->source == EXTERNAL) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 
 
