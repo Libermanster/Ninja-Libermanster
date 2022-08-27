@@ -85,14 +85,9 @@ macro *getMacroFromList(macroList *, char *);
  * 
  * @param list the macro list list
  */
-
+/*both function are responssible of freeing the macro list at the end of the list use*/
 void freeMacro(macro*);
 void freeMacroList(macroList *);
- /*
 
-
-
-
-*/
 
 #endif

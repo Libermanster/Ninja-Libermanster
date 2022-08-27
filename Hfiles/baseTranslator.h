@@ -56,8 +56,14 @@ get the number to translate and the 2 digit long string in which to store the re
 void decTo32(int, char *);
 /*from dec to base32 ends*/
 
+/*from bin to dec begins*/
+/*
+translate any binrary number with 10 digfit into intiger
+*/
 int binToDec(int *);
+/*from bin to dec ends*/
 
+/*takes the first int and raise it by the power of the second int return the resault*/
 int int_pow(int , int );
 
 #endif

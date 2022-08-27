@@ -1,4 +1,4 @@
-/* PREASMBLER ALGORITHM HEADER FILE */
+ /* PREASMBLER ALGORITHM HEADER FILE */
 #include "macro_util.h"
 
 #ifndef PRE_AS
