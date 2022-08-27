@@ -8,16 +8,21 @@
 #define DATA_IMAGE
 typedef struct dataImage 
 {
-    int dc;/*0??*/
+    int dc;
     int dataArray[MAX_MEMORY];
     
 } dataImage;
+
 /*initialize data image*/
 dataImage* createDataImage();
 
+/*adds number to dataImage*/
 void addInt(char* , dataImage*);
 
+
+/*add string to dataImagie*/
 void addString(char* , dataImage*);
 
+/*get dataIamge counter*/
 int getDC(dataImage*);
 #endif

@@ -14,7 +14,7 @@ externalList* createExternTable();
 externSymbol* createExtern(char* , int );
 /*add node to external list*/
 void addExternToList(externSymbol*, externalList*);
-
+/*checks for number of operands errors and reff mode errors*/
 int checkOperandsError(int ,operand * ,int ,int );
 
 #endif

@@ -4,9 +4,7 @@
 #ifndef PRE_AS
 #define PRE_AS
 /**
- * implement the preassembler algorithm, lay out the macros
- * 
- * gets the pointer to the input file and its name
+ * preassembler algorithm
  */
 FILE* preasmbler_algorithm(FILE* , char[]);
 #endif
