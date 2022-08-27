@@ -1,0 +1,28 @@
+asFile/mmn.as: asFile/main.as asFile/dataImage.as asFile/second_run.as asFile/first_run.as asFile/pre_asmbler.as asFile/util.as asFile/symbol_util.as asFile/macro_util.as asFile/inctractionArray.as asFile/baseTranslator.as asFile/opcode.as asFile/operand.as asFile/print.as
+	gcc -S asFile/main.as asFile/dataImage.as asFile/second_run.as asFile/first_run.as asFile/pre_asmbler.as asFile/util.as asFile/symbol_util.as asFile/macro_util.as asFile/inctractionArray.as asFile/baseTranslator.as asFile/opcode.as asFile/operand.as asFile/print.as -o asFile/mmn.as
+asFile/main.as: Cfiles/main.c Hfiles/main.h
+	gcc -S  Cfiles/main.c -o asFile/main.as
+asFile/dataImage.as: Cfiles/dataImage.c Hfiles/dataImage.h
+	gcc -S  Cfiles/dataImage.c -o asFile/dataImage.as
+asFile/second_run.as: Cfiles/second_run.c Hfiles/second_run.h
+	gcc -S  Cfiles/second_run.c -o asFile/second_run.as
+asFile/first_run.as: Cfiles/first_run.c Hfiles/first_run.h
+	gcc -S  Cfiles/first_run.c -o asFile/first_run.as
+asFile/pre_asmbler.as: Cfiles/pre_asmbler.c Hfiles/pre_asmbler.h
+	gcc -S  Cfiles/pre_asmbler.c -o asFile/pre_asmbler.as
+asFile/util.as: Cfiles/util.c Hfiles/util.h
+	gcc -S  Cfiles/util.c -o asFile/util.as
+asFile/symbol_util.as: Cfiles/symbol_util.c Hfiles/symbol_util.h
+	gcc -S  Cfiles/symbol_util.c -o asFile/symbol_util.as
+asFile/macro_util.as: Cfiles/macro_util.c Hfiles/macro_util.h
+	gcc -S  Cfiles/macro_util.c -o asFile/macro_util.as
+asFile/inctractionArray.as: Cfiles/inctractionArray.c Hfiles/inctractionArray.h
+	gcc -S  Cfiles/inctractionArray.c -o asFile/inctractionArray.as
+asFile/baseTranslator.as: Cfiles/baseTranslator.c Hfiles/baseTranslator.h
+	gcc -S  Cfiles/baseTranslator.c -o asFile/baseTranslator.as
+asFile/opcode.as: Cfiles/opcode.c Hfiles/opcode.h
+	gcc -S  Cfiles/opcode.c -o asFile/opcode.as
+asFile/operand.as: Cfiles/operand.c Hfiles/operand.h
+	gcc -S  Cfiles/operand.c -o asFile/operand.as
+asFile/print.as: Cfiles/print.c Hfiles/print.h
+	gcc -S  Cfiles/print.c -o asFile/print.as
