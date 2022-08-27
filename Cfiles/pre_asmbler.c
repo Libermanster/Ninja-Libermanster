@@ -15,17 +15,17 @@ FILE* preasmbler_algorithm(FILE *fp, char name[])
     while (NULL != fgets(line, MAX_LINE, fp))
     {
         int i = 0;
-        i =countSpaces(line);
-        if(macroSwitch)
+        i =countSpaces(line); /* we "delete" spaces at the strat, this a common trick that we use throught the code*/
+        if(macroSwitch) /* if we are in lines of macro defention*/
         {
-            if (strncmp(&line[i], "endm", 4) == 0 && isLastWord(&line[i]))
+            if (strncmp(&line[i], "endm", 4) == 0 && isLastWord(&line[i])) /* macro defention ended, turn  off the switch */
             {
                 addMacroToList(macros, m);
                 macroSwitch = 0; /* //turn off the switch */
             }
             else
             {
-                addLineToMacro(m, line);
+                addLineToMacro(m, line); /*macro defention keeps going, adding lines to the macro */
                 
             }
         }
@@ -39,7 +39,7 @@ FILE* preasmbler_algorithm(FILE *fp, char name[])
         }
         else
         {
-            if (isLastWord(&line[i]))
+            if (isLastWord(&line[i]))  /* if we encounter an macro thats already defined*/
             {
                 macro *found_macro;
                 char *copy = duplicateString(&line[i]);

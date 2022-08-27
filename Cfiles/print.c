@@ -29,15 +29,10 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                     array[k]=a->arr[i].format.formatType.opcodeFormat.dst[p];
                 for(p=0;k<=9;k++,p++)
                     array[k]=a->arr[i].format.formatType.opcodeFormat.are[p];
-                /*print binrary*/
-
-                /*for(p=0;p<=9;p++) {
-                    fprintf(fp,"%d",array[p]);
-                }
-                fprintf(fp,"\n");*/
+            
                 num = binToDec(array);
 
-                /*pfint base 32*/
+            
                 decTo32(i+100,z);
                 decTo32(num,s);
                 fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);
@@ -51,14 +46,9 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                     array[k]=a->arr[i].format.formatType.registerFormat.secondOperandRegister[p];
                 for(p=0;k<=9;k++,p++) 
                     array[k]=a->arr[i].format.formatType.registerFormat.are[p]; 
-                 /*print binrary*/
-
-                 /*for(p=0;p<=9;p++) {
-                    fprintf(fp,"%d",array[p]);
-                }
-                fprintf(fp,"\n");*/
+              
                  num = binToDec(array);
-                /*pfint base 32*/
+                
                 decTo32(i+100,z);
                 decTo32(num,s);
                 fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);
@@ -70,14 +60,9 @@ void printObject(char* name ,dataImage * d, inctractionArray* a) {
                     array[k]=a->arr[i].format.formatType.dataFormat.data[p];
                 for(p=0;k<=9;k++,p++)
                     array[k]=a->arr[i].format.formatType.dataFormat.are[p];
-                /*print binrary*/
-
-                /*for(p=0;p<=9;p++) {
-                    fprintf(fp,"%d",array[p]);
-                }
-                fprintf(fp,"\n");*/
+    
                   num = binToDec(array);
-                /*pfint base 32*/
+             
                 decTo32(i+100,z);
                 decTo32(num,s);
                 fprintf(fp,"%c%c %c%c\n",z[0],z[1],s[0],s[1]);

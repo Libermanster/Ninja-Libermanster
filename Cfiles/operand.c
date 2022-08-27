@@ -46,10 +46,10 @@ operand createOperand(char* str, externalList* el, int lineCounter,  symbolList*
     
     
     
-    else  if(hasDott(str)==1) 
+    else  if(hasDott(str)==1) /*check if its a stracture (has dot) or just a label*/
     {
             
-            getLabelOperandName(str,namee); /* //get the stracture label name */
+            getLabelOperandName(str,namee); /* get the stracture label name */
             operand.reffMode = 2;
             operand.value.labelNameAndNum.name = duplicateString(namee);
             operand.value.labelNameAndNum.num = getLabelOperandNumber(str);
@@ -75,13 +75,12 @@ operand createOperand(char* str, externalList* el, int lineCounter,  symbolList*
     printf("ERROR IN LINE: %d , ILLIGAL OPERANDS", lineCounter);
     return operand; 
 
-   /*  //if none of that shit then there is an error , illigal operand ; */
-   /* doesnt supose to reach this point*/ 
+    
 }
 
 
 
-int checkOperandsError(int op,operand arr[],int i,int lineCounter) {
+int checkOperandsError(int op,operand arr[],int i,int lineCounter) { /* check if number of operands match and the reffModes are legal*/
     int str1[]={0,1,2,3};
     int str2[]={1,2,-1,-1};
     int str3[]={1,2,3,-1};
