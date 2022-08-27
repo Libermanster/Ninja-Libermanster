@@ -107,7 +107,7 @@ void printEntry(char* name, symbolList* sl) {
     temp = sl->first;
     while(temp!=NULL) {
         if(temp->source == ENTRY ) {
-            fprintf(fp,"name: %s  ,  address: %d",temp->name,temp->address);
+            fprintf(fp,"name: %s  ,  address: %d\n",temp->name,temp->address);
         }
         temp = temp->next;
     }
@@ -122,7 +122,7 @@ void printExtern(char* name, externalList* el) {
     fp = fopen(fname, "w");
     temp = el->first;
     while(temp!=NULL) {
-        fprintf(fp,"name: %s  ,  address: %d",temp->name,temp->address+100);
+        fprintf(fp,"name: %s  ,  address: %d\n",temp->name,temp->address+100);
         temp = temp->next;
     }
     fclose(fp);

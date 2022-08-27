@@ -5,7 +5,7 @@
 #define OPERAND
 
 
-operand createOperand(char* , externalList*, int ,  symbolList*);
+operand createOperand(char* , externalList*, int ,  symbolList*, inctractionArray*);
 int isExternLabel(char* , symbolList* );
 
 externalList* createExternTable();

@@ -8,20 +8,19 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
         int symbolInTheLine = 0;
-        symbol *s; /*  //check with an expert that it doesnt delete the prevoius labels */
+        symbol *s; /*  check with an expert that it doesnt delete the prevoius labels */
         char *name;
-        lineCounter++;
         if(isEmpty(line)||isComment(line))
         {
             continue;
         }
-        line = &line[countSpaces(line)];  /* //deletes the spaces in the start  */
+        line = &line[countSpaces(line)];  /* deletes the spaces in the start  */
         /*first word is .entry*/
         if (startsWithWord(line, ".entry"))
         {
             line += 6; /* // 6 == strlen(".entry")  */
             line = &line[countSpaces(line)];
-            name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            name = getNextWord(line);/*  check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,ENTRY);
             addSymbolToList(s,sl);
             *entrySwitch = 1;
@@ -33,13 +32,14 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
         {
             line += 7; /* // 7 == strlen(".extern")  */
             line = &line[countSpaces(line)];
-            name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
+            name = getNextWord(line);/*  check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,EXTERNAL);
-            addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
+            addSymbolToList(s,sl);/*  check problems with the label s pointer how does it work */
             *externSwitch = 1;
             free(name);
             continue;
         }
+        lineCounter++;
         /*first word is label*/
         if(startsWithLabel(line))
         { 
@@ -212,11 +212,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             temp = strtok(line, ",");
             if(temp!=NULL) { /* two operands */
                 i++;
-                operands[i] = createOperand(temp,el,lineCounter,sl);
+                operands[i] = createOperand(temp,el,lineCounter,sl,Iarr);
                 temp = strtok(NULL, ",");
                 if(temp && countSpaces(temp) != strlen(temp)) {
                     i++;
-                    operands[i]=createOperand(temp,el,lineCounter,sl);
+                    operands[i]=createOperand(temp,el,lineCounter,sl,Iarr);
                 }
                 if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     *errorSwitch=1;
@@ -230,7 +230,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             }
             else {
             i++; /* one operand */
-            operands[i] = createOperand(line,el,lineCounter,sl);
+            operands[i] = createOperand(line,el,lineCounter,sl,Iarr);
             if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
                     *errorSwitch=1;
                     continue;

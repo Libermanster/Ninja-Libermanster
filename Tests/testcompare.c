@@ -49,7 +49,15 @@ int main(int argc, char *argv[])
    
     char *name_1, *name_2;
     FILE *fp_1, *fp_2;
-    printf("\n.ob\n");
+    printf("\n.as\n");
+    name_1 = stringConnect(argv[1], ".as");
+    name_2 = stringConnect(argv[2], ".am");
+    fp_1 = fopen(name_1, "r");
+    fp_2 = fopen(name_2, "r");
+    compare(fp_2,fp_1);
+    fclose (fp_1);
+    fclose (fp_2);
+    /*printf("\n.ob\n");
     name_1 = stringConnect(argv[1], ".ob");
     name_2 = stringConnect(argv[2], ".ob");
     fp_1 = fopen(name_1, "r");
@@ -64,7 +72,7 @@ int main(int argc, char *argv[])
     fp_2 = fopen(name_2, "r");
     compare(fp_2,fp_1);
     fclose (fp_1);
-    fclose (fp_2);
+    fclose (fp_2);*/
     printf("\nThis two files are the fucking same!!!\n");
     return 0;
 }

@@ -4,7 +4,7 @@
 #include "../Hfiles/operand.h"
 /*#include "../Hfiles/symbol_util.h"*/
 
-operand createOperand(char* str, externalList* el, int lineCounter,  symbolList* sl) {
+operand createOperand(char* str, externalList* el, int lineCounter,  symbolList* sl,inctractionArray* a) {
     operand operand;
     char* num; 
     int number;
@@ -38,9 +38,9 @@ operand createOperand(char* str, externalList* el, int lineCounter,  symbolList*
             free(namee);
             return operand;
         }
-        
-        
-            /*  error , reg number is not legal */
+        else{
+            printf("ERROR IN LINE: %d , ILLIGAL REGISTER NUMBER", lineCounter);
+        }
        
     }
     
@@ -63,7 +63,7 @@ operand createOperand(char* str, externalList* el, int lineCounter,  symbolList*
             operand.value.labelName = duplicateString(str);
             if(isExternLabel(str,sl)==1)  {
                 externSymbol* e;
-                e = createExtern(duplicateString(str),lineCounter);
+                e = createExtern(duplicateString(str),a->ic);
                 addExternToList(e,el);
             }
             free(namee);
