@@ -63,70 +63,55 @@ void deleteSpacesAtEnd(char *);
 
 
 /*
-    breif: 
-    input: line[81]
-    output: int, 1 for true 0 for false
+   checks  ifthelabel is a stracture
 */
 int hasDott(char *);
 /*
-    breif: get back the label
-    input: line[81], label[]
-    output: void, change the label char array into the label
+    gets label name from a string
 */
 void getLabelName(char *, char *);
 /*
-    breif: checks if a line contain only whitespaces, works only for for 81 digits lines
-    input: line[81]
-    output: 1 for true 0 for false
+    checks if a line contain only whitespaces, works only for for 81 digits lines
+
 */
 int isEmpty(char *);
 /*
     breif: checks for comments line
-    input: line[81]
-    output: 1 for true 0 for false
+ 
 */
 int isComment(char *);
 /*
-    breif: checks for lines thats starts with label
-    input: line[81]
-    output: 1 for true 0 for false
+    breif: checks if the line starts with label
+   
 */
 int startsWithLabel(char *);
 /*
-    breif: checks for lines thats starts with label, contain only whitespaces or comments line
-    input: line[81]
-    output: 1 for empty line 2 for comment line 3 for labeled line 0 for else
+   
 */
 int throughText(char *);
 
 
 /*
-    breif: 
-    input: line[81]
-    output:
+    gets name of a label stracture before the dot
 */
 void getLabelOperandName(char *, char *);
 
 /*
-    breif: 
-    input: line[81]
-    output:
+   gets number of stracture after the dot
 */
 int getLabelOperandNumber(char *);
 
 /*
-    breif: 
-    input: line[81]
-    output:
+    gets register number
 */
 int getRegister(char *);
 
 /*
-    breif: 
-    input: line[81]
-    output:
+    checks if its a register
 */
 int isRegister(char *);
+
+/* gets the next word in the line*/
 
 char* getNextWord(char *);
 
