@@ -7,5 +7,8 @@
 
 #ifndef SCNDRN
 #define SCNDRN
+/** 
+ * fills the array
+*/
 void second_run(inctractionArray*, dataImage*, symbolList*);
 #endif
