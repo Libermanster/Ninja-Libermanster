@@ -12,7 +12,7 @@ typedef struct dataImage
     int dataArray[MAX_MEMORY];
     
 } dataImage;
-
+/*initialize data image*/
 dataImage* createDataImage();
 
 void addInt(char* , dataImage*);
