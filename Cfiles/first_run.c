@@ -7,45 +7,45 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
     lineCounter = 0;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
+        lineCounter++;
         int symbolInTheLine = 0;
-        symbol *s; /*  check with an expert that it doesnt delete the prevoius labels */
+        symbol *s; 
         char *name;
-        if(isEmpty(line)||isComment(line))
+        if(isEmpty(line)||isComment(line)) /*checks if the line is empty or comment*/
         {
             continue;
         }
-        line = &line[countSpaces(line)];  /* deletes the spaces in the start  */
-        /*first word is .entry*/
-        if (startsWithWord(line, ".entry"))
+        line = &line[countSpaces(line)];  /* deletes the spaces in the start, we use this trick throughout the code  */
+
+        if (startsWithWord(line, ".entry"))  /*first word is .entry*/
         {
-            line += 6; /* // 6 == strlen(".entry")  */
+            line += 6; /*  6 is the length of entry, we move foward in the line to get the next word  */
             line = &line[countSpaces(line)];
-            name = getNextWord(line);/*  check if the pointers shit is correct, its complicated in this line. */
+            name = getNextWord(line);
             s = createSymbol(name,0,UNKNOWN,ENTRY);
             addSymbolToList(s,sl);
             *entrySwitch = 1;
             free(name);
             continue;
         }
-        /*first word is .extern*/
-        if (startsWithWord(line, ".extern"))
+        
+        if (startsWithWord(line, ".extern")) /*first word is .extern*/
         {
-            line += 7; /* // 7 == strlen(".extern")  */
+            line += 7; /* 7 is the length of extern, we move foward in the line to get the next word  */
             line = &line[countSpaces(line)];
-            name = getNextWord(line);/*  check if the pointers shit is correct, its complicated in this line. */
+            name = getNextWord(line);
             s = createSymbol(name,0,UNKNOWN,EXTERNAL);
-            addSymbolToList(s,sl);/*  check problems with the label s pointer how does it work */
+            addSymbolToList(s,sl);
             *externSwitch = 1;
             free(name);
             continue;
         }
-        lineCounter++;
-        /*first word is label*/
-        if(startsWithLabel(line))
+        
+        if(startsWithLabel(line)) /*first word is a label*/
         { 
             name  = malloc(sizeof(char) * MAX_LINE);
             getLabelName(line,name);
-            if(isLabelExsits(name,sl)==1){
+            if(isLabelExsits(name,sl)==1){ /*if label already  exsits, then check if its an entry label or output an error*/
                 if(isEntryLabel(name,sl)==1) {
                     symbolInTheLine = 1;
                     s = getLabelByName(name,sl);
@@ -58,7 +58,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     continue;
                 }
             }
-            else 
+            else /*else add the label to symbolList*/
             {
             symbolInTheLine = 1;
             s = createSymbol(name,0,UNKNOWN,NONE);
@@ -67,15 +67,15 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             line = &line[countSpaces(line)];
             }
         }
-        /*first word is .data*/
-        if (startsWithWord(line, ".data")) 
+        
+        if (startsWithWord(line, ".data")) /*first word is .data*/
         {
             char* number; 
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                if(isEntryLabel(get_symbol_name(s),sl)==0) { /*if its not an entry label add to list, if its an entry label it is already added to the list*/
                     addSymbolToList(s,sl);
                 }
             }
@@ -91,48 +91,34 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             free(number);
             continue;
         }
-        /*first word is .string*/
-        if(startsWithWord(line,".string")) 
+        
+        if(startsWithWord(line,".string")) /*first word is .string*/
         {
             char* end;
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                if(isEntryLabel(get_symbol_name(s),sl)==0) {
+                if(isEntryLabel(get_symbol_name(s),sl)==0) { /*if its not an entry label add to list, if its an entry label it is already added to the list*/
                     addSymbolToList(s,sl);
                 }
             }
             line+=7;
             line = &line[countSpaces(line)];
-            /*if (line[0] != '"')
-            {
-            error(eh, NOT_A_STRING, 0);
-            continue;
-            }*/
             line++;
             if (NULL != (end = strchr(line, '"')))
             {
                 if (isLastWord(end))
                 {
-                    *end = '\0';
+                    *end = '\0'; /*nice trick,  we change the last " to \0 to mark end of string and for copying being easy*/
                     addString(line, dataIm);
 
                     continue;
                 }
-                else 
-                {
-
-                   /*  //error */
-                }
+                continue;
             }
-            else
-            {
-                /*//error */
-            }
-        }
         /*first word is .struct*/
-        if(startsWithWord(line,".struct"))/*  //might not work needs a check. */
+        if(startsWithWord(line,".struct")) /*first word is .struct*/
         {
             char* end; 
             char* numAndString; 
@@ -151,11 +137,6 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             addInt(numAndString, dataIm);
             numAndString = strtok(NULL, ",");
             numAndString += countSpaces(numAndString);
-            /*if (numAndString[0] != '"')
-            {
-                error(eh, NOT_A_STRING, 0);
-                continue;
-            }*/
             numAndString++;
             if (NULL != (end = strchr(numAndString, '"'))) 
             {
@@ -166,20 +147,16 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 } else
                 {
                     /*error*/
-                    printf("error first_run-> startsWithWord .struct -> isLastWord\n");
+                    continue;
                 }
-
-            } else
-            {
-                /*error*/   
-                printf("error first_run-> startsWithWord .struct\n");
-            }
-        } else
+            } 
+        } 
+        else /* else we have an inctraction */
         {
             int i;
             char *temp;
             int opcode;
-            operand operands[3];
+            operand operands[3]; /*makes an array of operands*/
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getIC(Iarr));
@@ -188,15 +165,11 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     addSymbolToList(s,sl);
                 }
             }
-            
-        
-            i=0;
-            
-            
+            i=0; 
             line += countSpaces(line);
             temp = getNextWord(line);
             line += strlen(temp);
-            opcode = getOpcode(temp);
+            opcode = getOpcode(temp); /* gets opcode number */
             if (opcode == -1)
             {
                 printf("ERROR IN LINE: %d , UNKNOWN OPCODE\n",lineCounter);
