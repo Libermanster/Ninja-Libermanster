@@ -54,7 +54,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 }
                 else {
                     printf("ERROR IN LINE: %d , LABEL IS ALREADY DEFINED\n",lineCounter);
-                    **errorSwitch=1;
+                    *errorSwitch=1;
                     continue;
                 }
             }

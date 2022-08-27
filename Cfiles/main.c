@@ -43,16 +43,9 @@ int main(int argc, char *argv[])
             }   
         }
         free(d);
-        free(a);
-        free(sl);
-        free(el);
-
-            
+        free(a);            
     }
-
-
     return 0;
-
 }
 
 
