@@ -29,8 +29,7 @@ char *stringConnect(char *s1, char *s2) /*//strconcat*/
 int countSpaces(char *s) /* skip_spaces*/
 {
     int i = 0;
-    for (i = 0; i < MAX_LINE && isspace(s[i]) && s[i] != '\0'; i++)
-        ;
+    for (i = 0; i < MAX_LINE && isspace(s[i]) && s[i] != '\0'; i++);
     return i;
 }
 
