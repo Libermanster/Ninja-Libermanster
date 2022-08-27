@@ -92,16 +92,14 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             continue;
         }
         
-        if(startsWithWord(line,".string")) /*first word is .string*/
+         if(startsWithWord(line,".string")) 
         {
             char* end;
             if(symbolInTheLine==1)
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                if(isEntryLabel(get_symbol_name(s),sl)==0) 
-                { 
-                    /*if its not an entry label add to list, if its an entry label it is already added to the list*/
+                if(isEntryLabel(get_symbol_name(s),sl)==0) {
                     addSymbolToList(s,sl);
                 }
             }
@@ -112,12 +110,20 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             {
                 if (isLastWord(end))
                 {
-                    *end = '\0'; /*nice trick,  we change the last " to \0 to mark end of string and for copying being easy*/
+                    *end = '\0';
                     addString(line, dataIm);
 
                     continue;
                 }
-                continue;
+                else 
+                {
+
+                   /*  //error */
+                }
+            }
+            else
+            {
+                /*//error */
             }
         }
         /*first word is .struct*/
