@@ -7,10 +7,10 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
     lineCounter = 0;
     while(NULL != fgets(line, MAX_LINE+1, fp)) 
     {
-        lineCounter++;
         int symbolInTheLine = 0;
         symbol *s; 
         char *name;
+        lineCounter++;
         if(isEmpty(line)||isComment(line)) /*checks if the line is empty or comment*/
         {
             continue;
@@ -99,7 +99,9 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             {
                 setLabelAddress(s,getDC(dataIm));
                 setLabelType(s,DATA);
-                if(isEntryLabel(get_symbol_name(s),sl)==0) { /*if its not an entry label add to list, if its an entry label it is already added to the list*/
+                if(isEntryLabel(get_symbol_name(s),sl)==0) 
+                { 
+                    /*if its not an entry label add to list, if its an entry label it is already added to the list*/
                     addSymbolToList(s,sl);
                 }
             }
@@ -117,6 +119,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 }
                 continue;
             }
+        }
         /*first word is .struct*/
         if(startsWithWord(line,".struct")) /*first word is .struct*/
         {
