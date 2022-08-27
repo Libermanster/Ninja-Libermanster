@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         fname = stringConnect(argv[i], ".am");
         fclose (fp);
         fp = fopen(fname, "r");
-        first_run_algorithm(fp,a,d,sl,el,errorSwitch,entrySwitch,externSwitch);
+        first_run_algorithm(fp,a,d,sl,el,&errorSwitch,&entrySwitch,&externSwitch);
         fclose (fp);
         if(errorSwitch==0) {
             second_run(a,d,sl);

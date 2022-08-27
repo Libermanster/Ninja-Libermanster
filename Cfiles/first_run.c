@@ -1,6 +1,6 @@
 #include "../Hfiles/first_run.h"
 
-void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl, externalList * el, int errorSwitch,int entrySwitch, int externSwitch) {
+void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm, symbolList * sl, externalList * el, int *errorSwitch,int *entrySwitch, int *externSwitch) {
     
     char* line = malloc(sizeof(char)*(MAX_LINE+1));
     int lineCounter;
@@ -24,7 +24,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,ENTRY);
             addSymbolToList(s,sl);
-            entrySwitch = 1;
+            *entrySwitch = 1;
             free(name);
             continue;
         }
@@ -36,7 +36,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             name = getNextWord(line);/*  //check if the pointers shit is correct, its complicated in this line. */
             s = createSymbol(name,0,UNKNOWN,EXTERNAL);
             addSymbolToList(s,sl);/*  //check problems with the label s pointer how does it work */
-            externSwitch = 1;
+            *externSwitch = 1;
             free(name);
             continue;
         }
@@ -54,7 +54,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                 }
                 else {
                     printf("ERROR IN LINE: %d , LABEL IS ALREADY DEFINED\n",lineCounter);
-                    errorSwitch=1;
+                    **errorSwitch=1;
                     continue;
                 }
             }
@@ -200,7 +200,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             if (opcode == -1)
             {
                 printf("ERROR IN LINE: %d , UNKNOWN OPCODE\n",lineCounter);
-                errorSwitch=1;
+                *errorSwitch=1;
                 continue;    
             }
 
@@ -219,7 +219,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
                     operands[i]=createOperand(temp,el,lineCounter,sl);
                 }
                 if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
-                    errorSwitch=1;
+                    *errorSwitch=1;
                     continue;
                 }
                 else {
@@ -232,7 +232,7 @@ void first_run_algorithm(FILE * fp, inctractionArray * Iarr, dataImage * dataIm,
             i++; /* one operand */
             operands[i] = createOperand(line,el,lineCounter,sl);
             if(checkOperandsError(opcode,operands,i,lineCounter)==0) {
-                    errorSwitch=1;
+                    *errorSwitch=1;
                     continue;
                 }
             addInstractionToArray(Iarr,opcode,operands,i);      
