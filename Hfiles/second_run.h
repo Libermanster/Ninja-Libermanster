@@ -8,7 +8,7 @@
 #ifndef SCNDRN
 #define SCNDRN
 /** 
- * fills the array
+ * fills the array, takes a label name and decoeds to binary
 */
 void second_run(inctractionArray*, dataImage*, symbolList*);
 #endif
